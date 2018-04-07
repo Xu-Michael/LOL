@@ -1,0 +1,84 @@
+.show-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: fill;
+}
+
+.card-container {
+  height: 80vh;
+  width: 50vh;
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  margin: 10rpx;
+  background: #fff;
+  border-radius: 5px;
+  padding: 2em 0;
+  box-sizing: border-box;
+  transition: .3s ease;
+  box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.35);
+}
+
+.card-gif {
+  width: 100%;
+  height: 50%;
+  background-size: cover !important;
+  position: absolute;
+  top: 0;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.collected {
+  position: absolute;
+  top: 170px;
+  right: 25rpx;
+  font-size: 40rpx;
+  display: flex;
+  align-items: center;
+}
+
+.icon-heart {
+  height: 65rpx;
+  width: 65rpx;
+  margin-right: 10rpx;
+}
+
+.tag {
+  font-family: 'Palanquin', sans-serif;
+  font-size: 36rpx;
+  color: #8f959a;
+  margin: 1rem;
+  position: absolute;
+  top: 200px;
+  width: 100%;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  margin: 0.4em auto;
+  width: 100%;
+}
+
+.button {
+  text-align: center;
+  width: 300rpx;
+  background-color: #00CED1;
+  color: #fff;
+  text-decoration: none;
+  padding: 14rpx 16rpx;
+  border: 5rpx solid #00CED1;
+  font-size: 1rem;
+  font-weight: 900;
+  margin: 0.3em auto;
+  border-radius: 5px;
+}

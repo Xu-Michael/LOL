@@ -1,0 +1,32 @@
+<template name="form">
+
+  <form class="gif-form" bindsubmit="bindSubmit">
+    <view class="user-input">
+      <view class="text-area-wrap">
+        <textarea value="{{tag}}" style="input-size" placeholder="#funny" class="input-height" name="tag" maxlength="-1" auto-height />
+      </view>
+    </view>
+
+    <view class="user-input">
+      <view class="text-area-wrap image-input">
+        <textarea value="{{image}}" style="input-size" placeholder="Image URL" class="input-height" name="image" maxlength="-1" auto-height />
+      </view>
+    </view>
+
+    <view class="user-input">
+      <view class="text-area-wrap">
+        <textarea value="{{author}}" style="input-size" placeholder="Your Name" class="input-height" name="author" maxlength="-1" auto-height />
+      </view>
+    </view>
+
+    <view class="user-input">
+      <view class="text-area-wrap">
+        <textarea value="{{collected}}" style="input-size" placeholder="100" class="input-height" name="collected" maxlength="-1" auto-height />
+      </view>
+    </view>
+
+    <button class="button" type="primary" form-type="submit">Submit</button>
+  </form>
+
+
+</template>

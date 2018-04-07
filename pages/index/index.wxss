@@ -1,0 +1,48 @@
+/* Cards */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card-container:last-child {
+  justify-content: left;
+}
+.card {
+  height: 300rpx;
+  width: 350rpx;
+  text-shadow: 0 1rpx 3rpx rgba(0,0,0,0.8);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  margin: 10rpx;
+  position: relative;
+  background: #fff;
+  border-radius: 5px;
+  padding: 2em 0;
+  box-sizing: border-box;
+  transition: .3s ease;
+  box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.35);
+}
+.tag {
+  position: absolute;
+  bottom: 10rpx;
+  right: 10rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  transition: all 1s ease-out;
+}
+.collected {
+  position: absolute;
+  top: 10rpx;
+  left: 10rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+.icon-heart {
+  height: 50rpx;
+  width: 50rpx;
+  margin-right: 10rpx;
+}

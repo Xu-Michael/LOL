@@ -1,0 +1,17 @@
+/**app.wxss**/
+@import "lib/style/font.wxss";
+
+.container {
+  margin: 4em auto;
+}
+
+page {
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  font-family: 'Palanquin', sans-serif;
+  font-size: 21px;
+  color: #8f959a;
+  line-height: 1.5;
+  background: #fff;
+}
