@@ -10,12 +10,12 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarBackgroundColor": "#282C34",
+    "navigationBarTitleText": "Gifme",
+    "navigationBarTextStyle":"white"
   },
   "tabBar": {
-    "backgroundColor": "#283149",
+    "backgroundColor": "#282C34",
     "selectedColor": "white",
     "borderStyle": "white",        
     "color": "black",
