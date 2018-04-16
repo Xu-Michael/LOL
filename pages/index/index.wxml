@@ -10,7 +10,7 @@
   </view> -->
   <view class="card" bindtap="showGif" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('{{gifs[0].image}}') ;" data-gif="{{gifs[0]}}">
     <view class="collected">
-      <image class="icon-heart" src="../../image/icon-heart.png"/>
+      <image class="icon-heart" src="../../image/white/favorite.png"/>
       {{ gifs[0].collected }}
     </view>
     <view class="tag">
@@ -19,7 +19,7 @@
   </view>
   <view class="card" bindtap="showGif" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('{{gifs[1].image}}') ;" data-gif="{{gifs[1]}}">
     <view class="collected">
-      <image class="icon-heart" src="../../image/icon-heart.png"/>
+      <image class="icon-heart" src="../../image/white/favorite.png"/>
       {{ gifs[1].collected }}
     </view>
     <view class="tag">
@@ -28,7 +28,7 @@
   </view>
   <view class="card" bindtap="showGif" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('{{gifs[2].image}}') ;" data-gif="{{gifs[2]}}">
     <view class="collected">
-      <image class="icon-heart" src="../../image/icon-heart.png"/>
+      <image class="icon-heart" src="../../image/white/favorite.png"/>
       {{ gifs[2].collected }}
     </view>
     <view class="tag">
@@ -37,7 +37,7 @@
   </view>
   <view class="card" bindtap="showGif" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('{{gifs[3].image}}') ;" data-gif="{{gifs[3]}}">
     <view class="collected">
-      <image class="icon-heart" src="../../image/icon-heart.png"/>
+      <image class="icon-heart" src="../../image/white/favorite.png"/>
       {{ gifs[3].collected }}
     </view>
     <view class="tag">
@@ -47,7 +47,7 @@
   <view class="card" bindtap="showGif" data-gif="{{gifs[4]}}">
     <video class="video" src="{{gifs[4].image}}" loop autoplay controls="{{false}}" object-fit="cover"></video>
     <view class="collected">
-      <image class="icon-heart" src="../../image/icon-heart.png"/>
+      <image class="icon-heart" src="../../image/white/favorite.png"/>
       {{ gifs[4].collected }}
     </view>
     <view class="tag">
@@ -57,7 +57,7 @@
   <view class="card" bindtap="showGif" data-gif="{{gifs[5]}}">
     <video class="video" src="{{gifs[5].image}}" loop autoplay controls="{{false}}"   object-fit="cover"></video>
     <view class="collected">
-      <image class="icon-heart" src="../../image/icon-heart.png"/>
+      <image class="icon-heart" src="../../image/white/favorite.png"/>
       {{ gifs[5].collected }}
     </view>
     <view class="tag">
@@ -67,7 +67,7 @@
   <view class="card" bindtap="showGif" data-gif="{{gifs[6]}}">
     <video class="video" src="{{gifs[6].image}}" loop autoplay controls="{{false}}" object-fit="cover"></video>
     <view class="collected">
-      <image class="icon-heart" src="../../image/icon-heart.png"/>
+      <image class="icon-heart" src="../../image/white/favorite.png"/>
       {{ gifs[6].collected }}
     </view>
     <view class="tag">

@@ -27,3 +27,7 @@ page {
 .blue {
   color: #5ea5df;
 }
+
+.red {
+  color: #B52B3B;
+}
