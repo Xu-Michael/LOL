@@ -17,11 +17,16 @@
           {{ gif.collected }}
         </view>
         <view class="tag collected">
+          <image class="icon-heart" src="../../image/orange/tag2.png"/>
           {{ gif.tags }}
         </view>
       </view>
     </view>
   </view>
+
+<view class="highlight-button">
+  <view class="submit-button">SUBMIT</view>
+</view>
 
 
 <!-- 
