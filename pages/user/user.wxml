@@ -1,0 +1,5 @@
+<view class="user-container">
+  <view class="card-container" wx:for="{{users}}" wx:for-item="user" wx:key="user.id" bindtap="showCollection" data-user="{{user}}">
+    {{user.name}}
+  </view>
+</view>

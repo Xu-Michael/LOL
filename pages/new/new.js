@@ -1,88 +1,78 @@
-const app = getApp();
-// pages/new/new.js
+let cos_utils = require('../../utils/cos')
+var config = require('../../config')
+let Key = ''
+let filePath = ''
+let image_src = 'https://picchain-1256466747.cos.ap-chengdu.myqcloud.com/'
+
+function getRandomColor() {
+  let rgb = []
+  for (let i = 0; i < 3; ++i) {
+    let color = Math.floor(Math.random() * 256).toString(16)
+    color = color.length == 1 ? '0' + color : color
+    rgb.push(color)
+  }
+  return '#' + rgb.join('')
+};
+
+let tempPath;
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
+  onReady: function (res) {
+    this.videoContext = wx.createVideoContext('myVideo')
+  },
+  inputValue: '',
   data: {
-  
+    src: ''
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+  bindInputBlur: function (e) {
+    this.inputValue = e.detail.value
   },
-
-  bindSubmit: function (e) {
-
-    let form_gif = e.detail.value
-
-    //get that restaurant with the id from globaldata
-    let gifs = app.globalData.gifs
-    const last_id = gifs[gifs.length - 1].id
-    const new_id = last_id + 1
-
-    form_gif.id = new_id
-
-    app.globalData.gifs.push(form_gif)
-
-    // redirect to the index
-    wx.reLaunch({
-      url: '/pages/index/index'
+  bindButtonTap: function () {
+    var page = this
+    wx.chooseVideo({
+      sourceType: ['album', 'camera'],
+      maxDuration: 10,
+      camera: ['front', 'back'],
+      success: function (res) {
+        filePath = res.tempFilePath
+        Key = filePath.substr(filePath.lastIndexOf('/') + 1); // 这里指定上传的文件名
+        page.setData({
+          src: filePath,
+          Key: Key
+        });
+        cos_utils.cos.postObject({
+          Bucket: config.Bucket,
+          Region: config.Region,
+          Key: Key,
+          FilePath: filePath,
+          onProgress: function (info) {
+            console.log(JSON.stringify(info));
+          },
+        });
+        const form_gif = {
+          tags: "testing",
+          image: 'https://picchain-1256466747.cos.ap-chengdu.myqcloud.com/' + Key,
+          author: "testing",
+          collected: 12
+        };
+        wx.request({
+          url: `https://gif-me.herokuapp.com/api/v1/gifs`,
+          method: 'POST',
+          data: form_gif,
+          success(res) {
+            console.log(res)
+            wx.redirectTo({
+              url: `../show/show?id=${res.data.id}`
+            });
+          }
+        });
+      }
     })
-
-
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  bindSendDanmu: function () {
+    this.videoContext.sendDanmu({
+      text: this.inputValue,
+      color: getRandomColor()
+    })
   }
 })

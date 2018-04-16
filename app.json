@@ -3,7 +3,10 @@
     "pages/index/index",
     "pages/show/show",
     "pages/edit/edit",
-    "pages/new/new"
+    "pages/new/new",
+    "pages/form/form",
+    "pages/user/user",
+    "pages/collection/collection"
   ],
   "window":{
     "backgroundTextStyle":"light",

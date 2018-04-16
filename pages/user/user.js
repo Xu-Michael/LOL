@@ -1,19 +1,19 @@
-const app = getApp()
-
+// pages/user/user.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+  
   },
 
-  showGif: function (e) {
+  showCollection: function (e) {
     const data = e.currentTarget.dataset;
-    const gifId = data.gif.id;
+    console.log(data)
+    const userId = data.user.id;
     wx.navigateTo({
-      url: `../show/show?id=${gifId}`
+      url: `../collection/collection?id=${userId}`
     });
   },
 
@@ -21,17 +21,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // this.setData(app.globalData);
     let page = this;
     wx.request({
-      url: "https://gif-me.herokuapp.com/api/v1/gifs",
+      url: "https://gif-me.herokuapp.com/api/v1/users",
       method: 'GET',
       success(res) {
-        const gifs = res.data.gifs;
-        console.log(gifs)
+        const users = res.data.users;
+
         // Update local data
         page.setData({
-          gifs: gifs
+          users: users
         });
 
         wx.hideToast();

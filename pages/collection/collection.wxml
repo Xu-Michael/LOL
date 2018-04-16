@@ -1,0 +1,11 @@
+<view class="card-container">
+  <view wx:for="{{user_gifs}}" wx:for-item="gif" wx:key="gif.id" class="card" bindtap="showGif" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('{{gif.image}}') ;" data-gif="{{gif}}">
+    <view class="collected">
+      <image class="icon-heart" src="../../image/icon-heart.png"/>
+      {{ gif.collected }}
+    </view>
+    <view class="tag">
+      {{ gif.tags }}
+    </view>
+  </view>
+</view>

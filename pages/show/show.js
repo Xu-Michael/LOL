@@ -22,26 +22,28 @@ Page({
   },
 
   deleteGif: function (e) {
-    let page = this
-
-    //find the restaurant in GlobalData
-    let gifs = getApp().globalData.gifs
-    let id = this.data.id
-
-
-    const index = gifs.findIndex(gif => gif.id == id)
+    const data = e.currentTarget.dataset;
 
     wx.showModal({
       title: 'Delete',
-      content: 'Did this GIF made you cringe?',
-      success: page.success
-    })
-    
-    gifs.splice(index, 1)
+      content: 'Did this GIF make you cringe?',
+      success: function() {
+        wx.request({
+          url: `https://gif-me.herokuapp.com/api/v1/gifs/${data.id}`,
+          method: 'DELETE',
+          success() {
+            // set data on index page and show
+            wx.redirectTo({
+              url: '/pages/index/index'
+            });
+          }
+        });
 
-    //redirect to index
-    wx.reLaunch({
-      url: '/pages/index/index'
+        //redirect to index
+        wx.reLaunch({
+          url: '/pages/index/index'
+        })
+      }
     })
   },
 
@@ -49,9 +51,36 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const gifs = app.globalData.gifs
-    let index = gifs.findIndex(gif => gif.id.toString() === options.id);
-    this.setData(gifs[index]);
+    console.log(options);
+    let page = this;
+    wx.request({
+      url: `https://gif-me.herokuapp.com/api/v1/gifs/${options.id}`,
+      method: 'GET',
+      success(res) {
+        const video = res.data;
+        console.log(video)
+        // Update local data
+        page.setData({
+          video: video
+        }); 
+        wx.hideToast();
+      }
+    });
+    // Get api data
+    // wx.request({
+    //   url: `https://gif-me.herokuapp.com/api/v1/gifs/${options.id}`,
+    //   method: 'GET',
+    //   success(res) {
+    //     const gif = res.data;
+
+    //     // Update local data
+    //     page.setData(
+    //       gif
+    //     );
+
+    //     wx.hideToast();
+    //   }
+    // });
   },
 
   /**

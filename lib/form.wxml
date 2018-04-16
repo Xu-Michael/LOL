@@ -3,14 +3,12 @@
   <form class="gif-form" bindsubmit="bindSubmit">
     <view class="user-input">
       <view class="text-area-wrap">
-        <textarea value="{{tag}}" style="input-size" placeholder="#funny" class="input-height" name="tag" maxlength="-1" auto-height />
+        <textarea value="{{tags}}" style="input-size" placeholder="#funny" class="input-height" name="tags" maxlength="-1" auto-height />
       </view>
     </view>
 
     <view class="user-input">
-      <view class="text-area-wrap image-input">
-        <textarea value="{{image}}" style="input-size" placeholder="Image URL" class="input-height" name="image" maxlength="-1" auto-height />
-      </view>
+      <button bindtap="bindButtonTap">Get video</button>
     </view>
 
     <view class="user-input">

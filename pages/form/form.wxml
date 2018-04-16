@@ -7,6 +7,6 @@
         {{ collected }}
       </view>
     </view> -->
-    <template is="form" data="{{tags: tags, author: author, image: image, collected: collected}}"/>
+    <template is="form"/>
   </view>
 </view>

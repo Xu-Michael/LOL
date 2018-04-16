@@ -110,3 +110,7 @@ textarea {
 .image-input {
   font-size: 10rpx !important;
 }
+
+.video {
+  height: 169px;
+}

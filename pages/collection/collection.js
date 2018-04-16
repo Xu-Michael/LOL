@@ -1,12 +1,11 @@
-const app = getApp()
-
+// pages/collection/collection.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+  
   },
 
   showGif: function (e) {
@@ -24,14 +23,14 @@ Page({
     // this.setData(app.globalData);
     let page = this;
     wx.request({
-      url: "https://gif-me.herokuapp.com/api/v1/gifs",
+      url: `https://gif-me.herokuapp.com/api/v1/users/${options.id}`,
       method: 'GET',
       success(res) {
-        const gifs = res.data.gifs;
-        console.log(gifs)
+        const gifs = res.data.user_gifs;
+
         // Update local data
         page.setData({
-          gifs: gifs
+          user_gifs: gifs
         });
 
         wx.hideToast();
