@@ -23,7 +23,7 @@ Page({
     // this.setData(app.globalData);
     let page = this;
     wx.request({
-      url: `https://gif-me.herokuapp.com/api/v1/users/${options.id}`,
+      url: `https://gifme-api.wogengapp.cn/api/v1/users/${options.id}`,
       method: 'GET',
       success(res) {
         const gifs = res.data.user_gifs;

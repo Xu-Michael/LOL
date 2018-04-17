@@ -10,6 +10,7 @@ Page({
   },
 
   showGif: function (e) {
+    console.log(e);
     const data = e.currentTarget.dataset;
     const gifId = data.gif.id;
     wx.navigateTo({
@@ -24,11 +25,10 @@ Page({
     // this.setData(app.globalData);
     let page = this;
     wx.request({
-      url: "https://gif-me.herokuapp.com/api/v1/gifs",
+      url: "https://gifme-api.wogengapp.cn/api/v1/gifs",
       method: 'GET',
       success(res) {
-        const gifs = res.data.gifs;
-        console.log(gifs)
+        const gifs = res.data.gifs_by_collections;
         // Update local data
         page.setData({
           gifs: gifs

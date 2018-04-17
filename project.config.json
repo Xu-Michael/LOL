@@ -62,10 +62,10 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 5,
 					"name": "user",
 					"pathName": "pages/user/user",
-					"query": ""
+					"query": "id=1"
 				}
 			]
 		}

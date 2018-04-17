@@ -5,33 +5,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-
-    "gifs": [
-      {
-        "id": 1,
-        "name": 'Gab',
-        "image": 'https://kitt.lewagon.com/placeholder/users/gabriel-dehan',
-        "date": '01/13/17',
-        "collected": 200,
-        "tags": '#cool'
-      },
-      {
-        "id": 2,
-        "name": 'Gray',
-        "image": 'https://kitt.lewagon.com/placeholder/users/graysdays',
-        "date": '01/10/17',
-        "collected": 200,
-        "tags": '#cool'
-      },
-      {
-        "id": 3,
-        "name": 'Alex',
-        "image": 'https://kitt.lewagon.com/placeholder/users/alex-felix',
-        "date": '01/09/17',
-        "collected": 200,
-        "tags": '#cool'
-      }
-    ]
   },
 
   showCollection: function (e) {
@@ -56,21 +29,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // let page = this;
-    // wx.request({
-    //   url: "https://gif-me.herokuapp.com/api/v1/users",
-    //   method: 'GET',
-    //   success(res) {
-    //     const users = res.data.users;
+    let page = this;
+    wx.request({
+      url: `https://gifme-api.wogengapp.cn/api/v1/users/${options.id}`,
+      method: 'GET',
+      success(res) {
+        const user = res.data;
+        console.log(user)
+        // Update local data
+        page.setData({
+          users: user
+        });
 
-    //     // Update local data
-    //     page.setData({
-    //       users: users
-    //     });
-
-    //     wx.hideToast();
-    //   }
-    // });
+        wx.hideToast();
+      }
+    });
   },
 
   /**

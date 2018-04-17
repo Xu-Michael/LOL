@@ -24,7 +24,7 @@ Page({
     }
 
     wx.request({
-      url: `https://gif-me.herokuapp.com/api/v1/gifs/${id}`,
+      url: `https://gifme-api.wogengapp.cn/api/v1/gifs/${id}`,
       method: 'PUT',
       data: form_gif,
       success() {
@@ -53,7 +53,7 @@ Page({
     });
 
     wx.request({
-      url: `https://gif-me.herokuapp.com/api/v1/gifs/${options.id}`,
+      url: `https://gifme-api.wogengapp.cn/api/v1/gifs/${options.id}`,
       method: 'GET',
       success(res) {
         const gif = res.data;
