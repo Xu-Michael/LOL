@@ -6,7 +6,8 @@
     "pages/new/new",
     "pages/form/form",
     "pages/user/user",
-    "pages/collection/collection"
+    "pages/collection/collection",
+    "pages/createshow/createshow"
   ],
   "window":{
     "backgroundTextStyle":"light",

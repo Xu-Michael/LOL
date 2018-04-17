@@ -7,36 +7,19 @@
         {{ collected }}
       </view>
     </view>
-
     <view class="details-container">
-      <!-- <view class="tag">{{tags}}</view> -->
+      <view class="tag">{{tags}}</view>
     </view>
-
     <view class="button-container">
       <view class="button" bindtap="editGif" data-id="{{id}}">
-        Add Tag
+        Edit Gif
       </view>
       <view class="button" bindtap="deleteGif" data-id="{{id}}">
-        Add to Collection
+        Delete Gif
       </view>
       <view class="button">
         Save To Phone
       </view>
     </view>
-
   </view>
 </view>
-
-<scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
-      <view wx:for="{{tags}}" wx:for-item="tag" wx:key="tag.id" class="scroll-view-item_H black">
-      <view>{{tag.name}}</view>
-      </view>
-      <!-- <view id="demo1" class="scroll-view-item_H demo-text-1"></view> -->
-      <!-- <view id="demo2"  class="scroll-view-item_H demo-text-2"></view>
-      <view id="demo3" class="scroll-view-item_H demo-text-3"></view> -->
-    </scroll-view>
-
-
-
-
-
