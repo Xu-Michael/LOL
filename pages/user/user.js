@@ -38,7 +38,7 @@ Page({
         console.log(user)
         // Update local data
         page.setData({
-          users: user
+          user: user
         });
 
         wx.hideToast();
