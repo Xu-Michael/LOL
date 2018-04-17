@@ -10,32 +10,32 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarBackgroundColor": "#282C34",
+    "navigationBarTitleText": "Gifme",
+    "navigationBarTextStyle":"white"
   },
   "tabBar": {
-    "backgroundColor": "#283149",
+    "backgroundColor": "#393f4a",
     "selectedColor": "white",
     "borderStyle": "white",        
     "color": "black",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "image/icon-home.png",
-        "selectedIconPath": "image/icon-home-selected.png",
+        "iconPath": "image/white/home.png",
+        "selectedIconPath": "image/orange/home.png",
         "text": ""
       },
       {
         "pagePath": "pages/new/new",
-        "iconPath": "image/icon-camera.png",
-        "selectedIconPath": "image/icon-camera-selected.png",
+        "iconPath": "image/white/camera.png",
+        "selectedIconPath": "image/orange/aperture.png",
         "text": ""
       },
       {
         "pagePath": "pages/index/index",
-        "iconPath": "image/icon-heart.png",
-        "selectedIconPath": "image/icon-heart-selected.png",
+        "iconPath": "image/white/favorite.png",
+        "selectedIconPath": "image/orange/favorite.png",
         "text": ""
       }
     ]

@@ -3,7 +3,7 @@
     <view class="card-gif">
       <video class="video" src="{{video.image}}" loop autoplay controls="{{false}}"></video>
       <view class="collected">
-        <image class="icon-heart" src="../../image/icon-heart.png"/>
+        <image class="icon-heart" src="../../image/white/favorite.png"/>
         {{ collected }}
       </view>
     </view>
