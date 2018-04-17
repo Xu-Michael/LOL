@@ -1,5 +1,41 @@
-<view class="user-container">
+<!-- <view class="user-container">
   <view class="card-container" wx:for="{{users}}" wx:for-item="user" wx:key="user.id" bindtap="showCollection" data-user="{{user}}">
     {{user.name}}
   </view>
 </view>
+ -->
+  <view class="flex">
+  <view class="border flex">
+  <view class="avatar-name text-align">
+    <image class="avatar" src='https://static.businessinsider.com/image/531f59fdecad04d857ec91c6/image.jpg' />
+    <view class="name">Jered</view>
+  </view>
+
+    <view class="collected-card flex">
+       <image src="../../image/icon-heart.png" class="left" />
+       <view class="totalc flex">Gifs in 400 collections</view>
+    </view>
+    </view>
+    <view class="action-icons flex">
+    <view class="icon flex">
+      <image src="../../image/icon-camera.png" class="trash" />
+    </view>
+    <view class="icon flex">
+      <image src="../../image/icon-trash.png" class="trash" bindtap="showDeletes"/>
+    </view>
+    </view>
+    </view>
+
+
+
+<view class="card-container">
+<view wx:for="{{gifs}}" wx:for-item="gif" wx:key="gif.id" class="card" bindtap="showCollection" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('{{gif.image}}') ;" data-user="{{gif}}">
+    <view class="collected">
+      <image class="icon-heart" src="../../image/icon-heart.png"/>
+      {{ gif.collected }}
+    </view>
+    <view class="tag">
+      {{ gif.tags }}
+    </view>
+  </view>
+  </view>
