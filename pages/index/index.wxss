@@ -83,7 +83,7 @@
     margin-left: 20rpx;
     padding: 30rpx;
     background: linear-gradient(
-    135deg, rgba(252, 87, 54, .9),rgba(253, 120, 90, .9));
+    160deg, rgba(252, 87, 54, .9),rgba(253, 120, 90, .9)); 
     border: 0 !important;
     color: white;
     cursor: pointer;
