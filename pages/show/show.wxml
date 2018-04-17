@@ -8,12 +8,17 @@
       </view> -->
       <!-- <view class="details-container"> -->
         </view>
+
+        <view class="collectheader flex">
+          <image class="icon-heart" src="../../image/orange/favorite.png"/>
+           <view class="collectnum">In 1000 Collections</view>
+          </view>
       <view class="lower-container">
 
         <!-- <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%"> -->
           <view class="flexleft">
 
-          <view class="tagcontainer wrap">
+          <view class="tagcontainer margin-top wrap">
           <view class="leadicon flex tag-space">
             <image class="icon-heart" src="../../image/orange/tag2.png"/>
           </view>
@@ -29,10 +34,7 @@
 
 
 
-          <view class="leadicon margin-top flex pad20">
-          <image class="icon-heart" src="../../image/orange/favorite.png"/>
-           <view class="collectnum">In 1000 Collections</view>
-          </view>
+
 
           <!-- <view class="borderbox" /> -->
 
