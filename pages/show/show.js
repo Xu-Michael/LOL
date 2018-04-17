@@ -66,7 +66,7 @@ Page({
       content: 'Did this GIF make you cringe?',
       success: function() {
         wx.request({
-          url: `https://gif-me.herokuapp.com/api/v1/gifs/${data.id}`,
+          url: `https://gifme-api.wogengapp.cn/api/v1/gifs/${data.id}`,
           method: 'DELETE',
           success() {
             // set data on index page and show
@@ -87,25 +87,25 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function () {
-    // console.log(options);
-    // let page = this;
-    // wx.request({
-    //   url: `https://gif-me.herokuapp.com/api/v1/gifs/${options.id}`,
-    //   method: 'GET',
-    //   success(res) {
-    //     const video = res.data;
-    //     console.log(video)
-    //     // Update local data
-    //     page.setData({
-    //       video: video
-    //     });
-    //     wx.hideToast();
-    //   }
-    // });
+  onLoad: function (options) {
+    console.log(options);
+    let page = this;
+    wx.request({
+      url: `https://gifme-api.wogengapp.cn/api/v1/gifs/${options.id}`,
+      method: 'GET',
+      success(res) {
+        const video = res.data;
+        console.log(video)
+        // Update local data
+        page.setData({
+          video: video
+        }); 
+        wx.hideToast();
+      }
+    });
     // Get api data
     // wx.request({
-    //   url: `https://gif-me.herokuapp.com/api/v1/gifs/${options.id}`,
+    //   url: `https://gifme-api.wogengapp.cn/api/v1/gifs/${options.id}`,
     //   method: 'GET',
     //   success(res) {
     //     const gif = res.data;

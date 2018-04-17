@@ -46,7 +46,7 @@ Page({
 
     // Get api data
     wx.request({
-      url: `https://gif-me.herokuapp.com/api/v1/gifs`,
+      url: `https://gifme-api.wogengapp.cn/api/v1/gifs`,
       method: 'POST',
       data: form_gif,
       success() {

@@ -9,8 +9,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.9.94",
-	"appid": "wx7afe1abcdf810a16",
-	"projectname": "%E9%80%97%E6%88%91%E7%AC%91",
+	"appid": "wxd60d84913b2a9b43",
+	"projectname": "Gifme",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -60,6 +60,12 @@
 					"name": "New",
 					"pathName": "pages/new/new",
 					"query": ""
+				},
+				{
+					"id": 5,
+					"name": "user",
+					"pathName": "pages/user/user",
+					"query": "id=1"
 				}
 			]
 		}

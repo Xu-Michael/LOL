@@ -13,5 +13,45 @@ page {
   font-size: 21px;
   color: #8f959a;
   line-height: 1.5;
-  background: #fff;
+  background: #282C34;
+}
+
+.black {
+  color: #282C34;
+}
+
+.yellow {
+  color: #E5C07B;
+}
+
+.blue {
+  color: #5ea5df;
+}
+
+.red {
+  color: #B52B3B;
+}
+
+.highlight-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+}
+
+ .submit-button {
+    display: block;
+    text-align: center;
+    width: 400rpx;
+    margin-left: 20rpx;
+    padding: 30rpx;
+    background: linear-gradient(
+    160deg, rgba(252, 87, 54, .9),rgba(253, 120, 90, .9)); 
+    border: 0 !important;
+    color: white;
+    cursor: pointer;
+    font-size: 35rpx;
+    text-shadow: 0 1px 0 rgba(black, .2);
+    border-radius: 5rpx;
 }

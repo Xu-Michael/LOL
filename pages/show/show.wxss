@@ -1,6 +1,5 @@
 .show-container {
   width: 100%;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,33 +7,55 @@
 }
 
 .card-container {
-  height: 90vh;
-  width: 50vh;
   background-size: cover !important;
   background-position: center;
   color: white;
-  /*position: relative;*/
-  margin: 10rpx;
-  background: #fff;
+  position: relative;
+  /* background: #fff; */
   border-radius: 5px;
   box-sizing: border-box;
   transition: .3s ease;
-  box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card-gif {
+  /* width: 100%; */
+  /* height: 100%;  */
+  /* background-size: cover !important; */
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  background-color: #393f4a;
 }
 
 .video {
-   width: 100%;
-   border-top-left-radius: 5px;
-   border-top-right-radius: 5px;
-   background-size: cover !important;
+  width: 600rpx;
+  height: 450rpx;
 }
 
-/*.card-gif {
-  width: 100%;
-  height: 50%;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
-}*/
+.details-container {
+  display: flex;
+  align-items: left;  
+  margin: 0 10rpx 10rpx 10rpx; 
+}
+
+.icon-heart {
+  height: 35rpx;
+  width: 35rpx;
+  padding: 10rpx;
+}
+
+.tag {
+  /* padding: 5rpx 20rpx 5rpx 20rpx; */
+  /* background-color: #B52B3B; */
+  color: white;
+  text-align: center;
+  margin: 5rpx;
+  /* background: linear-gradient(
+    160deg, rgba(253, 153, 39, .9),rgba(253, 182, 89, .9));  */
+  }
 
 .collected {
   /*position: absolute;
@@ -45,159 +66,29 @@
   align-items: center;
 }
 
-
-
-.icon-heart {
-  height: 65rpx;
-  width: 65rpx;
-}
-
-.borderbox {
-  height: 60rpx;
-  width: 4rpx;
-  border-left: ;
-  border-left: 1rpx solid #686868;
-}
-
-/*.tag {
+.tag {
   font-family: 'Palanquin', sans-serif;
-  font-size: 36rpx;
-  color: #8f959a;
-  margin: 1rem;
+  font-size: 24rpx;
+  /* color: #8f959a; */
+  /* margin: 1rem;
   position: absolute;
   top: 200px;
-  width: 100%;
-}*/
-/*.hypercontainer {
-  display: flex;
-  justify-content: center
-}*/
+  width: 100%; */
+  /* opacity: 0.7; */
+  border-radius: 5px;
+}
 
 .button-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0.4em auto;
-  width: 100%;
+  /* position: absolute; */
+  /* bottom: 0; */
+  padding: 20rpx;
+  margin: 40rpx;
 }
 
-
-
-.button {
-  text-align: center;
-  width: 300rpx;
-  background-color: #00CED1;
-  color: #fff;
-  text-decoration: none;
-  padding: 14rpx 16rpx;
-  border: 5rpx solid #00CED1;
-  font-size: 1rem;
-  font-weight: 900;
-  margin: 0.3em auto;
-  border-radius: 5px;
-}
-
-
-.lower-container {
-  display: flex;
-  /*flex-direction: column;*/
-  align-items: center;
-  justify-content: center;
-  width:100%;
- /* position: relative;
-  left: 110rpx;*/
-}
-
-
-
-.flex {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.taglabel {
-  /*position: absolute;
-  top:617rpx;
-  left:71rpx;*/
-  border-radius: 5px;
-  font-size: 24rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 40rpx;
-  color: #AFAFAF;
-  background-color: white;
-  box-shadow: 7px -1px 5px -7px rgba(0,0,0,0.44);
-  min-width: 200rpx;
-  height: 75rpx;
-  padding: 22rpx 0;
-
-
-
-}
-
-.collected {
-  /* position: absolute;
-  top: 10rpx;
-  left: 10rpx; */
-  font-size: 24rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /*margin: 10rpx;*/
-  height: 40rpx;
-  color: #AFAFAF;
-  background-color: grey;
-  border-radius: 5px;
-  padding: 10rpx;
-}
-
-
-.collectnum {
-  margin-left: 10rpx;
-
-}
-
-.gif-details {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  color: black;
-  box-shadow: 0 3px 10px -2px rgba(0,0,0,0.50);
-  border-radius: 5px;
-  width: 30%;
-  margin-left: 10rpx;
-  margin-top: 10rpx;
-
-}
-
-.icon-heart {
-  height: 40rpx;
-  width: 40rpx;
-}
-
-.tag-space {
-  margin-left: 12rpx;
-  margin-bottom: 20rpx
-}
-
-.scroll-view_H {
-  white-space: nowrap;
-}
-
-.scroll-view-item_H {
-  display: inline-block;
-  margin-left: 15rpx;
-  box-shadow: 0 3px 10px -2px rgba(0,0,0,0.50);
-  border-radius: 5px;
-  padding: 5rpx;
-  margin-bottom: 20rpx
-}
-
-.black{
-  /* background-color: #1AAD19; */
-  color: #000000;
-  font-size: 36rpx;
+.submit-button {
+  margin: 10rpx;
 }

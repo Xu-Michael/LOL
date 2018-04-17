@@ -1,4 +1,5 @@
-// pages/collection/collection.js
+// pages/generating/generating.js
+let key;
 Page({
 
   /**
@@ -8,34 +9,33 @@ Page({
   
   },
 
-  showGif: function (e) {
-    const data = e.currentTarget.dataset;
-    const gifId = data.gif.id;
-    wx.navigateTo({
-      url: `../show/show?id=${gifId}`
+  generateGif: function () {
+    const form_gif = {
+      tags: "testing",
+      image: 'https://gifme-1256511506.cos.ap-shanghai.myqcloud.com/' + key,
+      // image: filePath,
+      author: "testing",
+      collected: 12,
+      user_id: 1
+    };
+    wx.request({
+      url: `http://localhost:3000/api/v1/gifs`,
+      method: 'POST',
+      data: form_gif,
+      success(res) {
+        console.log(res)
+        // wx.redirectTo({
+        //   url: `../show/show?id=${res.data.id}`
+        // });
+      }
     });
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // this.setData(app.globalData);
-    let page = this;
-    wx.request({
-      url: `https://gifme-api.wogengapp.cn/api/v1/users/${options.id}`,
-      method: 'GET',
-      success(res) {
-        const gifs = res.data.user_gifs;
-
-        // Update local data
-        page.setData({
-          user_gifs: gifs
-        });
-
-        wx.hideToast();
-      }
-    });
+    key = options.key
+    setTimeout(this.generateGif, 3000);
   },
 
   /**

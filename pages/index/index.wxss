@@ -1,26 +1,39 @@
 /* Cards */
-.card-container {
+ .card-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 20rpx;
+} 
+
+.gif-container {
+  display: flex;
+  flex-items: space-around;
+  justify-content: center;
+  flex-direction: column;
+  width: 350rpx;
 }
-.card-container:last-child {
-  justify-content: left;
+
+.gif-details {
+  display: flex;
+  flex-items: center;
+  justify-content: center;
 }
+
 .card {
   height: 300rpx;
-  width: 350rpx;
+  width: 330rpx;
   text-shadow: 0 1rpx 3rpx rgba(0,0,0,0.8);
   background-size: cover !important;
   background-position: center;
   color: white;
   position: relative;
-  margin: 10rpx;
+  margin: 10rpx; 
   position: relative;
   background: #fff;
-  border-radius: 5px;
-  padding: 2em 0;
-  box-sizing: border-box;
+   border-radius: 5px; 
+   /* padding: 2em 0;  */
+   /* box-sizing: border-box;  */
   transition: .3s ease;
   box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.35);
 }
@@ -32,24 +45,49 @@
   border-radius: 5px;
 }
 .tag {
-  position: absolute;
+  /* position: absolute;
   bottom: 10rpx;
-  right: 10rpx;
-  font-size: 28rpx;
-  font-weight: bold;
+  right: 10rpx; */
   transition: all 1s ease-out;
 }
 .collected {
-  position: absolute;
+  /* position: absolute;
   top: 10rpx;
-  left: 10rpx;
-  font-size: 28rpx;
-  font-weight: bold;
+  left: 10rpx; */
+  font-size: 24rpx;
   display: flex;
   align-items: center;
+  margin: 10rpx;
+  height: 40rpx;
+  color: #AFAFAF;
 }
 .icon-heart {
-  height: 50rpx;
-  width: 50rpx;
-  margin-right: 10rpx;
+  height: 30rpx;
+  width: 30rpx;
+  padding: 10rpx;
 }
+
+
+.highlight-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+}
+
+ .submit-button {
+    display: block;
+    text-align: center;
+    width: 400rpx;
+    margin-left: 20rpx;
+    padding: 30rpx;
+    background: linear-gradient(
+    160deg, rgba(252, 87, 54, .9),rgba(253, 120, 90, .9)); 
+    border: 0 !important;
+    color: white;
+    cursor: pointer;
+    font-size: 35rpx;
+    text-shadow: 0 1px 0 rgba(black, .2);
+    border-radius: 5rpx;
+  }
