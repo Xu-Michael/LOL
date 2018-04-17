@@ -6,8 +6,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    navbar: ['New', 'Trending', 'Search'],
+    currentTab: 0 
   },
+
+  navbarTap: function (e) {
+    this.setData({
+      currentTab: e.currentTarget.dataset.idx
+    })
+  }, 
 
   showGif: function (e) {
     console.log(e);

@@ -91,3 +91,34 @@
     text-shadow: 0 1px 0 rgba(black, .2);
     border-radius: 5rpx;
   }
+
+  page{  
+  display: flex;  
+  flex-direction: column;  
+  height: 100%;  
+}  
+.navbar{  
+  flex: none;  
+  display: flex;  
+  background: #282C34;  
+  font-size: 35rpx;
+}  
+.navbar .item{  
+  position: relative;  
+  flex: auto;  
+  text-align: center;  
+  line-height: 80rpx;  
+}  
+.navbar .item.active{  
+  color: #FC5736;  
+}  
+.navbar .item.active:after{  
+  content: "";  
+  display: block;  
+  position: absolute;  
+  bottom: 0;  
+  left: 0;  
+  right: 0;  
+  height: 4rpx;  
+  background: #FC5736;  
+}  
