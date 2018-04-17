@@ -14,7 +14,7 @@
       <view class="gif-details">
         <view class="collected">
           <image class="icon-heart" src="../../image/orange/favorite.png"/>
-          {{ gif.collected }}
+          {{ gif.collection_count}}
         </view>
         <view class="tag collected">
           <image class="icon-heart" src="../../image/orange/tag2.png"/>

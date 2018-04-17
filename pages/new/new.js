@@ -49,22 +49,8 @@ Page({
             console.log(JSON.stringify(info));
           },
         });
-        const form_gif = {
-          tags: "testing",
-          image: 'https://picchain-1256466747.cos.ap-chengdu.myqcloud.com/' + Key,
-          author: "testing",
-          collected: 12
-        };
-        wx.request({
-          url: `https://gifme-api.wogengapp.cn/api/v1/gifs`,
-          method: 'POST',
-          data: form_gif,
-          success(res) {
-            console.log(res)
-            wx.redirectTo({
-              url: `../show/show?id=${res.data.id}`
-            });
-          }
+        wx.redirectTo({
+          url: `../generating/generating?key=${Key}`
         });
       }
     })
