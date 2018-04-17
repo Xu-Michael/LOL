@@ -1,3 +1,5 @@
+
+
 <view class="show-container" style="background: linear-gradient(rgba(30, 27, 38, 0.9), rgba(30, 27, 38, 0.9)), url('')">
   <view class="card-container">
     <view class="card-gif">
@@ -8,19 +10,18 @@
       </view> -->
       <view class="details-container">
         <image class="icon-heart" src="../../image/orange/tag2.png"/>
-        <view class="tag">#tag1</view>
-        <view class="tag">#tag2</view>
-        <view class="tag">#tag3</view>
-        <!-- <view class="tag">#tag1</view>
-        <view class="tag">#tag2</view>
-        <view class="tag">#tag3</view>
-        <view class="tag">#tag1</view>
-        <view class="tag">#tag2</view>
-        <view class="tag">#tag3</view> -->
-      </view> 
+        <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+          <view wx:for="{{tags}}" wx:for-item="tag" wx:key="tag.id" class="scroll-view-item_H black">
+            <view>{{tag.name}}</view>
+          </view>
+          <!-- <view id="demo1" class="scroll-view-item_H demo-text-1"></view> -->
+          <!-- <view id="demo2"  class="scroll-view-item_H demo-text-2"></view>
+          <view id="demo3" class="scroll-view-item_H demo-text-3"></view> -->
+        </scroll-view>
+      </view>
     </view>
 
-    
+
     <view class="button-container">
       <view class="submit-button" bindtap="editGif" data-id="{{id}}">
         Edit Gif
@@ -32,5 +33,14 @@
         Save To Phone
       </view>
     </view>
+
+
   </view>
 </view>
+
+
+
+
+
+
+

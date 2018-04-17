@@ -6,44 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    "tags": [
-      {
-        "id": 1,
-        "name": '#Cool'
-      },
-      {
-        "id": 2,
-        "name": '#Funny'
-      },
-      {
-        "id": 3,
-        "name": '#Amazing'
-      },
-      {
-        "id": 4,
-        "name": '#Funny'
-      },
-      {
-        "id": 5,
-        "name": '#Funny'
-      },
-      {
-        "id": 6,
-        "name": '#Funny'
-      },
-      {
-        "id": 7,
-        "name": '#Funny'
-      },
-      {
-        "id": 8,
-        "name": '#Funny'
-      },
-      {
-        "id": 9,
-        "name": '#Funny'
-      }
-    ]
+
   },
 
   editGif: function (e) {
@@ -64,9 +27,9 @@ Page({
     wx.showModal({
       title: 'Delete',
       content: 'Did this GIF make you cringe?',
-      success: function() {
+      success: function () {
         wx.request({
-          url: `https://gifme-api.wogengapp.cn/api/v1/gifs/${data.id}`,
+          url: `https://gif-me.herokuapp.com/api/v1/gifs/${data.id}`,
           method: 'DELETE',
           success() {
             // set data on index page and show
@@ -91,7 +54,7 @@ Page({
     console.log(options);
     let page = this;
     wx.request({
-      url: `https://gifme-api.wogengapp.cn/api/v1/gifs/${options.id}`,
+      url: `https://gif-me.herokuapp.com/api/v1/gifs/${options.id}`,
       method: 'GET',
       success(res) {
         const video = res.data;
@@ -99,13 +62,13 @@ Page({
         // Update local data
         page.setData({
           video: video
-        }); 
+        });
         wx.hideToast();
       }
     });
     // Get api data
     // wx.request({
-    //   url: `https://gifme-api.wogengapp.cn/api/v1/gifs/${options.id}`,
+    //   url: `https://gif-me.herokuapp.com/api/v1/gifs/${options.id}`,
     //   method: 'GET',
     //   success(res) {
     //     const gif = res.data;
