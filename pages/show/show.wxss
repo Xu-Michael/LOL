@@ -8,16 +8,15 @@
 }
 
 .card-container {
-  height: 80vh;
+  height: 90vh;
   width: 50vh;
   background-size: cover !important;
   background-position: center;
   color: white;
-  position: relative;
+  /*position: relative;*/
   margin: 10rpx;
   background: #fff;
   border-radius: 5px;
-  padding: 2em 0;
   box-sizing: border-box;
   transition: .3s ease;
   box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.35);
@@ -30,29 +29,34 @@
    background-size: cover !important;
 }
 
-.card-gif {
+/*.card-gif {
   width: 100%;
   height: 50%;
-  background-size: cover !important;
-  position: absolute;
-  top: 0;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
-}
+}*/
 
 .collected {
-  position: absolute;
+  /*position: absolute;
   top: 170px;
-  right: 25rpx;
+  right: 25rpx;*/
   font-size: 40rpx;
   display: flex;
   align-items: center;
 }
 
+
+
 .icon-heart {
   height: 65rpx;
   width: 65rpx;
-  margin-right: 10rpx;
+}
+
+.borderbox {
+  height: 60rpx;
+  width: 4rpx;
+  border-left: ;
+  border-left: 1rpx solid #686868;
 }
 
 /*.tag {
@@ -64,17 +68,21 @@
   top: 200px;
   width: 100%;
 }*/
+/*.hypercontainer {
+  display: flex;
+  justify-content: center
+}*/
 
 .button-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  bottom: 0;
   margin: 0.4em auto;
   width: 100%;
 }
+
+
 
 .button {
   text-align: center;
@@ -90,6 +98,91 @@
   border-radius: 5px;
 }
 
+
+.lower-container {
+  display: flex;
+  /*flex-direction: column;*/
+  align-items: center;
+  justify-content: center;
+  width:100%;
+ /* position: relative;
+  left: 110rpx;*/
+}
+
+
+
+.flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.taglabel {
+  /*position: absolute;
+  top:617rpx;
+  left:71rpx;*/
+  border-radius: 5px;
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40rpx;
+  color: #AFAFAF;
+  background-color: white;
+  box-shadow: 7px -1px 5px -7px rgba(0,0,0,0.44);
+  min-width: 200rpx;
+  height: 75rpx;
+  padding: 22rpx 0;
+
+
+
+}
+
+.collected {
+  /* position: absolute;
+  top: 10rpx;
+  left: 10rpx; */
+  font-size: 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*margin: 10rpx;*/
+  height: 40rpx;
+  color: #AFAFAF;
+  background-color: grey;
+  border-radius: 5px;
+  padding: 10rpx;
+}
+
+
+.collectnum {
+  margin-left: 10rpx;
+
+}
+
+.gif-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: black;
+  box-shadow: 0 3px 10px -2px rgba(0,0,0,0.50);
+  border-radius: 5px;
+  width: 30%;
+  margin-left: 10rpx;
+  margin-top: 10rpx;
+
+}
+
+.icon-heart {
+  height: 40rpx;
+  width: 40rpx;
+}
+
+.tag-space {
+  margin-left: 12rpx;
+  margin-bottom: 20rpx
+}
+
 .scroll-view_H {
   white-space: nowrap;
 }
@@ -100,6 +193,7 @@
   box-shadow: 0 3px 10px -2px rgba(0,0,0,0.50);
   border-radius: 5px;
   padding: 5rpx;
+  margin-bottom: 20rpx
 }
 
 .black{
