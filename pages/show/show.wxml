@@ -6,10 +6,21 @@
         <image class="icon-heart" src="../../image/white/favorite.png"/>
         {{ collected }}
       </view> -->
+      <view class="details-container">
+        <image class="icon-heart" src="../../image/orange/tag2.png"/>
+        <view class="tag">#tag1</view>
+        <view class="tag">#tag2</view>
+        <view class="tag">#tag3</view>
+        <!-- <view class="tag">#tag1</view>
+        <view class="tag">#tag2</view>
+        <view class="tag">#tag3</view>
+        <view class="tag">#tag1</view>
+        <view class="tag">#tag2</view>
+        <view class="tag">#tag3</view> -->
+      </view> 
     </view>
-    <!-- <view class="details-container">
-      <view class="tag">{{tags}}</view>
-    </view> -->
+
+    
     <view class="button-container">
       <view class="submit-button" bindtap="editGif" data-id="{{id}}">
         Edit Gif
