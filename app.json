@@ -9,7 +9,8 @@
     "pages/collection/collection",
     "pages/createshow/createshow",
     "pages/generating/generating",
-    "pages/tagform/tagform"
+    "pages/tagform/tagform",
+    "pages/login/login"
   ],
   "window":{
     "backgroundTextStyle":"light",
