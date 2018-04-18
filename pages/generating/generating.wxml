@@ -1,8 +1,7 @@
-<view class="flex">
 <view class="form-container">
   <form class='login-form' bindsubmit="bindSubmit">
     <view class="title-row">
-      <view class="form-title">Add tags while your Gif is generating! </view>
+      Add tags while your Gif is generating!
     </view>
     <view class="flex-row">
       <label class="lf--label flex" for="tag">
@@ -17,6 +16,4 @@
       <button class='submit-button' form-type='submit'>SUBMIT</button>
     </view>
   </form>
-  <view id="countdown" class="timedisplay"></view>
-</view>
 </view>
