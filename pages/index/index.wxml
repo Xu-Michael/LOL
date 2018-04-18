@@ -14,7 +14,7 @@
   
 <view hidden="{{currentTab!==0}}">  
   <view class="card-container">
-    <view class="gif-container" wx:for="{{gifs}}" wx:for-item="gif" wx:key="gif.id">
+    <view class="gif-container" wx:for="{{gifs_new}}" wx:for-item="gif" wx:key="gif.id">
       <view class="card" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('{{gif.image}}') ;" data-gif="{{gif.id}}" bindtap="showGif"></view>
       <view class="gif-details">
         <view class="collected">
@@ -35,7 +35,21 @@
 </view>  
   
 <view hidden="{{currentTab!==1}}">  
-  tab_02  
+  <view class="card-container">
+    <view class="gif-container" wx:for="{{gifs_trending}}" wx:for-item="gif" wx:key="gif.id">
+      <view class="card" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('{{gif.image}}') ;" data-gif="{{gif.id}}" bindtap="showGif"></view>
+      <view class="gif-details">
+        <view class="collected">
+          <image class="icon-heart" data-gif="{{gif.id}}" bindtap="collect" src="../../image/orange/favorite.png"/>
+          {{ gif.collection_count}}
+        </view>
+        <view class="tag collected">
+          <image class="icon-heart" src="../../image/orange/tag2.png"/>
+          {{ gif.tags }}
+        </view>
+      </view>
+    </view>
+  </view>
 </view>  
   
 <view hidden="{{currentTab!==2}}">  

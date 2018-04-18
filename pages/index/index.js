@@ -35,10 +35,12 @@ Page({
       url: "https://gifme-api.wogengapp.cn/api/v1/gifs",
       method: 'GET',
       success(res) {
-        const gifs = res.data.gifs_by_collections;
+        const gifs_trending = res.data.gifs_by_collections;
+        const gifs_new = res.data.gifs_by_new;
         // Update local data
         page.setData({
-          gifs: gifs
+          gifs_trending: gifs_trending,
+          gifs_new: gifs_new
         });
 
         wx.hideToast();
