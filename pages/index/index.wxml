@@ -52,11 +52,11 @@
   </view>
 </view>  
   
-<view hidden="{{currentTab!==2}}">  
+<!-- <view hidden="{{currentTab!==2}}">  
   tab_03  
-</view>  
+</view>   -->
 
-
+<icon class="weui-icon-search_in-box" type="search" size="14"></icon>
 
 
 <!-- 

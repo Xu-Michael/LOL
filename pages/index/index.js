@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    navbar: ['New', 'Trending', 'Search'],
+    navbar: ['New', 'Trending'],
     currentTab: 0 
   },
 
