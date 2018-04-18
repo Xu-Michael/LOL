@@ -1,2 +1,23 @@
-<!--pages/generating/generating.wxml-->
-<view>Your gif is being made. Please wait for a few seconds :)</view>
+<view class="flex">
+<view class="form-container">
+  <form class='login-form' bindsubmit="bindSubmit">
+    <view class="title-row">
+      <view class="form-title">Add a tag while your Gif is generating! </view>
+    </view>
+    <view class="flex-row">
+      <label class="lf--label flex" for="tag">
+        <image class="add-tag" src="../../image/orange/tag2.png"/>
+      </label>
+      <input id="content" class='lf--input' name="content" placeholder='happy funny cat' type='text'/>
+    </view>
+    <view class="flex-row-buttons">
+
+      <view hidden="{{flag ? false : true}}" class='lf--continuego' bindtap="onContinueClicked">CONTINUE</view>
+      <view wx:if="{{flag1 == true && flag2 == true}}" class="class='lf--continuego'">CONTINUE</view>
+      <view wx:else class="class='lf--continue'">CONTINUE</view>
+      <button class='submit-button' form-type='submit'>SUBMIT</button>
+    </view>
+  </form>
+  <view id="countdown" class="timedisplay"></view>
+</view>
+</view>
