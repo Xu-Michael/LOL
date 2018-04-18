@@ -47,7 +47,7 @@ page {
     margin-left: 20rpx;
     padding: 30rpx;
     background: linear-gradient(
-    160deg, rgba(252, 87, 54, .9),rgba(253, 120, 90, .9)); 
+    160deg, rgba(252, 87, 54, .9),rgba(253, 120, 90, .9));
     border: 0 !important;
     color: white;
     cursor: pointer;
@@ -55,3 +55,22 @@ page {
     text-shadow: 0 1px 0 rgba(black, .2);
     border-radius: 5rpx;
 }
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-c {
+  flex-direction: column;
+}
+
+.f-start {
+  align-self: flex-start;
+}
+
+.f-end {
+  align-self: flex-end;
+}
+
