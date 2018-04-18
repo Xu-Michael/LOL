@@ -122,3 +122,9 @@
   height: 4rpx;  
   background: #FC5736;  
 }  
+
+.weui-icon-search_in-box {
+  position: absolute;
+  left: 10px;
+  top: 7px;
+}
