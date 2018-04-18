@@ -69,6 +69,14 @@
 				},
 				{
 					"id": -1,
+					"name": "tagform",
+					"pathName": "pages/tagform/tagform",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "generate",
+					"pathName": "pages/generating/generating",
 					"name": "login",
 					"pathName": "pages/login/login",
 					"query": ""

@@ -1,0 +1,22 @@
+<!--pages/tagform/tagform.wxml-->
+<view class="flex">
+<view class="form-container">
+  <form class='login-form' bindsubmit="bindSubmit">
+    <view class="title-row">
+      <view class="form-title">Add Tag</view>
+    </view>
+    <view class="flex-row">
+      <label class="lf--label flex" for="tag">
+        <image class="add-tag" src="../../image/orange/tag2.png"/>
+      </label>
+      <input id="location" class='lf--input' name="name" placeholder='Place Tag' type='text'/>
+    </view>
+    <view class="flex-row-buttons">
+      <view class='lf--cancel' bindtap="onCancelClicked" >CANCEL</view>
+      <button class='submit-button' form-type='submit'>SUBMIT</button>
+    </view>
+  </form>
+</view>
+</view>
+
+
