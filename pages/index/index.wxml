@@ -56,7 +56,7 @@
   tab_03  
 </view>   -->
 
-<icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+<icon class="weui-icon-search_in-box" type="search" size="14" bindtap="wxSearchTab"></icon>
 
 
 <!-- 
