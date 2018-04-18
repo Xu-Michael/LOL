@@ -66,6 +66,18 @@
 					"name": "user",
 					"pathName": "pages/user/user",
 					"query": "id=1"
+				},
+				{
+					"id": -1,
+					"name": "tagform",
+					"pathName": "pages/tagform/tagform",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "generate",
+					"pathName": "pages/generating/generating",
+					"query": ""
 				}
 			]
 		}

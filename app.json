@@ -7,8 +7,9 @@
     "pages/form/form",
     "pages/user/user",
     "pages/collection/collection",
-    "pages/createshow/createshow"
-    "pages/generating/generating"
+    "pages/createshow/createshow",
+    "pages/generating/generating",
+    "pages/tagform/tagform"
   ],
   "window":{
     "backgroundTextStyle":"light",
