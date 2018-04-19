@@ -19,7 +19,7 @@ Page({
   showGif: function (e) {
     console.log(e);
     const data = e.currentTarget.dataset;
-    const gifId = data.gif.id;
+    const gifId = data.gif;
     wx.navigateTo({
       url: `../show/show?id=${gifId}`
     });
