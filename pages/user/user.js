@@ -5,6 +5,30 @@ Page({
    * 页面的初始数据
    */
   data: {
+    "gifs": [
+      {
+        "id": 1,
+        "name": 'Gab',
+        "image": 'https://kitt.lewagon.com/placeholder/users/gabriel-dehan',
+        "date": '01/13/17',
+        "content": 'Best food ever!'
+      },
+      {
+        "id": 2,
+        "name": 'Gray',
+        "image": 'https://kitt.lewagon.com/placeholder/users/graysdays',
+        "date": '01/10/17',
+        "content": 'Love the service'
+      },
+      {
+        "id": 3,
+        "name": 'Alex',
+        "image": 'https://kitt.lewagon.com/placeholder/users/alex-felix',
+        "date": '01/09/17',
+        "content": 'Had a great time :)'
+      }
+    ],
+    deleteflag: false
   },
 
   showCollection: function (e) {
@@ -16,14 +40,9 @@ Page({
     });
   },
 
-  // showDeletes: function (e) {
-  //   var x = document.getElementById("myDIV");
-  //   if (x.style.display === "none") {
-  //       x.style.display = "block";
-  //   } else {
-  //       x.style.display = "none";
-  //   }
-  // }
+  showDeletes: function (e) {
+    this.setData({ deleteflag: true })
+  },
 
   /**
    * 生命周期函数--监听页面加载
