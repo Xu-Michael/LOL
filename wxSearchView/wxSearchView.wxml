@@ -1,7 +1,7 @@
 <view class="weui-search-bar">
    <view class="weui-search-bar__form">
     <view class="weui-search-bar__box">
-      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+      <!-- <icon class="weui-icon-search_in-box" type="search" size="14"></icon> -->
       <input type="text" class="weui-search-bar__input" placeholder="Search Gifme" value="{{wxSearchData.value}}" bindinput="wxSearchInput" bindconfirm="wxSearchConfirm" />
       <view class="weui-icon-clear" wx:if="{{wxSearchData.value.length > 0}}" bindtap="wxSearchClear">
         <icon type="clear" size="14"></icon>
@@ -9,7 +9,7 @@
     </view>
   </view>
     <view class="weui-search-bar__cancel-btn" bindtap="wxSearchConfirm">
-         <text wx:if="{{wxSearchData.value.length>0}}" data-key='search'>搜索</text>
+         <text wx:if="{{wxSearchData.value.length>0}}" data-key='search'>Search</text>
          <text wx:else data-key='back'>Back</text>
      </view>
 </view>

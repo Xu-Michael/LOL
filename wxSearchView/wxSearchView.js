@@ -99,7 +99,10 @@ function wxSearchKeyTap(e) {
 function wxSearchConfirm(e) {
   var key = e.target.dataset.key;
   if (key == 'back') {
-    __goBackFunction();
+    wx.switchTab({
+      url: '/pages/index/index',
+    });
+    // __goBackFunction();
   } else {
     search(__that.data.wxSearchData.value);
   }
