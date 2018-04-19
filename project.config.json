@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 6,
 			"list": [
 				{
 					"id": 0,
@@ -83,6 +83,12 @@
 					"id": -1,
 					"name": "generating",
 					"pathName": "pages/generating/generating",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "search",
+					"pathName": "pages/search/search",
 					"query": ""
 				}
 			]

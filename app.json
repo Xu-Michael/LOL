@@ -10,7 +10,8 @@
     "pages/createshow/createshow",
     "pages/generating/generating",
     "pages/tagform/tagform",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/search/search"
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -7,13 +7,14 @@
     </view>
     <view class="flex-row">
       <label class="lf--label flex" for="tag">
-        <image class="add-tag" src="../../image/orange/tag2.png"/>
+        <image class="icon-heart" src="../../image/white/tag.png"/>
       </label>
       <input id="location" class='lf--input' name="name" placeholder='Place Tag' type='text'/>
     </view>
     <view class="flex-row-buttons">
       <view class='lf--cancel' bindtap="onCancelClicked" >CANCEL</view>
-      <button class='submit-button' form-type='submit'>SUBMIT</button>
+      <view class="submit-button" form-type='submit'>SUBMIT</view>
+      <!-- <button class='submit-button' form-type='submit'>SUBMIT</button> -->
     </view>
   </form>
 </view>

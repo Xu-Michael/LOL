@@ -1,4 +1,6 @@
 const app = getApp()
+// const baseUrl = "你服务部署的网址/weather/";
+var WxSearch = require('../../wxSearchView/wxSearchView.js');
 let error_camera;
 Page({
 
@@ -125,5 +127,11 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  wxSearchTab: function () {
+    wx.redirectTo({
+      url: '../search/search'
+    })
   }
 })
