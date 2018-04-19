@@ -17,17 +17,7 @@ function getRandomColor() {
 let tempPath;
 
 Page({
-  onReady: function (res) {
-    this.videoContext = wx.createVideoContext('myVideo')
-  },
-  inputValue: '',
-  data: {
-    src: ''
-  },
-  bindInputBlur: function (e) {
-    this.inputValue = e.detail.value
-  },
-  bindButtonTap: function () {
+  onLoad: function(options) {
     var page = this
     wx.chooseVideo({
       sourceType: ['album', 'camera'],
@@ -54,6 +44,19 @@ Page({
         });
       }
     })
+  },
+  onReady: function (res) {
+    this.videoContext = wx.createVideoContext('myVideo')
+  },
+  inputValue: '',
+  data: {
+    src: ''
+  },
+  bindInputBlur: function (e) {
+    this.inputValue = e.detail.value
+  },
+  bindButtonTap: function () {
+    
   },
   bindSendDanmu: function () {
     this.videoContext.sendDanmu({

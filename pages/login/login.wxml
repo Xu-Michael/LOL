@@ -1,0 +1,8 @@
+<view class="login-container">
+  <image class="lock" src="../../image/lock.svg"/>
+  <view class="h3">Oops, it seems like you haven't logged in yet.</view>
+  <view class="highlight-button">
+    <view class="login-button">Login</view>
+    <view class="cancel-button">Cancel</view>
+  </view>
+</view>

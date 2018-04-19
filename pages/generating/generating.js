@@ -6,34 +6,100 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    flag1: false,
+    flag2: false
+  },
+
+
+  show1: function () {
+    console.log("show1success")
+    this.setData({ flag1: true })
+  },
+  hide1: function () {
+    this.setData({ flag1: false })
+  },
+  show2: function () {
+    console.log("show2success")
+    this.setData({ flag2: true })
+  },
+  hide2: function () {
+    this.setData({ flag2: false })
   },
 
   generateGif: function () {
+    let page = this
     const form_gif = {
       tags: "testing",
-      image: 'https://gifme-1256511506.cos.ap-shanghai.myqcloud.com/' + key,
-      // image: filePath,
+      video: 'https://gifme-1256511506.cos.ap-shanghai.myqcloud.com/' + key,
       author: "testing",
       collected: 12,
-      user_id: 1
+      user_id: 17
     };
     wx.request({
-      url: `http://localhost:3000/api/v1/gifs`,
+      url: `https://gifme-api.wogengapp.cn/api/v1/gifs`,
       method: 'POST',
       data: form_gif,
       success(res) {
-        console.log(res)
+        console.log(true)
+        page.show1();
         // wx.redirectTo({
         //   url: `../show/show?id=${res.data.id}`
         // });
       }
     });
   },
+
+  // bindSubmit: function(e) {
+
+  //   console.log(e)
+  //   wx.getLocation({
+  //     type: 'wgs84',
+  //     success: function (res) {
+  //       console.log(res)
+  //       lat = res.latitude
+  //       lng = res.longitude
+  //       location = {
+  //         name: e.detail.value.name,
+  //         prize: e.detail.value.prize,
+  //         longitude: lng,
+  //         latitude: lat,
+  //         user_id: user_id,
+  //       }
+  //       wx.request({
+  //         url: `http://localhost:3000/api/v1/users/${user_id}/locations`,
+  //         method: 'POST',
+  //         data: {
+  //           location: location
+  //         },
+  //         success() {
+  //           // set data on index page and show
+  //           wx.redirectTo({
+  //             url: '/pages/index/index'
+  //           });
+  //         }
+  //       });
+  //     }
+  //   });
+
+  bindSubmit: function (e) {
+    let page = this
+    console.log(e)
+    console.log(e.detail.value.content)
+    page.show2();
+  },
+
+
+  onContinueClicked() {
+    wx.navigateTo({
+      url: `../show/show?id=${gif.id}`
+    });
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // let that = this;
     key = options.key
     setTimeout(this.generateGif, 3000);
   },
@@ -42,48 +108,48 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   }
 })

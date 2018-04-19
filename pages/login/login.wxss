@@ -1,0 +1,55 @@
+/* pages/login/login.wxss */
+page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.lock {
+  width: 350rpx;
+  height: 350rpx;
+  margin-bottom: 50rpx;
+}
+.login-container {
+  margin: auto 50rpx;
+  text-align: center;
+}
+.highlight-button {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+}
+
+.login-button {
+  display: block;
+  text-align: center;
+  width: 400rpx;
+  margin: 10rpx 20rpx;
+  padding: 30rpx;
+  background: linear-gradient(
+  160deg, rgba(252, 87, 54, .9),rgba(253, 120, 90, .9)); 
+  border: 0 !important;
+  color: white;
+  cursor: pointer;
+  font-size: 35rpx;
+  text-shadow: 0 1px 0 rgba(black, .2);
+  border-radius: 5rpx;
+}
+
+.cancel-button {
+  display: block;
+  text-align: center;
+  width: 400rpx;
+  margin: 10rpx 20rpx;
+  padding: 30rpx;
+  background: white; 
+  border: 0 !important;
+  color: #;
+  cursor: pointer;
+  font-size: 35rpx;
+  text-shadow: 0 1px 0 rgba(black, .2);
+  border-radius: 5rpx;
+}
