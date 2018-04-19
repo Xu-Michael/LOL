@@ -7,8 +7,8 @@
   <view class="flex">
   <view class="border flex">
   <view class="avatar-name flex text-align">
-    <image class="avatar" src='https://static.businessinsider.com/image/531f59fdecad04d857ec91c6/image.jpg' />
-    <view class="name">{{user.name}}Gab</view>
+    <image class="avatar" src='{{user.avatar}}' />
+    <view class="name">{{user.name}}</view>
     <view class="flex-row">
       <label class="lf--label flex" for="tag">
         <image class="add-tag" src="../../image/orange/favorite.png"/>
