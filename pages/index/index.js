@@ -1,7 +1,7 @@
 const app = getApp()
 // const baseUrl = "你服务部署的网址/weather/";
 var WxSearch = require('../../wxSearchView/wxSearchView.js');
-
+let error_camera;
 Page({
 
   /**
@@ -21,7 +21,7 @@ Page({
   showGif: function (e) {
     console.log(e);
     const data = e.currentTarget.dataset;
-    const gifId = data.gif.id;
+    const gifId = data.gif;
     wx.navigateTo({
       url: `../show/show?id=${gifId}`
     });
@@ -36,6 +36,21 @@ Page({
     });
   },
 
+  // collect: function(e) {
+  //   const collection = {
+  //     const user_id = 
+  //     const gif_id = 
+  //   };
+  //   wx.request({
+  //     url: `https://gifme-api.wogengapp.cn/api/v1/${user_id}/collections`,
+  //     method: 'POST',
+  //     data: collection,
+  //     success(res) {
+  //       console.log(true)
+  //       gif_id = res.data.id
+  //     }
+  //   });
+  // },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -43,7 +58,7 @@ Page({
     // this.setData(app.globalData);
     let page = this;
     wx.request({
-      url: "http://localhost:3000/api/v1/gifs",
+      url: "https://gifme-api.wogengapp.cn/api/v1/gifs",
       method: 'GET',
       success(res) {
         console.log(res)
@@ -77,7 +92,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
   },
 
   /**

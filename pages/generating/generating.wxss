@@ -16,7 +16,6 @@
     width: 100%;
   }
 
-
   .title-row {
     color: rgba(252, 87, 54, .9);
     font-size: 40rpx;
@@ -29,8 +28,11 @@
   .flex-row {
     display: flex;
     margin-bottom: 1em;
+
     /* border: 1px solid rgba(252, 87, 54, .9); */
     /* border-bottom: 1px solid rgba(253, 120, 90, .9); */
+    border: 1px solid rgba(252, 87, 54, .9);
+    border-bottom: 1px solid rgba(253, 120, 90, .9);
     margin: 70rpx;
     border-radius: 5rpx;
   }
