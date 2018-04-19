@@ -1,7 +1,8 @@
 <view class="show-container" style="background: linear-gradient(rgba(30, 27, 38, 0.9), rgba(30, 27, 38, 0.9)), url('')">
   <view class="card-container flex">
     <view class="card-gif">
-      <video class="video" src="{{video.image}}" loop autoplay controls="{{false}}" objectFit="fill"></video>
+      <!-- <video class="video" src="{{video.image}}" loop autoplay controls="{{false}}" objectFit="fill"></video> -->
+        <video class="video" src="https://media.giphy.com/media/65MlV85T8D38PggYQK/giphy.mp4" loop autoplay controls="{{false}}" objectFit="cover"></video>
       <!-- <view class="collected">
         <image class="icon-heart" src="../../image/white/favorite.png"/>
         {{ collected }}
@@ -10,13 +11,20 @@
         </view>
 
         <view class="collectheader flex">
-          <image class="icon-heart" src="../../image/orange/favorite.png"/>
-           <view class="collectnum">In 1000 Collections</view>
+          <view class="heart-collected flex">
+            <image class="icon-heart" src="../../image/white/favorite.png"/>
+            <view class="collectnum">1000</view>
           </view>
-      <view class="lower-container">
+          <view class="other-buttons flex">
+            <image class="icon-heart" bindtap="editGif" data-id="{{id}}" src="../../image/white/draw.png"/>
+            <button class="share-button" open-type="share" plain="true">
+              <image class="icon-heart" src="../../image/white/share.png"></image>
+            </button>
+          </view>
+          </view>
 
         <!-- <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%"> -->
-          <view class="flexleft">
+          <!-- <view class="flexleft"> -->
 
           <view class="tagcontainer margin-top wrap">
           <view class="leadicon flex tag-space">
@@ -26,14 +34,9 @@
             <view>{{tag.name}}</view>
             </view>
           </view>
-          </view>
+          <!-- </view> -->
 
         <!-- </scroll-view> -->
-
-    </view>
-
-
-
 
 
           <!-- <view class="borderbox" /> -->
@@ -55,7 +58,7 @@
       </view>
     </view> -->
 
-    <view class="button-container2 flex">
+    <!-- <view class="button-container2 flex">
 
       <view class="submit-button flex-c flex mod" bindtap="editGif" data-id="{{id}}">
       <view class="button-icon flex">
@@ -71,13 +74,7 @@
       </view>
       <view>Send</view>
     </view>
-    <view class="submit-button flex-c flex mod" bindtap="editGif" data-id="{{id}}">
-      <view class="button-icon flex">
-      <image class="icon-heart" src="../../image/orange/favorite.png"/>
-      +
-      </view>
-      <view>Save</view>
-    </view>
+
     <view class="submit-button flex-c flex mod" bindtap="editGif" data-id="{{id}}">
       <view class="button-icon flex">
       <image class="icon-heart" src="../../image/orange/tag2.png"/>
@@ -87,7 +84,7 @@
     </view>
 
 
-    </view>
+    </view> -->
 
 
 
