@@ -16,7 +16,6 @@
     width: 100%;
   }
 
-
   .title-row {
     color: rgba(252, 87, 54, .9);
     font-size: 40rpx;

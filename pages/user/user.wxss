@@ -5,6 +5,7 @@
   padding: 25rpx;
   width: 100vw;
   color: rgba(252, 87, 54, .9);
+  margin-bottom: 10rpx;
 }
 
 .avatar-name {
@@ -60,11 +61,22 @@
 
 #trash {
   position: absolute;
-  position:absolute;
-  top:228rpx;
+  position: absolute;
+  top:207rpx;
   right:11rpx;
   height: 40rpx;
   width: 40rpx;
+}
+
+#trashopen {
+  position: absolute;
+  top:207rpx;
+  right:11rpx;
+  height: 40rpx;
+  width: 40rpx;
+  background: rgba(252, 87, 54, .9);
+  border-radius: 50rpx;
+  padding: 15rpx;
 }
 
 .text-align {
@@ -146,10 +158,14 @@
   display: flex;
   align-items: center;
 }
-.icon-heart {
-  height: 50rpx;
-  width: 50rpx;
+.showabletrash {
+  height: 40rpx;
+  width: 40rpx;
   margin-right: 10rpx;
+  border-radius: 50rpx;
+  padding: 15rpx;
+  background: rgba(252, 87, 54, .9)
+
 }
 
 .lf--label {

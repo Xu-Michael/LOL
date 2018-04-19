@@ -17,10 +17,12 @@
     </view>
 
   </view>
-<image src="../../image/icon-trash.png" id="trash" bindtap="showDeletes"/>
+<image wx:if="{{deleteflag == false}}" src="../../image/icon-trash.png" id="trash" bindtap="showDeletes"/>
+<image wx:else src="../../image/icon-trash.png" id="trashopen" bindtap="hideDeletes"/>
     </view>
 
     </view>
+
 
 <!-- <view wx:for="{{user.users_gifs}}" -->
 
@@ -28,7 +30,7 @@
 <view wx:for="{{gifs}}" wx:for-item="gif" wx:key="gif.id" class="card" bindtap="showCollection" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('{{gif.image}}');" data-user="{{gif}}">
     <view class="collected">
 
-      <image hidden="{{deleteflag ? false : true}}" class="icon-heart" src="../../image/white/icon-heart.png"/>
+      <image hidden="{{deleteflag ? false : true}}" class="showabletrash" bindtap="gifDelete" src="../../image/icon-trash.png"/>
       {{ gif.collected }}
     </view>
     <view class="tag">
