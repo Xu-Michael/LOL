@@ -40,7 +40,7 @@
     </view>
 
     <view class="wxSearchKey" style="display:{{wxSearchData.value.length>0 ? 'none':'block'}}">
-      <text wx:if="{{wxSearchData.hotKeys[0]}}" class="wxSearchTitle">POPULAR SEARCHES </text>
+      <text wx:if="{{wxSearchData.hotKeys[0]}}" class="wxSearchTitle">POPULAR SEARCHES</text>
       <view class="wxSearchKeyList">
         <block wx:for="{{wxSearchData.hotKeys}}">
           <view class="wxSearchKeyItem" bindtap="wxSearchKeyTap" data-key="{{item}}">{{item}}</view>
