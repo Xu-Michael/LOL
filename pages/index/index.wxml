@@ -47,7 +47,7 @@
         </view>
         <view class="tag collected">
           <image class="icon-heart" src="../../image/orange/tag2.png"/>
-          {{ gif.tags }}
+          {{ gif.tag_list }}
         </view>
       </view>
     </view>

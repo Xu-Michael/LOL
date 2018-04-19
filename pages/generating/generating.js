@@ -34,7 +34,7 @@ Page({
       video: 'https://gifme-1256511506.cos.ap-shanghai.myqcloud.com/' + key,
       author: "testing",
       collected: 12,
-      user_id: 20
+      user_id: 26
     };
     wx.request({
       url: `https://gifme-api.wogengapp.cn/api/v1/gifs`,
@@ -93,7 +93,7 @@ Page({
     };
     console.log("calling patch...");
     wx.request({
-      url: `http://localhost:3000/api/v1/gifs/${gif_id}`,
+      url: `https://gifme-api.wogengapp.cn/api/v1/gifs/${gif_id}`,
       method: 'PUT',
       data: updated_gif,
       success(e) {
@@ -105,8 +105,8 @@ Page({
 
 
   onContinueClicked() {
-    wx.navigateTo({
-      url: `../show/show?id=${gif.id}`
+    wx.switchTab({
+      url: `../index/index`
     });
   },
 
