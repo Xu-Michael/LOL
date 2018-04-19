@@ -12,6 +12,7 @@
   justify-content: center;
   flex-direction: column;
   width: 350rpx;
+  position: relative;
 }
 
 .gif-details {
@@ -43,6 +44,15 @@
   position: absolute;
   top: 0;
   border-radius: 5px;
+}
+
+.avatar {
+  width: 55rpx;
+  height: 55rpx;
+  border-radius: 50%;
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
 }
 .tag {
   /* position: absolute;
