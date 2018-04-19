@@ -22,12 +22,13 @@
 
     </view>
 
-
+<!-- <view wx:for="{{user.users_gifs}}" -->
 
 <view class="card-container">
-<view wx:for="{{user.users_gifs}}" wx:for-item="gif" wx:key="gif.id" class="card" bindtap="showCollection" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('{{gif.image}}') ;" data-user="{{gif}}">
+<view wx:for="{{gifs}}" wx:for-item="gif" wx:key="gif.id" class="card" bindtap="showCollection" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('{{gif.image}}');" data-user="{{gif}}">
     <view class="collected">
-      <image class="icon-heart" src="../../image/white/icon-heart.png"/>
+
+      <image hidden="{{deleteflag ? false : true}}" class="icon-heart" src="../../image/white/icon-heart.png"/>
       {{ gif.collected }}
     </view>
     <view class="tag">
