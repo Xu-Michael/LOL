@@ -6,24 +6,20 @@
  -->
   <view class="flex">
   <view class="border flex">
-  <view class="avatar-name text-align">
+  <view class="avatar-name flex text-align">
     <image class="avatar" src='https://static.businessinsider.com/image/531f59fdecad04d857ec91c6/image.jpg' />
-    <view class="name">{{user.name}}</view>
-  </view>
+    <view class="name">{{user.name}}Gab</view>
+    <view class="flex-row">
+      <label class="lf--label flex" for="tag">
+        <image class="add-tag" src="../../image/orange/favorite.png"/>
+      </label>
+      <view class="totalc flex">Gifs in 400 collections</view>
+    </view>
 
-    <view class="collected-card flex">
-       <image src="../../image/white/icon-heart.png" class="left" />
-       <view class="totalc flex">Gifs in 400 collections</view>
+  </view>
+<image src="../../image/icon-trash.png" id="trash" bindtap="showDeletes"/>
     </view>
-    </view>
-    <view class="action-icons flex">
-    <view class="icon flex">
-      <image src="../../image/white/icon-camera.png" class="trash" />
-    </view>
-    <view class="icon flex">
-      <image src="../../image/icon-trash.png" class="trash" bindtap="showDeletes"/>
-    </view>
-    </view>
+
     </view>
 
 
