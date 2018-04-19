@@ -34,7 +34,7 @@ Page({
       video: 'https://gifme-1256511506.cos.ap-shanghai.myqcloud.com/' + key,
       author: "testing",
       collected: 12,
-      user_id: 42
+      user_id: 20
     };
     wx.request({
       url: `http://localhost:3000/api/v1/gifs`,
@@ -88,12 +88,16 @@ Page({
     console.log(e)
     console.log(e.detail.value.content)
     page.show2();
-    let tags = e.detail.value.content
+    const updated_gif = {
+      tags: e.detail.value.content
+    };
+    console.log("calling patch...");
     wx.request({
       url: `http://localhost:3000/api/v1/gifs/${gif_id}`,
-      method: 'PATCH',
-      data: tags,
-      success() {
+      method: 'PUT',
+      data: updated_gif,
+      success(e) {
+        console.log(e)
         // set data on index page and show
       }
     });
