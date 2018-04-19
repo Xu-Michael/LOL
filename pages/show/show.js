@@ -9,41 +9,52 @@ Page({
     "tags": [
       {
         "id": 1,
-        "name": '#Cool'
+        "name": 'Cool'
       },
       {
         "id": 2,
-        "name": '#Funny'
+        "name": 'Funny'
       },
       {
         "id": 3,
-        "name": '#Amazing'
+        "name": 'Amazing'
       },
       {
         "id": 4,
-        "name": '#Funny'
+        "name": 'Funny'
       },
       {
         "id": 5,
-        "name": '#Funny'
+        "name": 'Funny'
       },
       {
         "id": 6,
-        "name": '#Funny'
+        "name": 'Funny'
       },
       {
         "id": 7,
-        "name": '#Funny'
+        "name": 'Funny'
       },
       {
         "id": 8,
-        "name": '#Funny'
+        "name": 'Funny'
       },
       {
         "id": 9,
-        "name": '#Funny'
+        "name": 'Funny'
       }
-    ]
+    ],
+  shareData: {
+    title: 'Gif Example',
+    path: '/page/show/show'
+    },
+  scrollTop: 100,
+  scrollLeft: 0,
+  flag: true
+  },
+
+  onShareAppMessage: function () {
+    return this.data.shareData
   },
 
   editGif: function (e) {
@@ -160,12 +171,9 @@ Page({
    */
   onReachBottom: function () {
 
-  },
+  }
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
-  }
 })
