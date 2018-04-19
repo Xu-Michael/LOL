@@ -137,7 +137,11 @@ page {
   position: relative;
 }
 
-button[plain]{ border:0 }
+button[plain]{ 
+  /* border:0;
+  padding: 0;  */
+  margin: 0;
+}
 
 .pos{  
   position: absolute;  
@@ -164,19 +168,18 @@ button[plain]{ border:0 }
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
+
+ .share-button {
+  background-color: #282C34;
+  border: none !important;
+  padding: none !important;
+} 
 
 .button-container {
   flex-direction: column;
   /* position: absolute; */
   /* bottom: 0; */
-  padding: 20rpx;
-  margin: 40rpx;
-}
-
-.pad20 {
-  padding: 20rpx;
 }
 
 .gif-details {

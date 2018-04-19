@@ -47,9 +47,11 @@ Page({
   shareData: {
     title: 'Gif Example',
     path: '/page/show/show'
-    }
+    },
+  scrollTop: 100,
+  scrollLeft: 0,
+  flag: true
   },
-
 
   onShareAppMessage: function () {
     return this.data.shareData
