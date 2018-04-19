@@ -30,7 +30,6 @@
 		},
 		"miniprogram": {
 			"current": 8,
-			"current": -1,
 			"list": [
 				{
 					"id": 0,
@@ -83,7 +82,8 @@
 				{
 					"id": -1,
 					"name": "generating",
-					"pathName": "pages/generating/generating"
+					"pathName": "pages/generating/generating",
+					"query": ""
 				}
 			]
 		}

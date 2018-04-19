@@ -1,5 +1,6 @@
 // pages/generating/generating.js
 let key;
+let gif_id;
 Page({
 
   /**
@@ -33,14 +34,15 @@ Page({
       video: 'https://gifme-1256511506.cos.ap-shanghai.myqcloud.com/' + key,
       author: "testing",
       collected: 12,
-      user_id: 17
+      user_id: 42
     };
     wx.request({
-      url: `https://gifme-api.wogengapp.cn/api/v1/gifs`,
+      url: `http://localhost:3000/api/v1/gifs`,
       method: 'POST',
       data: form_gif,
       success(res) {
         console.log(true)
+        gif_id = res.data.id
         page.show1();
         // wx.redirectTo({
         //   url: `../show/show?id=${res.data.id}`
@@ -86,6 +88,16 @@ Page({
     console.log(e)
     console.log(e.detail.value.content)
     page.show2();
+    let tags = e.detail.value.content
+    wx.request({
+      url: `http://localhost:3000/api/v1/gifs/${gif_id}`,
+      method: 'PATCH',
+      data: tags,
+      success() {
+        // set data on index page and show
+      }
+    });
+
   },
 
 
