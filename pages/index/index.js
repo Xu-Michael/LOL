@@ -27,28 +27,30 @@ Page({
   
   showUser: function (e) {
     console.log(e);
-    const data = e.currentTarget.dataset;
+    let data = e.currentTarget.dataset;
     const userId = data.gif.user_id;
     wx.navigateTo({
       url: `../user/user?id=${userId}`
     });
   },
 
-  // collect: function(e) {
-  //   const collection = {
-  //     const user_id = 
-  //     const gif_id = 
-  //   };
-  //   wx.request({
-  //     url: `https://gifme-api.wogengapp.cn/api/v1/${user_id}/collections`,
-  //     method: 'POST',
-  //     data: collection,
-  //     success(res) {
-  //       console.log(true)
-  //       gif_id = res.data.id
-  //     }
-  //   });
-  // },
+  collect: function(e) {
+    let data = e.currentTarget.dataset;
+    const collection = {
+      user_id: data.gif.user_id,
+      gif_id: data.gif.id
+    };
+    console.log(collection);
+    wx.request({
+      // url: `https://gifme-api.wogengapp.cn/api/v1/${user_id}/collections`,
+      method: 'POST',
+      data: collection,
+      success(e) {
+        console.log(e)
+        // set data on index page and show
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
