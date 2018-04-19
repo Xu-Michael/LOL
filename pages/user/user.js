@@ -5,30 +5,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    "gifs": [
-      {
-        "id": 1,
-        "name": 'Gab',
-        "image": 'https://kitt.lewagon.com/placeholder/users/gabriel-dehan',
-        "date": '01/13/17',
-        "content": 'Best food ever!'
-      },
-      {
-        "id": 7,
-        "name": 'Gray',
-        "image": 'https://kitt.lewagon.com/placeholder/users/graysdays',
-        "date": '01/10/17',
-        "content": 'Love the service'
-      },
-      {
-        "id": 5,
-        "name": 'Alex',
-        "image": 'https://kitt.lewagon.com/placeholder/users/alex-felix',
-        "date": '01/09/17',
-        "content": 'Had a great time :)'
-      }
-    ],
-    deleteflag: false
   },
 
   showCollection: function (e) {
@@ -67,22 +43,36 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     let page = this;
-    wx.request({
-      // url: `https://gifme-api.wogengapp.cn/api/v1/users/${options.id}`,
-      url: `http://localhost:3000/api/v1/users/${options.id}`,
-      method: 'GET',
-      success(res) {
-        const user = res.data;
+    try {
+      var user = wx.getStorageSync('user')
+      if (user) {
         console.log(user)
-        // Update local data
-        page.setData({
-          user: user
-        });
+        const user_id = user.id
+        wx.request({
+          // url: `https://gifme-api.wogengapp.cn/api/v1/users/${options.id}`,
+          url: `http://localhost:3000/api/v1/users/${user.id}`,
+          method: 'GET',
+          success(res) {
+            const user = res.data;
+            console.log(user)
+            // Update local data
+            page.setData({
+              user: user
+            });
 
-        wx.hideToast();
+            wx.hideToast();
+          }
+        });
+      } else {
+        wx.reLaunch({
+          url: '../login/login'
+        });
       }
-    });
+    } catch (e) {
+      console.log(e)
+    }
   },
 
   /**

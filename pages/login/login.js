@@ -18,7 +18,6 @@ Page({
   login: function() {
     wx.login({
       success: function (res) {
-        console.log(res.code)
         if (res.code) {
           const code = res.code
           wx.getUserInfo({
@@ -43,13 +42,13 @@ Page({
                   code: code
                 },
                 success: function (res) {
-                  console.log(res)
+                  const id = res.data.id
                   wx.setStorage({
                     key: "user",
                     data: res.data
                   });
-                  wx.navigateTo({
-                    url: `../user/user?id=${res.data.id}`
+                  wx.switchTab({
+                    url: `../user/user`
                   });
                 }
               })

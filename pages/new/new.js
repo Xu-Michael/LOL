@@ -19,50 +19,63 @@ let tempPath;
 Page({
   onLoad: function(options) {
     var page = this
-    wx.chooseVideo({
-      sourceType: ['album', 'camera'],
-      maxDuration: 10,
-      camera: ['front', 'back'],
-      success: function (res) {
-        if (res.width > res.height && res.width > 320){
-          filePath = res.tempFilePath
-          Key = filePath.substr(filePath.lastIndexOf('/') + 1); // 这里指定上传的文件名
-          page.setData({
-            src: filePath,
-            Key: Key
-          });
-          cos_utils.cos.postObject({
-            Bucket: config.Bucket,
-            Region: config.Region,
-            Key: Key,
-            FilePath: filePath,
-            onProgress: function (info) {
-              console.log(JSON.stringify(info));
-            },
-          });
-          wx.redirectTo({
-            url: `../generating/generating?key=${Key}`
-          });
-        } else {
-          wx.showModal({
-            content: "Please retake in landscape mode :)",
-            confirmText: "Ok",
-            cancelText: "STFU",
-            success(res) {
-              if (res.confirm) {
-                wx.reLaunch({
-                  url: '../new/new',
-                })
-              } else {
-                wx.reLaunch({
-                  url: '../index/index',
-                })
-              }
+    try {
+      var user = wx.getStorageSync('user')
+      if (user) {
+        console.log(user)
+        const user_id = user.id
+        wx.chooseVideo({
+          sourceType: ['album', 'camera'],
+          maxDuration: 10,
+          camera: ['front', 'back'],
+          success: function (res) {
+            if (res.width > res.height && res.width > 320) {
+              filePath = res.tempFilePath
+              Key = filePath.substr(filePath.lastIndexOf('/') + 1); // 这里指定上传的文件名
+              page.setData({
+                src: filePath,
+                Key: Key
+              });
+              cos_utils.cos.postObject({
+                Bucket: config.Bucket,
+                Region: config.Region,
+                Key: Key,
+                FilePath: filePath,
+                onProgress: function (info) {
+                  console.log(JSON.stringify(info));
+                },
+              });
+              wx.redirectTo({
+                url: `../generating/generating?key=${Key}&user_id=${user_id}`
+              });
+            } else {
+              wx.showModal({
+                content: "Please retake in landscape mode :)",
+                confirmText: "Ok",
+                cancelText: "STFU",
+                success(res) {
+                  if (res.confirm) {
+                    wx.reLaunch({
+                      url: '../new/new',
+                    })
+                  } else {
+                    wx.reLaunch({
+                      url: '../index/index',
+                    })
+                  }
+                }
+              })
             }
-          })
-        }
+          }
+        })
+      } else {
+        wx.reLaunch({
+          url: '../login/login'
+        });
       }
-    })
+    } catch (e) {
+      console.log(e)
+    }
   },
   onReady: function (res) {
     this.videoContext = wx.createVideoContext('myVideo')

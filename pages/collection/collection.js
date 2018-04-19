@@ -24,13 +24,16 @@ Page({
     try {
       var user = wx.getStorageSync('user')
       if (user) {
+        console.log(user)
         wx.request({
-          url: `https://gifme-api.wogengapp.cn/api/v1/users/${options.id}`,
+          // url: `https://gifme-api.wogengapp.cn/api/v1/users/${user.id}`,
+          url: `http://localhost:3000/api/v1/users/${user.id}`,
           method: 'GET',
           success(res) {
+            console.log(res)
             const gifs = res.data.user_gifs;
             page.setData({
-              user_gifs: gifs
+              user: res.data
             });
             wx.hideToast();
           }
