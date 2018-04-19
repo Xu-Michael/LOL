@@ -54,7 +54,7 @@ Page({
                   url: '../new/new',
                 })
               } else {
-                wx.switchTab({
+                wx.reLaunch({
                   url: '../index/index',
                 })
               }
