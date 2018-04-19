@@ -37,7 +37,7 @@ Page({
       user_id: 20
     };
     wx.request({
-      url: `http://localhost:3000/api/v1/gifs`,
+      url: `https://gifme-api.wogengapp.cn/api/v1/gifs`,
       method: 'POST',
       data: form_gif,
       success(res) {
@@ -101,7 +101,6 @@ Page({
         // set data on index page and show
       }
     });
-
   },
 
 

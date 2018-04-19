@@ -24,6 +24,15 @@ Page({
       url: `../show/show?id=${gifId}`
     });
   },
+  
+  showUser: function (e) {
+    console.log(e);
+    const data = e.currentTarget.dataset;
+    const userId = data.gif.user_id;
+    wx.navigateTo({
+      url: `../user/user?id=${userId}`
+    });
+  },
 
   /**
    * 生命周期函数--监听页面加载
