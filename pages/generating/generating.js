@@ -30,15 +30,13 @@ Page({
     let page = this
     const form_gif = {
       tags: "testing",
-      image: 'https://gifme-1256511506.cos.ap-shanghai.myqcloud.com/' + key,
-      // image: filePath,
+      video: 'https://gifme-1256511506.cos.ap-shanghai.myqcloud.com/' + key,
       author: "testing",
       collected: 12,
-      user_id: 1
-
+      user_id: 17
     };
     wx.request({
-      url: `http://localhost:3000/api/v1/gifs`,
+      url: `https://gifme-api.wogengapp.cn/api/v1/gifs`,
       method: 'POST',
       data: form_gif,
       success(res) {
