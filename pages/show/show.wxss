@@ -1,4 +1,4 @@
-page {
+ page {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -264,6 +264,6 @@ border-radius:5px;
   height: 35rpx;
   width: 35rpx;
   padding: 10rpx;
-}*/
+}*/ 
 
 

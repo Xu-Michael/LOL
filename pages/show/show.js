@@ -7,42 +7,6 @@ Page({
    */
   data: {
     "tags": [
-      {
-        "id": 1,
-        "name": 'Cool'
-      },
-      {
-        "id": 2,
-        "name": 'Funny'
-      },
-      {
-        "id": 3,
-        "name": 'Amazing'
-      },
-      {
-        "id": 4,
-        "name": 'Funny'
-      },
-      {
-        "id": 5,
-        "name": 'Funny'
-      },
-      {
-        "id": 6,
-        "name": 'Funny'
-      },
-      {
-        "id": 7,
-        "name": 'Funny'
-      },
-      {
-        "id": 8,
-        "name": 'Funny'
-      },
-      {
-        "id": 9,
-        "name": 'Funny'
-      }
     ],
   shareData: {
     title: 'Gif Example',
@@ -105,11 +69,10 @@ Page({
       url: `https://gifme-api.wogengapp.cn/api/v1/gifs/${options.id}`,
       method: 'GET',
       success(res) {
-        const video = res.data;
-        console.log(video)
+        const gif = res.data;
         // Update local data
         page.setData({
-          video: video
+          gif: gif
         }); 
         wx.hideToast();
       }
