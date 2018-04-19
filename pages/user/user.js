@@ -14,14 +14,14 @@ Page({
         "content": 'Best food ever!'
       },
       {
-        "id": 2,
+        "id": 7,
         "name": 'Gray',
         "image": 'https://kitt.lewagon.com/placeholder/users/graysdays',
         "date": '01/10/17',
         "content": 'Love the service'
       },
       {
-        "id": 3,
+        "id": 5,
         "name": 'Alex',
         "image": 'https://kitt.lewagon.com/placeholder/users/alex-felix',
         "date": '01/09/17',
@@ -40,15 +40,27 @@ Page({
     });
   },
 
-  showDeletes: function (e) {
+  showGif: function (e) {
+    console.log(e)
+    const data = e.currentTarget.dataset;
+    console.log(data);
+    const gifId = data.gif.id;
+    console.log(gifId);
+  },
+
+  showDeletes: function () {
     this.setData({ deleteflag: true })
   },
 
-  hideDeletes: function (e) {
+  hideDeletes: function () {
     this.setData({ deleteflag: false })
   },
 
-  gifDelete: function() {
+  gifDelete: function(e) {
+    const data = e.currentTarget.dataset;
+    console.log(data);
+    const gifId = data.gif.id;
+    console.log(gifId);
 },
 
   /**
