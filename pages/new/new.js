@@ -46,7 +46,8 @@ Page({
         } else {
           wx.showModal({
             content: "Please retake in landscape mode :)",
-            confirmText: "STFU",
+            confirmText: "Ok",
+            cancelText: "STFU",
             success(res) {
               if (res.confirm) {
                 wx.reLaunch({
