@@ -139,8 +139,20 @@
   background: #FC5736;  
 }  
 
-.weui-icon-search_in-box {
-  position: absolute;
-  left: 10px;
-  top: 7px;
+.search-icon {
+  background: linear-gradient(
+    160deg, rgba(252, 87, 54, .9),rgba(253, 120, 90, .9)); 
+  position: fixed;
+  border-radius: 50%;
+  padding: 40rpx;
+  bottom: 40rpx;
+  right: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+ .weui-icon-search_in-box {
+  height: 45rpx;
+  width: 45rpx;
+} 
