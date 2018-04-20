@@ -31,9 +31,10 @@ Page({
           method: 'GET',
           success(res) {
             console.log(res)
-            const gifs = res.data.collections;
+            const gifs = res.data.users_gifs;
+            console.log(gifs)
             page.setData({
-              user_gifs: gifs
+              gifs: gifs
             });
             wx.hideToast();
           }
