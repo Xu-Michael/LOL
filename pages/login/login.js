@@ -15,6 +15,56 @@ Page({
   
   },
 
+  login: function() {
+    wx.login({
+      success: function (res) {
+        if (res.code) {
+          const code = res.code
+          wx.getUserInfo({
+            success: function (res) {
+              var userInfo = res.userInfo
+              var nickName = userInfo.nickName
+              var avatarUrl = userInfo.avatarUrl
+              var gender = userInfo.gender
+              var province = userInfo.province
+              var city = userInfo.city
+              var country = userInfo.country
+              const user = {
+                name: nickName,
+                avatar: avatarUrl
+              }
+              wx.request({
+                // url: 'https://gifme-api.wogengapp.cn/api/v1/users',
+                url: 'http://localhost:3000/api/v1/users',
+                method: 'POST',
+                data: {
+                  user: user,
+                  code: code
+                },
+                success: function (res) {
+                  const id = res.data.id
+                  wx.setStorage({
+                    key: "user",
+                    data: res.data
+                  });
+                  wx.switchTab({
+                    url: `../user/user`
+                  });
+                }
+              })
+            }
+          });
+        } else {
+          console.log('登录失败！' + res.errMsg)
+        }
+      }
+    });
+  },
+
+  cancel: function() {
+
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
