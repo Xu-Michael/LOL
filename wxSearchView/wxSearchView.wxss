@@ -106,11 +106,11 @@
   font-size: inherit;
 }
 
-.weui-icon-search_in-box {
+/* .weui-icon-search_in-box {
   position: absolute;
   left: 10px;
   top: 7px;
-}
+} */
 
 .weui-search-bar__text {
   display: inline-block;

@@ -62,7 +62,7 @@ Page({
   },
 
   cancel: function() {
-
+    
   },
 
   /**
