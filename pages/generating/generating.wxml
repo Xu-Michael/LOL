@@ -26,7 +26,9 @@
       <view class="flex-row">
         <input id="content" class='lf--input' name="content" placeholder='happy funny cat' type='text'/>
         <label class="lf--label flex" for="tag">
-          <image class="icon-heart" src="../../image/orange/add.png" form-type='submit'/>
+        <button class="flex" form-type='submit'>
+          <image class="icon-heart" src="../../image/orange/add.png" />
+          </button>
         </label>
       </view>
 
