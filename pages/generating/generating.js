@@ -38,8 +38,8 @@ Page({
       user_id: user_id
     };
     wx.request({
-      // url: `https://gifme-api.wogengapp.cn/api/v1/gifs`,
-      url: "http://localhost:3000/api/v1/gifs",
+      url: `https://gifme-api.wogengapp.cn/api/v1/gifs`,
+      // url: "http://localhost:3000/api/v1/gifs",
       method: 'POST',
       data: form_gif,
       success(res) {
@@ -93,8 +93,8 @@ Page({
       tags: e.detail.value.content
     };
     wx.request({
-      // url: `https://gifme-api.wogengapp.cn/api/v1/gifs/${gif_id}`,
-      url: `http://localhost:3000/api/v1/gifs/${gif_id}`,
+      url: `https://gifme-api.wogengapp.cn/api/v1/gifs/${gif_id}`,
+      // url: `http://localhost:3000/api/v1/gifs/${gif_id}`,
       method: 'PUT',
       data: updated_gif,
       success(e) {
