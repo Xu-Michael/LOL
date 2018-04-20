@@ -57,11 +57,12 @@ Page({
 
             wx.hideToast();
             const collection = {
-              user_id: user.id,
+              user_id: current_user_id,
               gif_id: data.gif.id
             };
+            console.log(collection)
             wx.request({
-              url: `https://gifme-api.wogengapp.cn/api/v1/${user.id}/collections`,
+              url: `https://gifme-api.wogengapp.cn/api/v1/users/${current_user_id}/collections`,
               // url: `http://localhost:3000/api/v1/users/${current_user_id}/collections`,
               method: 'POST',
               data: collection,
