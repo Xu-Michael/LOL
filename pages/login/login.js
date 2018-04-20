@@ -34,8 +34,8 @@ Page({
                 avatar: avatarUrl
               }
               wx.request({
-                // url: 'https://gifme-api.wogengapp.cn/api/v1/users',
-                url: 'http://localhost:3000/api/v1/users',
+                url: 'https://gifme-api.wogengapp.cn/api/v1/users',
+                // url: 'http://localhost:3000/api/v1/users',
                 method: 'POST',
                 data: {
                   user: user,

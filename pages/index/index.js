@@ -9,14 +9,14 @@ Page({
    */
   data: {
     navbar: ['New', 'Trending'],
-    currentTab: 0 
+    currentTab: 0
   },
 
   navbarTap: function (e) {
     this.setData({
       currentTab: e.currentTarget.dataset.idx
     })
-  }, 
+  },
 
   showGif: function (e) {
     console.log(e);
@@ -26,7 +26,7 @@ Page({
       url: `../show/show?id=${gifId}`
     });
   },
-  
+
   showUser: function (e) {
     console.log(e);
     let data = e.currentTarget.dataset;
@@ -60,8 +60,8 @@ Page({
     // this.setData(app.globalData);
     let page = this;
     wx.request({
-      // url: "https://gifme-api.wogengapp.cn/api/v1/gifs",
-      url: "http://localhost:3000/api/v1/gifs",
+      url: "https://gifme-api.wogengapp.cn/api/v1/gifs",
+      // url: "http://localhost:3000/api/v1/gifs",
       method: 'GET',
       success(res) {
         console.log(res)
@@ -88,7 +88,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
@@ -101,35 +101,35 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   },
 
   wxSearchTab: function () {
