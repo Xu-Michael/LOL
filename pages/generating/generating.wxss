@@ -32,7 +32,7 @@
     /* border: 1px solid rgba(252, 87, 54, .9); */
     /* border-bottom: 1px solid rgba(253, 120, 90, .9); */
     margin: 60rpx;
-    border-radius: 5px;
+    border-radius: 5rpx;
   }
 
   .flex-row-buttons {

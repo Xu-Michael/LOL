@@ -25,7 +25,7 @@ Page({
     const id = e.currentTarget.dataset.id
     console.log(e);
     wx.navigateTo({
-      url: `../edit/edit?id=${id}`
+      url: `../tagform/tagform?id=${id}`
     })
   },
 

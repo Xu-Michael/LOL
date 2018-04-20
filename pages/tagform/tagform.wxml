@@ -1,5 +1,6 @@
+
 <!--pages/tagform/tagform.wxml-->
-<view class="flex">
+<!-- <view class="flex">
 <view class="form-container">
   <form class='login-form' bindsubmit="bindSubmit">
     <view class="title-row">
@@ -13,11 +14,52 @@
     </view>
     <view class="flex-row-buttons">
       <view class='lf--cancel' bindtap="onCancelClicked" >CANCEL</view>
-      <view class="submit-button" form-type='submit'>SUBMIT</view>
+      <view class="submit-button" form-type='submit'>SUBMIT</view> -->
       <!-- <button class='submit-button' form-type='submit'>SUBMIT</button> -->
-    </view>
+    <!-- </view>
   </form>
 </view>
+</view> -->
+
+
+<!-- <view class="form-container">
+  <form class='login-form' bindsubmit="bindSubmit">
+    <view class="title-row">
+      Add tags while your Gif is generating!
+    </view>
+    <view class="flex-row">
+      <label class="lf--label flex" for="tag">
+        <image class="add-tag" src="../../image/orange/tag2.png"/>
+      </label>
+      <input id="content" class='lf--input' name="content" placeholder='happy funny cat' type='text'/>
+    </view>
+    <view class="flex-row-buttons">
+
+      <view wx:if="{{flag1 == true && flag2 == true}}" class='lf--continuego' bindtap="onContinueClicked">CONTINUE</view>
+      <view wx:else class="class='lf--continue'">CONTINUE</view>
+      <button class='submit-button' form-type='submit'>SUBMIT</button>
+    </view>
+  </form>
+</view> -->
+
+
+<view class="login-container">
+  <image class="lock" src="../../image/orange/tag-HD.png"/>
+  <view class="h3">Edit Your Tag</view>
+    <form class='login-form' bindsubmit="bindSubmit">
+      <view class="flex-row">
+        <input id="content" class='lf--input' name="content" placeholder='happy funny cat' type='text'/>
+        <label class="lf--label flex" for="tag">
+          <image class="icon-heart" src="../../image/orange/add.png" form-type='submit'/>
+        </label>
+      </view>
+
+  <view class="highlight-button">
+    <view class="cancel-button" bindtap="onCancelClicked" data-gif="{{gif.id}}">CANCEL</view>
+  </view>
+      <!-- <view class="flex-row-buttons">
+        <view class='lf--cancel' bindtap="onCancelClicked" >CANCEL</view>
+        <view class="submit-button" form-type='submit'>SUBMIT</view>
+      </view> -->
+    </form>
 </view>
-
-
