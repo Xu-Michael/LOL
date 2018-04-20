@@ -27,9 +27,33 @@ Page({
   mySearchFunction: function (value) {
     // do your job here
     // 跳转
+    let page = this;
+    let tag = value;
+    wx.request({
+      url: `https://gifme-api.wogengapp.cn/api/v1/gifs?tags=${tag}`,
+      method: 'GET',
+      success(res) {
+        console.log("hello")
+        console.log(res)
+        let tagged_gifs = res.data.gifs;
+        // Update local data
+        page.setData({
+          tagged_gifs: tagged_gifs
+        });
+        
+      }
+    });
     wx.redirectTo({
       url: '../index/index?searchValue=' + value
     })
+  },
+  showGif: function (e) {
+    console.log(e);
+    const data = e.currentTarget.dataset;
+    const gifId = data.gif;
+    wx.navigateTo({
+      url: `../show/show?id=${gifId}`
+    });
   },
   // 返回回调函数
   myGobackFunction: function () {
