@@ -1,9 +1,7 @@
-
 <view class="login-container">
   <image class="lock" src="../../image/orange/aperture2.png"/>
   <view class="h3">Create your Gif!</view>
   <view class="highlight-button">
-    <view class="login-button">Take Video</view>
-    <view class="login-button">Take Photo</view>
+    <view class="login-button" bindtap='bindButtonTap'>Take Video</view>
   </view>
 </view>
