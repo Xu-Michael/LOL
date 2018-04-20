@@ -48,14 +48,18 @@
   border-radius: 5px;
 }
 
-.avatar {
+.avatar-bordered {
   width: 55rpx;
   height: 55rpx;
   border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
   position: absolute;
   top: 20rpx;
   right: 20rpx;
+  /* background-color: #fff; */
 }
+
 .tag {
   /* position: absolute;
   bottom: 10rpx;

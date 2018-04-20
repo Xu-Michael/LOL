@@ -41,6 +41,15 @@ Page({
     }
   },
 
+  onCancelClicked(e) {
+    console.log(e);
+    const data = e.currentTarget.dataset;
+    const gifId = data.gif;
+    wx.navigateTo({
+      url: `../show/show?id=${gifId}`
+    });
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

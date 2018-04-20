@@ -45,8 +45,8 @@
       },
       {
         "pagePath": "pages/user/user",
-        "iconPath": "image/white/favorite.png",
-        "selectedIconPath": "image/orange/favorite.png",
+        "iconPath": "image/white/profile2.png",
+        "selectedIconPath": "image/orange/profile.png",
         "text": ""
       }
     ]

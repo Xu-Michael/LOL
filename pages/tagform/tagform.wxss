@@ -1,3 +1,10 @@
+page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 /* pages/tagform/tagform.wxss */
 .form-container {
   width: 700rpx;
@@ -16,21 +23,12 @@
 
 .login-form {
   width: 100%;
-  position: relative;
-  border-radius: 5rpx;
-  background: rgba(black, .15);
   
   /* &:before {
     content: '';
     position: absolute;
     top: -2px; left: 0;
-    height: 2px; width: 100%; */
-    
-    background: linear-gradient(
-      to right,
-      #35c3c1,
-      $green-light
-    );    
+    height: 2px; width: 100%; */    
   }
   
   /* @media screen and (min-width: 600px) {
@@ -54,7 +52,7 @@
     margin-bottom: 1em;
     /* border: 1px solid rgba(252, 87, 54, .9); */
     /* border-bottom: 1px solid rgba(253, 120, 90, .9); */
-    margin: 70rpx;
+    margin: 60rpx;
     border-radius: 5rpx;
   }
 
@@ -73,9 +71,7 @@
   .lf--label {
     width: 120rpx;
     /* border-right: 1px solid rgba(252, 87, 54, .9);  */
-     background: linear-gradient(
-    160deg, rgba(252, 87, 54, .9),rgba(253, 120, 90, .9)); 
-    cursor: pointer;
+    background-color: #fff;
   }
 
   .lf--input {
@@ -173,8 +169,8 @@
 } */
 
 .icon-heart {
-  height: 50rpx;
-  width: 50rpx;
+  height: 60rpx;
+  width: 60rpx;
   padding: 10rpx;
 }
 
@@ -187,4 +183,77 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.login-container {
+  margin: auto 50rpx;
+  text-align: center;
+}
+
+.lock {
+  width: 300rpx;
+  height: 300rpx;
+  margin-bottom: 50rpx;
+}
+
+.highlight-button {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+}
+
+.login-button {
+  display: block;
+  text-align: center;
+  width: 400rpx;
+  margin: 10rpx 20rpx;
+  padding: 30rpx;
+  background: linear-gradient(
+  160deg, rgba(252, 87, 54, .9),rgba(253, 120, 90, .9)); 
+  border: 0 !important;
+  color: white;
+  cursor: pointer;
+  font-size: 35rpx;
+  text-shadow: 0 1px 0 rgba(black, .2);
+  border-radius: 5rpx;
+}
+
+.cancel-button {
+  /* display: block;
+  text-align: center;
+  width: 400rpx;
+  margin: 10rpx 20rpx;
+  padding: 30rpx;
+  background: white; 
+  border: 0 !important;
+  color: #;
+  cursor: pointer;
+  font-size: 35rpx;
+  text-shadow: 0 1px 0 rgba(black, .2);
+  border-radius: 5rpx; */
+  display: block;
+  text-align: center;
+  width: 400rpx;
+  padding: 30rpx;
+  margin: 10rpx 20rpx;
+  color: grey;
+  cursor: pointer;
+  font-size: 35rpx;
+  font-weight: 600;
+  text-shadow: 0 1px 0 rgba(black, .2);
+  border-radius: 5rpx;
+  border: 1rpx solid grey;
+  /* background: white; */
+}
+
+.highlight-button {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
 }
