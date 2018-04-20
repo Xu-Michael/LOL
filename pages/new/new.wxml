@@ -1,6 +1,9 @@
-<view class="section tc">
-  <video class="video" src="https://media.giphy.com/media/65MlV85T8D38PggYQK/giphy.mp4" loop autoplay controls="{{false}}"></video>
-   <view class="btn-area">
-    <button bindtap="bindButtonTap">Get video</button>
-  </view> 
+
+<view class="login-container">
+  <image class="lock" src="../../image/orange/aperture2.png"/>
+  <view class="h3">Create your Gif!</view>
+  <view class="highlight-button">
+    <view class="login-button">Take Video</view>
+    <view class="login-button">Take Photo</view>
+  </view>
 </view>
