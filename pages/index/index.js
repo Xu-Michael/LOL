@@ -45,8 +45,8 @@ Page({
         console.log(user)
         const current_user_id = user.id
         wx.request({
-          // url: `https://gifme-api.wogengapp.cn/api/v1/users/${user.id}`,
-          url: `http://localhost:3000/api/v1/users/${current_user_id}`,
+          url: `https://gifme-api.wogengapp.cn/api/v1/users/${user.id}`,
+          // url: `http://localhost:3000/api/v1/users/${current_user_id}`,
           method: 'GET',
           success(res) {
             const user = res.data;
@@ -61,8 +61,8 @@ Page({
               gif_id: data.gif.id
             };
             wx.request({
-              // url: `https://gifme-api.wogengapp.cn/api/v1/${user.id}/collections`,
-              url: `http://localhost:3000/api/v1/users/${current_user_id}/collections`,
+              url: `https://gifme-api.wogengapp.cn/api/v1/${user.id}/collections`,
+              // url: `http://localhost:3000/api/v1/users/${current_user_id}/collections`,
               method: 'POST',
               data: collection,
               success(e) {
@@ -88,8 +88,8 @@ Page({
     // this.setData(app.globalData);
     let page = this;
     wx.request({
-      // url: "https://gifme-api.wogengapp.cn/api/v1/gifs",
-      url: "http://localhost:3000/api/v1/gifs",
+      url: "https://gifme-api.wogengapp.cn/api/v1/gifs",
+      // url: "http://localhost:3000/api/v1/gifs",
       method: 'GET',
       success(res) {
         console.log(res)

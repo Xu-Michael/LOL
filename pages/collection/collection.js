@@ -26,8 +26,8 @@ Page({
       if (user) {
         console.log(user)
         wx.request({
-          // url: `https://gifme-api.wogengapp.cn/api/v1/users/${user.id}`,
-          url: `http://localhost:3000/api/v1/users/${user.id}/collections`,
+          url: `https://gifme-api.wogengapp.cn/api/v1/users/${user.id}`,
+          // url: `http://localhost:3000/api/v1/users/${user.id}/collections`,
           method: 'GET',
           success(res) {
             console.log(res)
