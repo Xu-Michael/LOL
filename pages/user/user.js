@@ -50,7 +50,7 @@ Page({
       if (user) {
         const user_id = user.id
         wx.request({
-          url: `https://gifme-api.wogengapp.cn/api/v1/users/${options.id}`,
+          url: `https://gifme-api.wogengapp.cn/api/v1/users/${user.id}`,
           // url: `http://localhost:3000/api/v1/users/${user.id}`,
           method: 'GET',
           success(res) {
