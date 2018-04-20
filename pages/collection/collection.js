@@ -20,22 +20,32 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // this.setData(app.globalData);
     let page = this;
-    wx.request({
-      url: `https://gifme-api.wogengapp.cn/api/v1/users/${options.id}`,
-      method: 'GET',
-      success(res) {
-        const gifs = res.data.user_gifs;
-
-        // Update local data
-        page.setData({
-          user_gifs: gifs
+    try {
+      var user = wx.getStorageSync('user')
+      if (user) {
+        console.log(user)
+        wx.request({
+          // url: `https://gifme-api.wogengapp.cn/api/v1/users/${user.id}`,
+          url: `http://localhost:3000/api/v1/users/${user.id}`,
+          method: 'GET',
+          success(res) {
+            console.log(res)
+            const gifs = res.data.user_gifs;
+            page.setData({
+              user: res.data
+            });
+            wx.hideToast();
+          }
         });
-
-        wx.hideToast();
+      } else {
+        wx.reLaunch({
+          url: '../login/login'
+        });
       }
-    });
+    } catch (e) {
+      console.log(e)
+    }
   },
 
   /**
