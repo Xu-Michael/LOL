@@ -36,22 +36,50 @@ Page({
     });
   },
 
-  collect: function(e) {
+  collect: function (e) {
     let data = e.currentTarget.dataset;
-    const collection = {
-      user_id: data.gif.user_id,
-      gif_id: data.gif.id
-    };
-    console.log(collection);
-    wx.request({
-      // url: `https://gifme-api.wogengapp.cn/api/v1/${user_id}/collections`,
-      method: 'POST',
-      data: collection,
-      success(e) {
-        console.log(e)
-        // set data on index page and show
+    let page = this;
+    try {
+      var user = wx.getStorageSync('user')
+      if (user) {
+        console.log(user)
+        const current_user_id = user.id
+        wx.request({
+          url: `https://gifme-api.wogengapp.cn/api/v1/users/${user.id}`,
+          // url: `http://localhost:3000/api/v1/users/${current_user_id}`,
+          method: 'GET',
+          success(res) {
+            const user = res.data;
+            // Update local data
+            page.setData({
+              user: user
+            });
+
+            wx.hideToast();
+            const collection = {
+              user_id: user.id,
+              gif_id: data.gif.id
+            };
+            wx.request({
+              url: `https://gifme-api.wogengapp.cn/api/v1/${user.id}/collections`,
+              // url: `http://localhost:3000/api/v1/users/${current_user_id}/collections`,
+              method: 'POST',
+              data: collection,
+              success(e) {
+                console.log(e)
+                // set data on index page and show
+              }
+            });
+          }
+        });
+      } else {
+        wx.reLaunch({
+          url: '../login/login'
+        });
       }
-    });
+    } catch (e) {
+      console.log(e)
+    }
   },
   /**
    * 生命周期函数--监听页面加载

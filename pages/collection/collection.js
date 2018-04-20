@@ -27,13 +27,13 @@ Page({
         console.log(user)
         wx.request({
           url: `https://gifme-api.wogengapp.cn/api/v1/users/${user.id}`,
-          // url: `http://localhost:3000/api/v1/users/${user.id}`,
+          // url: `http://localhost:3000/api/v1/users/${user.id}/collections`,
           method: 'GET',
           success(res) {
             console.log(res)
-            const gifs = res.data.user_gifs;
+            const gifs = res.data.collections;
             page.setData({
-              user: res.data
+              user_gifs: gifs
             });
             wx.hideToast();
           }
@@ -46,6 +46,23 @@ Page({
     } catch (e) {
       console.log(e)
     }
+  },
+  showUser: function (e) {
+    console.log(e);
+    let data = e.currentTarget.dataset;
+    console.log(data)
+    const userId = data.gif.user_id;
+    wx.navigateTo({
+      url: `../user/user?id=${userId}`
+    });
+  },
+  showGif: function (e) {
+    console.log(e);
+    const data = e.currentTarget.dataset;
+    const gifId = data.gif;
+    wx.navigateTo({
+      url: `../show/show?id=${gifId}`
+    });
   },
 
   /**
