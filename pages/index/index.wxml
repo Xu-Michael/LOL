@@ -31,9 +31,9 @@
     </view>
   </view>
 
-  <view class="highlight-button">
+  <!-- <view class="highlight-button">
     <view class="submit-button">SUBMIT</view>
-  </view>
+  </view> -->
 </view>  
   
 <view hidden="{{currentTab!==1}}">  
@@ -57,8 +57,9 @@
 <!-- <view hidden="{{currentTab!==2}}">  
   tab_03  
 </view>   -->
-
-<icon class="weui-icon-search_in-box" type="search" size="14" bindtap="wxSearchTab"></icon>
+<view class="search-icon flex">
+  <image class="weui-icon-search_in-box" src="../../image/white/search.png" type="search" bindtap="wxSearchTab"/>
+</view>
 
 
 <!-- 

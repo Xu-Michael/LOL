@@ -17,7 +17,7 @@
           <view class="other-buttons flex">
             <image class="icon-heart" bindtap="editGif" data-id="{{id}}" src="../../image/white/draw.png"/>
             <button class="share-button" open-type="share" plain="true">
-              <image class="icon-heart" src="../../image/white/share.png"></image>
+              <image class="icon-share" src="../../image/white/share.png"></image>
             </button>
           </view>
           </view>

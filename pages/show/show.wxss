@@ -135,6 +135,8 @@
   font-size: 35rpx;
   /* padding-bottom: 5rpx; */
   position: relative;
+  margin: 50rpx;
+  width: 100%;
 }
 
 button[plain]{ 
@@ -161,20 +163,29 @@ button[plain]{
   display: flex;
   justify-content: center;
   align-items: center;
-
+  position: absolute;
+  left: 80rpx;
 }
 
 .other-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  right: 80rpx;
 }
 
  .share-button {
   background-color: #282C34;
   border: none !important;
-  padding: none !important;
+  padding: 0 !important;
+  line-height: 0;
 } 
+
+.icon-share {
+  height: 38rpx;
+  width: 38rpx;
+}
 
 .button-container {
   flex-direction: column;
@@ -197,7 +208,8 @@ button[plain]{
 .icon-heart {
   height: 38rpx;
   width: 38rpx;
-  margin: 10rpx;
+  padding: 10rpx;
+  margin: 20rpx;
 }
 
 .tag-space {
