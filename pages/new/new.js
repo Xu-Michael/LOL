@@ -45,6 +45,19 @@ Page({
                   console.log(JSON.stringify(info));
                 },
               });
+              // wx.uploadFile({
+              //   url: 'https://example.weixin.qq.com/upload', //仅为示例，非真实的接口地址
+              //   filePath: filePath,
+              //   name: 'file',
+              //   formData: {
+              //     'user': 'test'
+              //   },
+              //   success: function (res) {
+              //     console.log(res.data)
+              //     var data = res.data
+              //     //do something
+              //   }
+              // })
               wx.redirectTo({
                 url: `../generating/generating?key=${Key}&user_id=${user_id}`
               });

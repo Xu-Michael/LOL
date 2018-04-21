@@ -24,14 +24,13 @@ Page({
     try {
       var user = wx.getStorageSync('user')
       if (user) {
-        console.log(user)
         wx.request({
-          url: `https://gifme-api.wogengapp.cn/api/v1/users/${user.id}`,
+          url: `https://gifme-api.wogengapp.cn/api/v1/users/${user.id}/collections`,
           // url: `http://localhost:3000/api/v1/users/${user.id}/collections`,
           method: 'GET',
           success(res) {
             console.log(res)
-            const gifs = res.data.users_gifs;
+            const gifs = res.data.collections;
             console.log(gifs)
             page.setData({
               gifs: gifs
