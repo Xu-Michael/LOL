@@ -18,9 +18,14 @@
 /** 搜索热点标题 */
 .wxSearchTitle{
   display: block;
-  padding: 10px 5px 5px 10px;
+  padding: 10rpx 0 10rpx 0; 
   font-size: 13px;
   text-align: left;
+  margin: 40rpx 0 20rpx 45rpx;
+  color: #FC5736;
+  font-size: 35rpx;
+  /* border-bottom: 5rpx solid #FC5736; */
+  width: 40%;
 }
 
 /** 提示样式 */
@@ -37,10 +42,11 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content:flex-start;
+  justify-content: space-evenly;
   align-items:center;
   /* border-bottom: 1px solid #eee; */
 }
+
 
 /** 标签样式 */
 .wxSearchKeyItem{
@@ -55,19 +61,32 @@
   /* background-color: rgba(200, 200, 200, 0.1); */
 }
 
+.wxSearchHistory {
+  position: relative;
+}
+
 /** 搜索记录标题栏 */
 .wxSearchHistoryItem{
-  padding-left: 10px;
+  /* padding-left: 10px;
   padding-top: 10px;
   padding-right: 5px;
   padding-bottom: 5px;
-  display: flex;
+  display: flex; */
+  display: block;
+  padding: 10rpx 0 10rpx 0; 
+  font-size: 13px;
+  text-align: left;
+  margin: 40rpx 0 20rpx 45rpx;
+  color: #FC5736;
+  font-size: 35rpx;
+  /* border-bottom: 5rpx solid #FC5736; */
+  width: 43%;
 }
 
 /** 搜索记录标题 */
 .wxSearchHistoryItemTitle{
   flex: 8;
-  font-size: 13px;
+  font-size: 35rpx;
 }
 
 /** 搜索记录删除按钮 */
@@ -168,7 +187,7 @@
 .weui-search-bar__cancel-btn {
   margin-left: 10px;
   line-height: 28px;
-  color: #FD785B;
+  color: #FC5736;
   white-space: nowrap;
   font-size: 38rpx;
 }
@@ -177,4 +196,16 @@
   height: 30rpx;
   width: 30rpx;
   padding: 10rpx;
+}
+
+.popular-search-icon {
+  height: 30rpx;
+  width: 30rpx;
+  margin-right: 10rpx;
+}
+
+.clear-button {
+  position: absolute;
+  right: 30rpx;
+  top: 25rpx; 
 }
