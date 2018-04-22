@@ -53,11 +53,10 @@ Page({
                   user_id: 23
                 },
                 success: function (res) {
-                  let id = res.id
-                  console.log(res.id)
-                  // wx.redirectTo({
-                  //   url: `../show/show?id=${id}`
-                  // });
+                  let id = res.data
+                  wx.redirectTo({
+                    url: `../show/show?id=${id}`
+                  });
                 }
               })
               // wx.redirectTo({
@@ -125,11 +124,10 @@ Page({
                 user_id: 23
               },
               success: function (res) {
-                const data = res.data
-                console.log(data)
-                // wx.redirectTo({
-                //   url: `../show/show?id=${id}`
-                // });
+                const id = res.data
+                wx.redirectTo({
+                  url: `../show/show?id=${id}`
+                });
               }
             });
             // cos_utils.cos.postObject({
