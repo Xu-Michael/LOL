@@ -38,19 +38,26 @@
 }
 
 /** 标签样式 */
+
+.key-list-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .wxSearchKeyList{
+  width: 90%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: start;
   align-items:center;
   /* border-bottom: 1px solid #eee; */
 }
 
-
 /** 标签样式 */
 .wxSearchKeyItem{
-  flex: 0 0 18%;
+  /* flex: 0 0 18%; */
   font-size: 30rpx;
   text-align: center;
   border: 1px solid #a1a0a0;

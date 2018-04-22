@@ -20,14 +20,14 @@
 
 
 <view class="login-container">
-  <image class="lock" src="../../image/orange/tag-HD.png"/>
+  <image class="lock" src="../../image/orange/tag.svg"/>
   <view class="h3">Add tags while your Gif is generating!</view>
     <form class='login-form' bindsubmit="bindSubmit">
       <view class="flex-row">
         <input id="content" class='lf--input' name="content" placeholder='happy funny cat' type='text'/>
         <label class="lf--label flex" for="tag">
-        <button class="flex" form-type="submit">
-          <image class="icon-heart" src="../../image/orange/add.png"/></button>
+        <button class="add-button flex" form-type="submit" plain="true">
+          <image class="icon-heart" src="../../image/orange/add.svg"/></button>
         </label>
       </view>
 

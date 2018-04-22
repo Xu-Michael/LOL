@@ -68,16 +68,10 @@
   margin: 0;
 }
 
-
-  button {
-    box-sizing: none;
-    margin: 0;
-    border: 0 !important;
-    padding: 0;
-    background: transparent;
-
-
-  }
+.add-button {
+  border: none !important;
+  padding: 0 !important;
+}
 
    .lf--continue {
     display: block;
