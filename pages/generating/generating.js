@@ -31,10 +31,7 @@ Page({
   generateGif: function () {
     let page = this
     const form_gif = {
-      tags: "testing",
       video: 'https://gifme-1256511506.cos.ap-shanghai.myqcloud.com/' + key,
-      author: "testing",
-      collected: 12,
       user_id: user_id
     };
     wx.request({

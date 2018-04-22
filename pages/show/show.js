@@ -66,7 +66,8 @@ Page({
     console.log(options);
     let page = this;
     wx.request({
-      url: `http://gifme-api.wogengapp.cn/api/v1/gifs/${options.id}`,
+      // url: `http://gifme-api.wogengapp.cn/api/v1/gifs/${options.id}`,
+      url: `http://localhost:3000/api/v1/gifs/${options.id}`,
       method: 'GET',
       success(res) {
         const gif = res.data;

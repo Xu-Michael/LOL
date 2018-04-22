@@ -22,7 +22,6 @@ Page({
     try {
       var user = wx.getStorageSync('user')
       if (user) {
-        console.log(user)
         const user_id = user.id
         wx.chooseVideo({
           sourceType: ['album', 'camera'],
@@ -36,31 +35,34 @@ Page({
                 src: filePath,
                 Key: Key
               });
-              cos_utils.cos.postObject({
-                Bucket: config.Bucket,
-                Region: config.Region,
-                Key: Key,
-                FilePath: filePath,
-                onProgress: function (info) {
-                  console.log(JSON.stringify(info));
-                },
-              });
-              // wx.uploadFile({
-              //   url: 'https://example.weixin.qq.com/upload', //仅为示例，非真实的接口地址
-              //   filePath: filePath,
-              //   name: 'file',
-              //   formData: {
-              //     'user': 'test'
+              // cos_utils.cos.postObject({
+              //   Bucket: config.Bucket,
+              //   Region: config.Region,
+              //   Key: Key,
+              //   FilePath: filePath,
+              //   onProgress: function (info) {
+              //     console.log(JSON.stringify(info));
               //   },
-              //   success: function (res) {
-              //     console.log(res.data)
-              //     var data = res.data
-              //     //do something
-              //   }
-              // })
-              wx.redirectTo({
-                url: `../generating/generating?key=${Key}&user_id=${user_id}`
-              });
+              // });
+              wx.uploadFile({
+                url: 'http://localhost:3000/api/v1/gifs', //仅为示例，非真实的接口地址
+                filePath: filePath,
+                name: 'video',
+                method: 'POST',
+                formData: {
+                  user_id: 23
+                },
+                success: function (res) {
+                  let id = res.id
+                  console.log(res.id)
+                  // wx.redirectTo({
+                  //   url: `../show/show?id=${id}`
+                  // });
+                }
+              })
+              // wx.redirectTo({
+              //   url: `../generating/generating?key=${Key}&user_id=${user_id}`
+              // });
             } else {
               wx.showModal({
                 content: "Please retake in landscape mode :)",
@@ -114,18 +116,34 @@ Page({
               src: filePath,
               Key: Key
             });
-            cos_utils.cos.postObject({
-              Bucket: config.Bucket,
-              Region: config.Region,
-              Key: Key,
-              FilePath: filePath,
-              onProgress: function (info) {
-                console.log(JSON.stringify(info));
+            wx.uploadFile({
+              url: 'http://localhost:3000/api/v1/gifs', //仅为示例，非真实的接口地址
+              filePath: filePath,
+              name: 'video',
+              method: 'POST',
+              formData: {
+                user_id: 23
               },
+              success: function (res) {
+                const data = res.data
+                console.log(data)
+                // wx.redirectTo({
+                //   url: `../show/show?id=${id}`
+                // });
+              }
             });
-            wx.redirectTo({
-              url: `../generating/generating?key=${Key}`
-            });
+            // cos_utils.cos.postObject({
+            //   Bucket: config.Bucket,
+            //   Region: config.Region,
+            //   Key: Key,
+            //   FilePath: filePath,
+            //   onProgress: function (info) {
+            //     console.log(JSON.stringify(info));
+            //   }
+            // });
+            // wx.redirectTo({
+            //   url: `../generating/generating?key=${Key}`
+            // });
           } else {
             wx.showModal({
               content: "Please retake in landscape mode :)",
