@@ -85,48 +85,6 @@ Page({
     }
   },
 
-  // toCollect: function(event) {
-  //       var cache = wx.getStorageSync('cache_key');
-  //       var currentCache = cache[this.data.currentId];
-  //       currentCache = !currentCache;
-  //       cache[this.data.currentId] = currentCache;
-  //       wx.setStorageSync('cache_key',cache);
-  //       this.setData({
-  //           collection: currentCache
-  //       });
-  //       wx.showToast({
-  //           title: currentCache?'点赞':'取消',
-  //           icon: 'success',
-  //           duration: 2000
-  //       });
-  //   },
-
-  deleteGif: function (e) {
-    const data = e.currentTarget.dataset;
-
-    wx.showModal({
-      title: 'Delete',
-      content: 'Did this GIF make you cringe?',
-      success: function() {
-        wx.request({
-          url: `https://gifme-api.wogengapp.cn/api/v1/gifs/${data.id}`,
-          method: 'DELETE',
-          success() {
-            // set data on index page and show
-            wx.redirectTo({
-              url: '/pages/index/index'
-            });
-          }
-        });
-
-        //redirect to index
-        wx.reLaunch({
-          url: '/pages/index/index'
-        })
-      }
-    })
-  },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -177,27 +135,6 @@ Page({
           }
     });
   },
-
-
-    // Get api data
-    // wx.request({
-    //   url: `https://gifme-api.wogengapp.cn/api/v1/gifs/${options.id}`,
-    //   method: 'GET',
-    //   success(res) {
-    //     const gif = res.data;
-
-    //     // Update local data
-    //     page.setData(
-    //       gif
-    //     );
-
-    //     wx.hideToast();
-    //   }
-    // });
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
   onReady: function () {
 
   },
