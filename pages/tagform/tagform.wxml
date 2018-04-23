@@ -44,13 +44,14 @@
 
 
 <view class="login-container">
-  <image class="lock" src="../../image/orange/tag-HD.png"/>
+  <image class="lock" src="../../image/orange/tag.svg"/>
   <view class="h3">Edit Your Tag</view>
     <form class='login-form' bindsubmit="bindSubmit">
       <view class="flex-row">
         <input id="content" class='lf--input' name="content" placeholder='happy funny cat' type='text'/>
         <label class="lf--label flex" for="tag">
-          <image class="icon-heart" src="../../image/orange/add.png" form-type='submit'/>
+          <button class="add-button flex" form-type="submit" plain="true">
+          <image class="icon-heart" src="../../image/orange/add.svg" form-type='submit'/></button>
         </label>
       </view>
 
