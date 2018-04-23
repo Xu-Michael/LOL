@@ -3,6 +3,7 @@ var config = require('../../config')
 let Key = ''
 let filePath = ''
 let image_src = 'https://picchain-1256466747.cos.ap-chengdu.myqcloud.com/'
+let user_id
 
 function getRandomColor() {
   let rgb = []
@@ -22,8 +23,7 @@ Page({
     try {
       var user = wx.getStorageSync('user')
       if (user) {
-        console.log(user)
-        const user_id = user.id
+        user_id = user.id
         wx.chooseVideo({
           sourceType: ['album', 'camera'],
           maxDuration: 10,
@@ -36,31 +36,34 @@ Page({
                 src: filePath,
                 Key: Key
               });
-              cos_utils.cos.postObject({
-                Bucket: config.Bucket,
-                Region: config.Region,
-                Key: Key,
-                FilePath: filePath,
-                onProgress: function (info) {
-                  console.log(JSON.stringify(info));
-                },
-              });
-              // wx.uploadFile({
-              //   url: 'https://example.weixin.qq.com/upload', //仅为示例，非真实的接口地址
-              //   filePath: filePath,
-              //   name: 'file',
-              //   formData: {
-              //     'user': 'test'
+              // cos_utils.cos.postObject({
+              //   Bucket: config.Bucket,
+              //   Region: config.Region,
+              //   Key: Key,
+              //   FilePath: filePath,
+              //   onProgress: function (info) {
+              //     console.log(JSON.stringify(info));
               //   },
-              //   success: function (res) {
-              //     console.log(res.data)
-              //     var data = res.data
-              //     //do something
-              //   }
-              // })
-              wx.redirectTo({
-                url: `../generating/generating?key=${Key}&user_id=${user_id}`
-              });
+              // });
+              wx.uploadFile({
+                // url: 'http://localhost:3000/api/v1/gifs',
+                url: 'https://https://gifme-api.wogengapp.cn/api/v1/gifs',
+                filePath: filePath,
+                name: 'video',
+                method: 'POST',
+                formData: {
+                  user_id: user_id
+                },
+                success: function (res) {
+                  let id = res.data
+                  wx.redirectTo({
+                    url: `../show/show?id=${id}`
+                  });
+                }
+              })
+              // wx.redirectTo({
+              //   url: `../generating/generating?key=${Key}&user_id=${user_id}`
+              // });
             } else {
               wx.showModal({
                 content: "Please retake in landscape mode :)",
@@ -114,18 +117,34 @@ Page({
               src: filePath,
               Key: Key
             });
-            cos_utils.cos.postObject({
-              Bucket: config.Bucket,
-              Region: config.Region,
-              Key: Key,
-              FilePath: filePath,
-              onProgress: function (info) {
-                console.log(JSON.stringify(info));
+            wx.uploadFile({
+              // url: 'http://localhost:3000/api/v1/gifs',
+              url: 'https://gifme-api.wogengapp.cn/api/v1/gifs',
+              filePath: filePath,
+              name: 'video',
+              method: 'POST',
+              formData: {
+                user_id: user_id
               },
+              success: function (res) {
+                const id = res.data
+                wx.redirectTo({
+                  url: `../show/show?id=${id}`
+                });
+              }
             });
-            wx.redirectTo({
-              url: `../generating/generating?key=${Key}`
-            });
+            // cos_utils.cos.postObject({
+            //   Bucket: config.Bucket,
+            //   Region: config.Region,
+            //   Key: Key,
+            //   FilePath: filePath,
+            //   onProgress: function (info) {
+            //     console.log(JSON.stringify(info));
+            //   }
+            // });
+            // wx.redirectTo({
+            //   url: `../generating/generating?key=${Key}`
+            // });
           } else {
             wx.showModal({
               content: "Please retake in landscape mode :)",
