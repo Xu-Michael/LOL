@@ -52,7 +52,7 @@ Page({
                     //   },
                     // });
                     wx.showLoading({
-                      title: 'Creating your gif...',
+                      title: 'Creating gif...',
                     });
                     wx.uploadFile({
                       // url: 'http://localhost:3000/api/v1/gifs',
@@ -65,7 +65,7 @@ Page({
                       },
                       success: function (res) {
                         let id = res.data
-                        wx.redirectTo({
+                        wx.navigateTo({
                           url: `../show/show?id=${id}`
                         });
                         wx.hideLoading();
@@ -155,7 +155,7 @@ Page({
                     //   },
                     // });
                     wx.showLoading({
-                      title: 'Creating your gif...',
+                      title: 'Creating gif...',
                     });
                     wx.uploadFile({
                       // url: 'http://localhost:3000/api/v1/gifs',

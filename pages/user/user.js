@@ -17,11 +17,11 @@ Page({
   },
 
   showGif: function (e) {
-    console.log(e)
     const data = e.currentTarget.dataset;
-    console.log(data);
-    const gifId = data.gif.id;
-    console.log(gifId);
+    const gifId = data.gif;
+    wx.navigateTo({
+      url: `../show/show?id=${gifId}`
+    });
   },
 
   showDeletes: function () {
