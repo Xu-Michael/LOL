@@ -34,10 +34,12 @@
         <!--text class="wxSearchHistoryItemDel" bindtap="wxSearchDeleteAll">删除</text-->
         <icon class="clear-button" type="clear" bindtap="wxSearchDeleteAll" size="14" />
       </view>
-      <view class="wxSearchKeyList">
-        <block wx:for="{{wxSearchData.his}}">
-          <view class="wxSearchKeyItem" bindtap="wxSearchKeyTap" data-key="{{item}}">{{item}}</view>
-        </block>
+      <view class="key-list-container">
+        <view class="wxSearchKeyList">
+          <block wx:for="{{wxSearchData.his}}">
+            <view class="wxSearchKeyItem" bindtap="wxSearchKeyTap" data-key="{{item}}">{{item}}</view>
+          </block>
+        </view>
       </view>
     </view>
 
@@ -45,10 +47,12 @@
       <view wx:if="{{wxSearchData.hotKeys[0]}}" class="wxSearchTitle">
       <image class="popular-search-icon" src="../../image/orange/search.svg"/>
       Popular Searches</view>
-      <view class="wxSearchKeyList">
-        <block wx:for="{{wxSearchData.hotKeys}}">
-          <view class="wxSearchKeyItem" bindtap="wxSearchKeyTap" data-key="{{item}}">{{item}}</view>
-        </block>
+      <view class="key-list-container">
+        <view class="wxSearchKeyList">
+          <block wx:for="{{wxSearchData.hotKeys}}">
+            <view class="wxSearchKeyItem" bindtap="wxSearchKeyTap" data-key="{{item}}">{{item}}</view>
+          </block>
+        </view>
       </view>
     </view>
   </view>

@@ -257,3 +257,8 @@ page {
   margin-top: 40rpx;
   margin-bottom: 40rpx;
 }
+
+.add-button {
+  border: none !important;
+  padding: 0 !important;
+}

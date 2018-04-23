@@ -6,11 +6,11 @@
       <view><image class="avatar-bordered" src="{{gif.user_avatar}}" data-gif="{{gif.gif.user_id}}" bindtap="showUser"/></view>
       <view class="gif-details">
         <view class="collected">
-          <image class="icon-heart" src="../../image/orange/favorite.png"/>
-          {{gif.collection_count}}
+          <image class="icon-heart" src="../../image/orange/favorite.svg"/>
+          {{gif.gif_collection_count}}
         </view>
         <view class="tag collected">
-          <image class="icon-heart" src="../../image/orange/tag2.png"/>
+          <image class="icon-heart" src="../../image/orange/tag.svg"/>
           {{ gif.tag_list }}
         </view>
       </view>
