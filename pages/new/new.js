@@ -3,6 +3,7 @@ var config = require('../../config')
 let Key = ''
 let filePath = ''
 let image_src = 'https://picchain-1256466747.cos.ap-chengdu.myqcloud.com/'
+let user_id
 
 function getRandomColor() {
   let rgb = []
@@ -22,7 +23,7 @@ Page({
     try {
       var user = wx.getStorageSync('user')
       if (user) {
-        const user_id = user.id
+        user_id = user.id
         wx.chooseVideo({
           sourceType: ['album', 'camera'],
           maxDuration: 10,
@@ -45,12 +46,13 @@ Page({
               //   },
               // });
               wx.uploadFile({
-                url: 'http://localhost:3000/api/v1/gifs', //仅为示例，非真实的接口地址
+                // url: 'http://localhost:3000/api/v1/gifs',
+                url: 'https://https://gifme-api.wogengapp.cn/api/v1/gifs',
                 filePath: filePath,
                 name: 'video',
                 method: 'POST',
                 formData: {
-                  user_id: 23
+                  user_id: user_id
                 },
                 success: function (res) {
                   let id = res.data
@@ -116,12 +118,13 @@ Page({
               Key: Key
             });
             wx.uploadFile({
-              url: 'http://localhost:3000/api/v1/gifs', //仅为示例，非真实的接口地址
+              // url: 'http://localhost:3000/api/v1/gifs',
+              url: 'https://gifme-api.wogengapp.cn/api/v1/gifs',
               filePath: filePath,
               name: 'video',
               method: 'POST',
               formData: {
-                user_id: 23
+                user_id: user_id
               },
               success: function (res) {
                 const id = res.data
