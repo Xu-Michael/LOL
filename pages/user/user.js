@@ -33,11 +33,30 @@ Page({
   },
 
   gifDelete: function(e) {
-    const data = e.currentTarget.dataset;
-    console.log(data);
-    const gifId = data.gif.id;
+    const gifId = e.currentTarget.dataset.gif;
     console.log(gifId);
-},
+    wx.showModal({
+      title: 'Delete',
+      content: 'Delete? :(',
+      success: function (res) {
+        if (res.confirm) {
+          wx.request({
+            url: `https://gifme-api.wogengapp.cn/api/v1/gifs/${gifId}`,
+            // url: `http://localhost:3000/api/v1/gifs/${gifId}`,
+            method: 'DELETE',
+            success() {
+              // set data on index page and show
+              wx.reLaunch({
+                url: '../user/user',
+              })
+            }
+          });
+        } else if (res.cancel) {
+          modalHidden: true;
+        }
+      }
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
