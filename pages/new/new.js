@@ -47,7 +47,7 @@ Page({
               // });
               wx.uploadFile({
                 // url: 'http://localhost:3000/api/v1/gifs',
-                url: 'https://https://gifme-api.wogengapp.cn/api/v1/gifs',
+                url: 'https://gifme-api.wogengapp.cn/api/v1/gifs',
                 filePath: filePath,
                 name: 'video',
                 method: 'POST',
