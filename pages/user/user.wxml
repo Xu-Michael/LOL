@@ -41,7 +41,7 @@
 
       <view class="gif-details">
         <view class="collected">
-          <image class="icon-heart" data-gif="{{gif.id}}" bindtap="collect" src="../../image/orange/favorite.svg"/>
+          <image class="icon-heart" data-gif="{{gif}}" bindtap="collect" src="../../image/orange/favorite.svg"/>
           {{ gif.collection_count}}
         </view>
         <view class="tag collected">
