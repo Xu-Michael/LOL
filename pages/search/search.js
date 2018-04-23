@@ -1,6 +1,5 @@
 //index.js
 var WxSearch = require('../../wxSearchView/wxSearchView.js');
-let top_ten = [];
 
 Page({
   data: {},
@@ -8,6 +7,7 @@ Page({
   // 搜索栏
   onLoad: function () {
     let that = this;
+    let top_ten = [];
     wx.request({
       url: `https://gifme-api.wogengapp.cn/api/v1/gifs`,
       method: 'GET',
@@ -19,14 +19,16 @@ Page({
         that.setData({
           top_ten: top_ten
         });
+        WxSearch.init(
+          that,  // 本页面一个引用
+          top_ten, // 热点搜索推荐，[]表示不使用
+          [],// 搜索匹配，[]表示不使用
+          that.mySearchFunction, // 提供一个搜索回调函数
+          that.myGobackFunction //提供一个返回回调函数
+        );
       }
     });
-    WxSearch.init(
-      that,  // 本页面一个引用
-      top_ten,// 搜索匹配，[]表示不使用
-      that.mySearchFunction, // 提供一个搜索回调函数
-      that.myGobackFunction //提供一个返回回调函数
-    );
+  
   },
 
   // 转发函数,固定部分
