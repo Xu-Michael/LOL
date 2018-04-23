@@ -45,6 +45,9 @@ Page({
               //     console.log(JSON.stringify(info));
               //   },
               // });
+              wx.showLoading({
+                title: 'Creating your hilarious gif...',
+              });
               wx.uploadFile({
                 // url: 'http://localhost:3000/api/v1/gifs',
                 url: 'https://gifme-api.wogengapp.cn/api/v1/gifs',
@@ -59,6 +62,7 @@ Page({
                   wx.redirectTo({
                     url: `../show/show?id=${id}`
                   });
+                  wx.hideLoading();
                 }
               })
               // wx.redirectTo({
