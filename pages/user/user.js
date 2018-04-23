@@ -74,10 +74,12 @@ Page({
           success(res) {
             if (res.statusCode == 200) {
               const user = res.data;
+              const user_gifs = user.users_gifs
               console.log(res)
               // Update local data
               page.setData({
-                user: user
+                user: user,
+                gifs: user_gifs
               });
               wx.hideToast();
             } else {
