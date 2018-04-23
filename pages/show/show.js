@@ -171,30 +171,13 @@ Page({
             }
             console.log(a)
             console.log(options.id)
-            console.log(5)
             let numberfy = Number(options.id)
 
             if (a.includes(numberfy)) {
               page.setData({collectioncheck: true})
-              console.log("fail")
             } else {
               page.setData({collectioncheck: false})
-              console.log("success")
             }
-
-            //   var cache = wx.getStorageSync('gif');
-            //   console.log(cache)
-            //   if (cache) {
-            //     var currentCache = cache[getId];
-            //     this.setData({
-            //       collectioncheck: currentCache
-            //     })
-            //   } else {
-            //     collectioncheck: false;
-            // var cache = {};
-            // cache[getId] = false;
-            // wx.setStorageSync('cache_key',cache);
-            //   }
           }
     });
   },
