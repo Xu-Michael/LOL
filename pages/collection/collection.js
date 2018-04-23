@@ -99,13 +99,19 @@ Page({
     }
   },
   showUser: function (e) {
-    console.log(e);
     let data = e.currentTarget.dataset;
-    console.log(data)
-    const userId = data.gif.user_id;
-    wx.navigateTo({
-      url: `../user/user?id=${userId}`
-    });
+    const userId = data.gif.gif.user_id;
+    console.log(userId)
+    let current_user = wx.getStorageSync('user')
+    if (userId == current_user.id) {
+      wx.switchTab({
+        url: `../user/user`
+      });
+    } else {
+      wx.navigateTo({
+        url: `../otheruser/otheruser?id=${userId}`
+      });
+    }
   },
   showGif: function (e) {
     console.log(e);
