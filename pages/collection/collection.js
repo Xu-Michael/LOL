@@ -29,13 +29,17 @@ Page({
           // url: `http://localhost:3000/api/v1/users/${user.id}/collections`,
           method: 'GET',
           success(res) {
-            console.log(res)
-            const gifs = res.data.collections;
-            console.log(gifs)
-            page.setData({
-              gifs: gifs
-            });
-            wx.hideToast();
+            if (res.statusCode == 200) {
+              const gifs = res.data.collections;
+              page.setData({
+                gifs: gifs
+              });
+              wx.hideToast();
+            } else {
+              wx.reLaunch({
+                url: '../login/login'
+              });
+            }
           }
         });
       } else {
