@@ -31,9 +31,17 @@ Page({
     console.log(e);
     let data = e.currentTarget.dataset;
     const userId = data.gif.user_id;
-    wx.navigateTo({
-      url: `../user/user?id=${userId}`
-    });
+    console.log(userId)
+    let current_user = wx.getStorageSync('user')
+    if (userId == current_user.id) {
+      wx.switchTab({
+        url: `../user/user`
+      });
+    } else {
+      wx.navigateTo({
+        url: `../otheruser/otheruser?id=${userId}`
+      });
+    }
   },
 
   collect: function (e) {

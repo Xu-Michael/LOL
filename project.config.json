@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 7,
 			"list": [
 				{
 					"id": 0,
@@ -101,6 +101,12 @@
 					"id": -1,
 					"name": "create show",
 					"pathName": "pages/createshow/createshow",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "Other User",
+					"pathName": "pages/otheruser/otheruser",
 					"query": ""
 				}
 			]
