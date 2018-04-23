@@ -20,7 +20,7 @@
     <!-- 搜索提示部分 -->
     <view class="wxSearchMindKey">
       <view class="wxSearchMindKeyList">
-        <block wx:for="{{wxSearchData.tipKeys}}">
+        <block wx:for="{{wxSearchData.tipKeys}}" wx:key="{{item.id}}">
           <view class="wxSearchMindKeyItem" bindtap="wxSearchKeyTap" data-key="{{item}}">{{item}}</view>
         </block>
       </view>
@@ -36,7 +36,7 @@
       </view>
       <view class="key-list-container">
         <view class="wxSearchKeyList">
-          <block wx:for="{{wxSearchData.his}}">
+          <block wx:for="{{wxSearchData.his}}" wx:key="item">
             <view class="wxSearchKeyItem" bindtap="wxSearchKeyTap" data-key="{{item}}">{{item}}</view>
           </block>
         </view>
@@ -49,7 +49,7 @@
       Popular Searches</view>
       <view class="key-list-container">
         <view class="wxSearchKeyList">
-          <block wx:for="{{wxSearchData.hotKeys}}">
+          <block wx:for="{{wxSearchData.hotKeys}}" wx:key="item">
             <view class="wxSearchKeyItem" bindtap="wxSearchKeyTap" data-key="{{item}}">{{item}}</view>
           </block>
         </view>
