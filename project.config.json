@@ -11,6 +11,11 @@
 	"libVersion": "1.9.94",
 	"appid": "wxd60d84913b2a9b43",
 	"projectname": "Gifme",
+	"svr": "",
+	"client": "",
+	"qcloudRoot": "",
+	"miniprogramRoot": "",
+	"pluginRoot": "",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -25,11 +30,10 @@
 			"list": []
 		},
 		"game": {
-			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 5,
 			"list": [
 				{
 					"id": 0,
