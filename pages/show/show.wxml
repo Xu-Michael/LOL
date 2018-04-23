@@ -12,7 +12,7 @@
         <view class="collectheader flex">
           <view class="heart-collected flex">
             <image wx:if="{{collectioncheck == true}}" class="icon-heart" src="../../image/orange/favorite.png"/>
-            <image wx:else class="icon-heart" bindtap="collect" src="../../image/white/favorite.png"/>
+            <image wx:else class="icon-heart" bindtap="collect" data-gif="{{gif}}" src="../../image/white/favorite.png"/>
             <view class="collectnum">{{gif.collection_count}}</view>
           </view>
           <view class="other-buttons flex">
