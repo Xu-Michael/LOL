@@ -80,10 +80,14 @@ function wxSearchInput(e) {
 // 清空输入
 function wxSearchClear() {
   // 页面数据
+  wx.reLaunch({
+    url: '../search/search',
+  })
   var temData = __that.data.wxSearchData;
   // 更新数据
   temData.value = "";
   temData.tipKeys = [];
+
   // 更新视图
   __that.setData({
     wxSearchData: temData
