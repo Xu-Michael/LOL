@@ -102,6 +102,12 @@
 					"name": "create show",
 					"pathName": "pages/createshow/createshow",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "Other User",
+					"pathName": "pages/otheruser/otheruser",
+					"query": ""
 				}
 			]
 		}

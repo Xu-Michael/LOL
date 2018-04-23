@@ -17,7 +17,7 @@
     <view class="gif-container" wx:for="{{gifs_new}}" wx:for-item="gif" wx:key="gif.id">
       <view class="card" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('{{gif.image}}') ;" data-gif="{{gif.id}}" bindtap="showGif"></view>
       <!-- <view class="avatar" style="background-image: url('{{gif.user_avatar}}') ;" data-gif="{{gif.user_id}}" bindtap="showUser"></view> -->
-      <view><image class="avatar-bordered" src="{{gif.user_avatar}}" data-gif="{{gif.user_id}}" bindtap="showUser"/></view>
+      <view><image class="avatar-bordered" src="{{gif.user_avatar}}" data-gif="{{gif}}" bindtap="showUser"/></view>
       <view class="gif-details">
         <view class="collected">
           <image class="icon-heart" data-gif="{{gif}}" bindtap="collect" src="../../image/orange/favorite.svg"/>
