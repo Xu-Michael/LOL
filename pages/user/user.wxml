@@ -13,7 +13,7 @@
       <label class="lf--label flex" for="tag">
         <image class="add-tag" src="../../image/orange/favorite.png"/>
       </label>
-      <view class="totalc flex">{{user}}</view>
+      <view class="totalc flex">{{user.user_collection_count}}</view>
     </view>
 
   </view>
