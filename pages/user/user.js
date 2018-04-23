@@ -48,20 +48,24 @@ Page({
     try {
       var user = wx.getStorageSync('user')
       if (user) {
-        const user_id = user.id
         wx.request({
           url: `https://gifme-api.wogengapp.cn/api/v1/users/${user.id}`,
           // url: `http://localhost:3000/api/v1/users/${user.id}`,
           method: 'GET',
           success(res) {
-            const user = res.data;
-            console.log(user)
-            // Update local data
-            page.setData({
-              user: user
-            });
-
-            wx.hideToast();
+            if (res.statusCode == 200) {
+              const user = res.data;
+              console.log(res)
+              // Update local data
+              page.setData({
+                user: user
+              });
+              wx.hideToast();
+            } else {
+              wx.reLaunch({
+                url: '../login/login'
+              });
+            }
           }
         });
       } else {
