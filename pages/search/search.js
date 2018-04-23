@@ -1,16 +1,29 @@
 //index.js
 var WxSearch = require('../../wxSearchView/wxSearchView.js');
+let top_ten = [];
 
 Page({
   data: {},
 
   // 搜索栏
   onLoad: function () {
-    var that = this;
+    let that = this;
+    wx.request({
+      url: `https://gifme-api.wogengapp.cn/api/v1/gifs`,
+      method: 'GET',
+      success(res) {
+        console.log(res)
+        let top_ten_obj = res.data.top_ten_tags;
+        top_ten_obj.forEach(function (tag) { top_ten.push(tag.name); }),
+        // Update local data
+        that.setData({
+          top_ten: top_ten
+        });
+      }
+    });
     WxSearch.init(
       that,  // 本页面一个引用
-      ['Le Wagon', 'Shanghai', "coding", "funny", 'dance', 'dog', "cat", 'stupid cat', 'gifme', 'xnode'], // 热点搜索推荐，[]表示不使用
-      ['杭州', '嘉兴', "海宁", "桐乡", '宁波', '金华', "绍兴", '上海', '苏州', '无锡', '常州', "南京", "济南", "长沙", "北京", "广州", '厦门', "香港", "澳门", "深圳"],// 搜索匹配，[]表示不使用
+      top_ten,// 搜索匹配，[]表示不使用
       that.mySearchFunction, // 提供一个搜索回调函数
       that.myGobackFunction //提供一个返回回调函数
     );
@@ -40,7 +53,6 @@ Page({
         page.setData({
           tagged_gifs: tagged_gifs
         });
-        
       }
     });
     wx.redirectTo({
