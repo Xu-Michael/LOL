@@ -7,10 +7,10 @@
   <view class="user-container">
     <view class="avatar-header">
       <image class="avatar" src='{{user.avatar}}'/>
-      <view class="name">{{user.name}}</view>
     </view>
-    <view class="flex-row">
-      <view class="totalc flex">Gifs collected {{user.user_collection_count}} times</view>
+    <view class="user-details">
+      <view class="name-row">{{user.name}}</view>
+      <view class="collected-row">Gifs collected {{user.user_collection_count}} times</view>
     </view>
   <!-- <image wx:if="{{deleteflag == false}}" src="../../image/icon-trash.png" id="trash" bindtap="showDeletes"/>
   <image wx:else src="../../image/icon-trash.png" id="trashopen" bindtap="hideDeletes"/> -->
