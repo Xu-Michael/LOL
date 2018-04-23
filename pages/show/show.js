@@ -15,7 +15,8 @@ Page({
   scrollTop: 100,
   scrollLeft: 0,
   flag: true,
-  collectioncheck: false
+  collectioncheck: false,
+  numberup: false
   },
 
   onShareAppMessage: function () {
@@ -39,6 +40,7 @@ Page({
     let data = e.currentTarget.dataset;
     let page = this;
     page.setData({collectioncheck: true})
+    page.setData({numberup: true})
     try {
       var user = wx.getStorageSync('user')
       if (user) {
