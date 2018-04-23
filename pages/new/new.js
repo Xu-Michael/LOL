@@ -55,7 +55,7 @@ Page({
                 name: 'video',
                 method: 'POST',
                 formData: {
-                  user_id: 23
+                  user_id: user_id
                 },
                 success: function (res) {
                   let id = res.data
