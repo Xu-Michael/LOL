@@ -11,11 +11,13 @@
 
         <view class="collectheader flex">
           <view class="heart-collected flex">
-            <image class="icon-heart" src="../../image/white/favorite.png"/>
-            <view class="collectnum">{{gif.collection_count}}</view>
+            <image wx:if="{{collectioncheck == true}}" class="icon-heart" src="../../image/orange/favorite.png"/>
+            <image wx:else class="icon-heart" bindtap="collect" data-gif="{{gif}}" src="../../image/white/favorite.png"/>
+            <view if wx:if="{{numberup == false}}" class="collectnum">{{gif.collection_count}}</view>
+            <view if wx:else class="collectnum">{{gif.collection_count + 1}}</view>
           </view>
           <view class="other-buttons flex">
-            <image class="icon-heart" bindtap="editGif" data-id="{{id}}" src="../../image/white/draw.png"/>
+            <image if class="icon-heart" bindtap="editGif" data-id="{{id}}" src="../../image/white/draw.png"/>
             <button class="share-button" open-type="share" plain="true">
               <image class="icon-share" src="../../image/white/share.png"></image>
             </button>
