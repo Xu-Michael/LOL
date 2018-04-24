@@ -76,6 +76,7 @@ Page({
                 console.log(e)
                 // set data on index page and show
               }
+
             });
           }
         });
@@ -102,6 +103,15 @@ Page({
       method: 'GET',
       success(res) {
         console.log(res)
+        page.setData(res.data)
+        // console.log(page.data.gifs)
+        let gifs = page.data.gifs
+        gifs = gifs.map(g => {
+          g["collectGifIcon"] = false
+          return g
+        })
+        page.setData({gifs: gifs})
+
         const gifs_trending = res.data.gifs_by_collections;
         const gifs_new = res.data.gifs_by_new;
         // gifs_new.forEach((gif) => {
