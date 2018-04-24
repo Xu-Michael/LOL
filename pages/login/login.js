@@ -62,7 +62,9 @@ Page({
   },
 
   cancel: function() {
-
+    wx.switchTab({
+      url: '../index/index',
+    })
   },
 
   /**

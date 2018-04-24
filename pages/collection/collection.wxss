@@ -1,6 +1,10 @@
 @import "../../wxSearchView/wxSearchView.wxss";
 
 /* Cards */
+.collection-header {
+  text-align: center;
+}
+
  .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -139,8 +143,6 @@
   background: #FC5736;  
 }  
 
-.weui-icon-search_in-box {
-  position: absolute;
-  left: 10px;
-  top: 7px;
+.collection-search {
+  width: 100%;
 }

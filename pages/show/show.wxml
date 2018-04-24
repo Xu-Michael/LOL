@@ -7,97 +7,32 @@
         {{ collected }}
       </view> -->
       <!-- <view class="details-container"> -->
-        </view>
-
-        <view class="collectheader flex">
-          <view class="heart-collected flex">
-            <image wx:if="{{collectioncheck == true}}" class="icon-heart" src="../../image/orange/favorite.png"/>
-            <image wx:else class="icon-heart" bindtap="collect" data-gif="{{gif}}" src="../../image/white/favorite.png"/>
-            <view if wx:if="{{numberup == false}}" class="collectnum">{{gif.collection_count}}</view>
-            <view if wx:else class="collectnum">{{gif.collection_count + 1}}</view>
-          </view>
-          <view class="other-buttons flex">
-            <image if class="icon-heart" bindtap="editGif" data-id="{{id}}" src="../../image/white/draw.png"/>
-            <button class="share-button" open-type="share" plain="true">
-              <image class="icon-share" src="../../image/white/share.png"></image>
-            </button>
-          </view>
-          </view>
-
-        <!-- <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%"> -->
-          <!-- <view class="flexleft"> -->
-
-          <view class="tagcontainer margin-top wrap">
-          <view class="leadicon flex tag-space">
-            <image class="icon-heart" src="../../image/orange/tag2.png"/>
-          </view>
-          <view wx:for="{{gif.tags}}" wx:for-item="tag" wx:key="tag.id" class="scroll-view-item_H">
-            <view>{{tag.name}}</view>
-            </view>
-          </view>
-          <!-- </view> -->
-
-        <!-- </scroll-view> -->
-
-
-          <!-- <view class="borderbox" /> -->
-
-
-
-    <!-- <view class="button-container flex">
-      <view class="submit-button" bindtap="editGif" data-id="{{id}}">
-        Add to Collection
-      </view>
-      <view class="submit-button" bindtap="deleteGif" data-id="{{id}}">
-        Send to Chat
-      </view>
-      <view class="submit-button">
-        Save To Phone
-      </view>
-      <view class="submit-button">
-        Add Tag
-      </view>
-    </view> -->
-
-    <!-- <view class="button-container2 flex">
-
-      <view class="submit-button flex-c flex mod" bindtap="editGif" data-id="{{id}}">
-      <view class="button-icon flex">
-      <image class="icon-heart" src="../../image/orange/favorite.png"/>
-      +
-      </view>
-      <view>Collect</view>
-    </view>
-    <view class="submit-button flex-c flex mod" bindtap="editGif" data-id="{{id}}">
-      <view class="button-icon flex">
-      <image class="icon-heart" src="../../image/orange/favorite.png"/>
-      +
-      </view>
-      <view>Send</view>
     </view>
 
-    <view class="submit-button flex-c flex mod" bindtap="editGif" data-id="{{id}}">
-      <view class="button-icon flex">
-      <image class="icon-heart" src="../../image/orange/tag2.png"/>
-      +
+    <view class="collectheader flex">
+      <view class="heart-collected flex">
+        <image wx:if="{{collectioncheck == true}}" class="icon-heart" src="../../image/orange/favorite.svg"/>
+        <image wx:else class="icon-heart" bindtap="collect" data-gif="{{gif}}" src="../../image/white/favorite.svg"/>
+        <view if wx:if="{{numberup == false}}" class="collectnum">{{gif.collection_count}}</view>
+        <view if wx:else class="collectnum">{{gif.collection_count + 1}}</view>
       </view>
-      <view>Add Tag</view>
+
+      <view class="other-buttons flex">
+        <image if class="icon-heart" bindtap="editGif" data-id="{{id}}" src="../../image/white/draw.svg"/>
+        <button class="share-button" open-type="share" plain="true">
+          <image class="icon-share" src="../../image/white/share.svg"></image>
+        </button>
+      </view>
     </view>
 
-
-    </view> -->
-
-
-
-
-
-
-
+    <view class="tagcontainer margin-top wrap">
+      <view class="leadicon flex tag-space">
+        <image class="icon-heart" src="../../image/orange/tag.svg"/>
+      </view>
+      <view wx:for="{{gif.tags}}" wx:for-item="tag" wx:key="tag.id" class="scroll-view-item_H">
+        <view>{{tag.name}}</view>
+      </view>
+    </view>
+  </view>
 </view>
-</view>
-
-
-
-
-
 
