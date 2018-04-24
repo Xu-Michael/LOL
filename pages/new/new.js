@@ -4,6 +4,7 @@ let Key = ''
 let filePath = ''
 let image_src = 'https://picchain-1256466747.cos.ap-chengdu.myqcloud.com/'
 let user_id
+let db_user
 
 function getRandomColor() {
   let rgb = []
@@ -29,7 +30,7 @@ Page({
           method: 'GET',
           success(res) {
             if (res.statusCode == 200) {
-              const user = res.data;
+              db_user = res.data;
               wx.chooseVideo({
                 sourceType: ['album', 'camera'],
                 maxDuration: 10,
@@ -42,38 +43,6 @@ Page({
                       src: filePath,
                       Key: Key
                     });
-                    // cos_utils.cos.postObject({
-                    //   Bucket: config.Bucket,
-                    //   Region: config.Region,
-                    //   Key: Key,
-                    //   FilePath: filePath,
-                    //   onProgress: function (info) {
-                    //     console.log(JSON.stringify(info));
-                    //   },
-                    // });
-                    wx.showLoading({
-                      title: 'Creating gif...',
-                    });
-                    wx.uploadFile({
-                      // url: 'http://localhost:3000/api/v1/gifs',
-                      url: 'https://gifme-api.wogengapp.cn/api/v1/gifs',
-                      filePath: filePath,
-                      name: 'video_upload',
-                      method: 'POST',
-                      formData: {
-                        user_id: user.id
-                      },
-                      success: function (res) {
-                        let id = res.data
-                        wx.navigateTo({
-                          url: `../show/show?id=${id}`
-                        });
-                        wx.hideLoading();
-                      }
-                    })
-                    // wx.redirectTo({
-                    //   url: `../generating/generating?key=${Key}&user_id=${user_id}`
-                    // });
                   } else {
                     wx.showModal({
                       content: "Please retake in landscape mode :)",
@@ -111,16 +80,21 @@ Page({
       console.log(e)
     }
   },
+
   onReady: function (res) {
     this.videoContext = wx.createVideoContext('myVideo')
   },
+
   inputValue: '',
+  
   data: {
     src: ''
   },
+
   bindInputBlur: function (e) {
     this.inputValue = e.detail.value
   },
+
   bindButtonTap: function () {
     var page = this
     try {
@@ -132,7 +106,7 @@ Page({
           method: 'GET',
           success(res) {
             if (res.statusCode == 200) {
-              const user = res.data;
+              db_user = res.data;
               wx.chooseVideo({
                 sourceType: ['album', 'camera'],
                 maxDuration: 10,
@@ -144,39 +118,7 @@ Page({
                     page.setData({
                       src: filePath,
                       Key: Key
-                    });
-                    // cos_utils.cos.postObject({
-                    //   Bucket: config.Bucket,
-                    //   Region: config.Region,
-                    //   Key: Key,
-                    //   FilePath: filePath,
-                    //   onProgress: function (info) {
-                    //     console.log(JSON.stringify(info));
-                    //   },
-                    // });
-                    wx.showLoading({
-                      title: 'Creating gif...',
-                    });
-                    wx.uploadFile({
-                      // url: 'http://localhost:3000/api/v1/gifs',
-                      url: 'https://gifme-api.wogengapp.cn/api/v1/gifs',
-                      filePath: filePath,
-                      name: 'video_upload',
-                      method: 'POST',
-                      formData: {
-                        user_id: user.id
-                      },
-                      success: function (res) {
-                        let id = res.data
-                        wx.redirectTo({
-                          url: `../show/show?id=${id}`
-                        });
-                        wx.hideLoading();
-                      }
-                    })
-                    // wx.redirectTo({
-                    //   url: `../generating/generating?key=${Key}&user_id=${user_id}`
-                    // });
+                    });                   
                   } else {
                     wx.showModal({
                       content: "Please retake in landscape mode :)",
@@ -213,6 +155,29 @@ Page({
     } catch (e) {
       console.log(e)
     }
+  },
+
+  submitVideo: function () {
+    wx.showLoading({
+      title: 'Creating gif...',
+    });
+    wx.uploadFile({
+      // url: 'http://localhost:3000/api/v1/gifs',
+      url: 'https://gifme-api.wogengapp.cn/api/v1/gifs',
+      filePath: filePath,
+      name: 'video_upload',
+      method: 'POST',
+      formData: {
+        user_id: db_user.id
+      },
+      success: function (res) {
+        let id = res.data
+        wx.switchTab({
+          url: `../user/user`
+        });
+        wx.hideLoading();
+      }
+    });
   },
 
   bindSendDanmu: function () {

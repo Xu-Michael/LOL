@@ -46,9 +46,63 @@ page {
   padding: 30rpx;
   background: white; 
   border: 0 !important;
-  color: #;
   cursor: pointer;
   font-size: 35rpx;
   text-shadow: 0 1px 0 rgba(black, .2);
   border-radius: 5rpx;
+}
+
+.flex-row {
+  display: flex;
+  margin: 60rpx;
+  margin-bottom: 20rpx;
+  border-radius: 5rpx;
+}
+
+.flex-row-buttons {
+  display: flex;
+  margin-bottom: 1em;
+  margin: 70rpx;
+  justify-content: center;
+  align-items: center;
+}
+
+.lf--label {
+  width: 120rpx;
+  /* border-right: 1px solid rgba(252, 87, 54, .9);  */
+  /* background: linear-gradient(
+  160deg, rgba(252, 87, 54, .9),rgba(253, 120, 90, .9)); */
+  background-color: #fff;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.lf--input {
+  flex: 1;
+  padding: 1em;
+  border: 0;
+  color: #8f8f8f;
+  font-size: 1rem;
+  background: white;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.icon-heart {
+  height: 60rpx;
+  width: 60rpx;
+  padding: 10rpx;
+  border-radius: 50rpx;
+  margin: 0;
+}
+
+.add-button {
+  border: none !important;
+  padding: 0 !important;
+}
+
+::placeholder { color: #8f8f8f; }
+
+.p {
+  font-size: 30rpx;
 }
