@@ -75,7 +75,23 @@ Page({
             if (res.statusCode == 200) {
               const user = res.data;
               const user_gifs = user.users_gifs
-              console.log(res)
+              // console.log(res.data);
+
+              const usergifs = res.data.users_gifs;
+              var i;
+              var a = []
+              for (i in usergifs) {
+              // console.log(usergifs[i].collection_count);
+              a.push(usergifs[i].collection_count);
+              console.log(a)
+              var total=0;
+              for(var i in a) { total += a[i]; }
+              // console.log(total)
+              // return total
+            }
+            page.setData({totalscore: total});
+            // console.log(totalscore)
+
               // Update local data
               page.setData({
                 user: user,
@@ -97,6 +113,7 @@ Page({
     } catch (e) {
       console.log(e)
     }
+
   },
 
   /**

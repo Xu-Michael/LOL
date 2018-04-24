@@ -98,6 +98,7 @@ Page({
       // url: "http://localhost:3000/api/v1/gifs",
       method: 'GET',
       success(res) {
+        console.log(res)
         const gifs_trending = res.data.gifs_by_collections;
         const gifs_new = res.data.gifs_by_new;
         // Update local data
