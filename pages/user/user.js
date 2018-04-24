@@ -112,8 +112,8 @@ Page({
       var user = wx.getStorageSync('user')
       if (user) {
         wx.request({
-          url: `https://gifme-api.wogengapp.cn/api/v1/users/${user.id}`,
-          // url: `http://localhost:3000/api/v1/users/${user.id}`,
+          url: `https://gifme-api.wogengapp.cn/api/v1/users/${user.id}?current_user_id=${user.id}`,
+          // url: `http://localhost:3000/api/v1/users/${user.id}?current_user_id=${user.id}`,
           method: 'GET',
           success(res) {
             if (res.statusCode == 200) {
