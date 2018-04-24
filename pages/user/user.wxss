@@ -1,23 +1,15 @@
 .user-container {
-  height: 200rpx;
+  height: 200rpx; 
   box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.35);
   color: rgba(252, 87, 54, .9);
   padding-bottom: 20rpx;
   /* display: flex;
   justify-content: center;
   align-items: center; */
-  position: relative;
-}
-
-.avatar-header {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  position: absolute;
-  left: 60rpx;
-  width: 200rpx;
-  height: 200rpx;
+  position: relative;
 }
 
 .avatar {
@@ -66,7 +58,6 @@
 
 #trash {
   position: absolute;
-  position: absolute;
   top:197rpx;
   right:26rpx;
   height: 40rpx;
@@ -100,9 +91,19 @@
 }
 
 .name-row {
-  font-size: 50rpx;
-  margin: 0 0 10rpx 20rpx;
+  font-size: 35rpx;
+  /* margin: 0 0 10rpx 20rpx; */
   color: #a1a0a0;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  position:fixed;
+  left: 338rpx;
+  top: 10rpx;
+}
+
+.user-name {
+  font-size: 40rpx;
 }
 
 .text-align {
@@ -207,25 +208,55 @@
 .user-details {
   display: flex;
   color: rgba(252, 87, 54, .9);
-  position: absolute;
+  /* position: absolute;
   right: 100rpx;
-  bottom: 40rpx;
+  bottom: 40rpx; */
   flex-direction: column;
   justify-content: center;
-  align-items: left;
+  align-items: center;
+  position: fixed;
+  left: 100rpx;
 }
 
-.collected-row {
+.user-stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.gif-stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  right: 130rpx;
+  top: 85rpx;
+}
+
+.gif-collected {
   /* border: 1px solid rgba(252, 87, 54, .9);
   border-bottom: 1px solid rgba(253, 120, 90, .9); */
-  border-radius: 5px;
   font-size: 35rpx;
-  padding: 0 20rpx 5rpx 20rpx;
-  margin: 15rpx;
-  background: linear-gradient(
-  160deg, rgba(252, 87, 54, .9),rgba(253, 120, 90, .9)); 
+  padding: 0 60rpx 0 60rpx;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
+
+.number-collected {
+  color: #FC5726;
+  font-size: 40rpx;
+}
+
+.collected-status {
+  color: #a1a0a0;
+  font-size: 30rpx;
+}
+
 
 .flex-row2 {
     display: flex;
@@ -235,9 +266,9 @@
     border-radius: 5px;
     font-size: 28rpx;
     color: rgba(252, 87, 54, .9);
-    position: absolute;
+    /* position: absolute;
     right: 150rpx;
-    bottom: 90rpx;
+    bottom: 90rpx; */
   }
 
   .add-tag {
@@ -259,6 +290,12 @@
   height: 50rpx;
   width: 50rpx;
   padding: 10rpx;
+}
+
+.icon-crown {
+  height: 40rpx;
+  width: 40rpx;
+  margin-left: 30rpx;
 }
 
 .gif-image {
