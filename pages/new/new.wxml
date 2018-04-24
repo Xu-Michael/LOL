@@ -4,18 +4,20 @@
     <view class="h3">Create your Gif!</view>
   </block>
   <block wx:if="{{src != ''}}">
-    <video bindtap='bindButtonTap' controls="{{false}}" autoplay loop src="{{src}}" class="video"></video>
-    <view class="h3">Click video to retake</view>
-    <view class="flex-row">
-      <input id="content" class='lf--input' name="content" placeholder='happy, funny, cat' type='text'/>
-      <label class="lf--label flex" for="tag">
-      <button class="add-button flex" form-type="submit" plain="true">
-        <image class="icon-heart" src="../../image/orange/tag.svg"/></button>
-      </label>
-    </view>
-    <view class="p">Seperate each tag with commas</view>
+    <form class='login-form' bindsubmit="bindSubmit">
+      <video bindtap='bindButtonTap' controls="{{false}}" autoplay loop src="{{src}}" class="video"></video>
+      <view class="h3">Click video to retake</view>
+      <view class="flex-row">
+        <label class="lf--label flex" for="tag">
+        <button class="add-button flex" form-type="submit" plain="true">
+          <image class="icon-heart" src="../../image/orange/tag.svg"/></button>
+        </label>
+        <input id="content" class='lf--input' name="content" placeholder='happy, funny, cat' type='text'/>
+      </view>
+      <view class="p">Seperate each tag with commas</view>
+      <view class="highlight-button">
+        <button class="login-button" form-type="submit">Post Your Gif</button>
+      </view>
+    </form>
   </block>
-  <view class="highlight-button">
-    <view class="login-button" bindtap='submitVideo'>Post Your Gif</view>
-  </view>
 </view>

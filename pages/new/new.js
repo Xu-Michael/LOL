@@ -85,8 +85,38 @@ Page({
     this.videoContext = wx.createVideoContext('myVideo')
   },
 
+  onShow: function () {
+    var animation = wx.createAnimation({
+      duration: 1000,
+      timingFunction: 'ease',
+    });
+
+    this.animation = animation;
+
+    animation.scale(2, 2).rotate(45).step();
+
+    this.setData({
+      animationData: animation.export()
+    });
+
+    setTimeout(function () {
+      animation.translate(30).step()
+      this.setData({
+        animationData: animation.export()
+      })
+    }.bind(this), 1000)
+  },
+
+  rotateAndScale: function () {
+    // Rotate and zoom at the same time
+    this.animation.rotateZ(180).scale(0.5, 1).step()
+    this.setData({
+      animationData: this.animation.export()
+    });
+  },
+
   inputValue: '',
-  
+
   data: {
     src: ''
   },
@@ -157,27 +187,36 @@ Page({
     }
   },
 
-  submitVideo: function () {
-    wx.showLoading({
-      title: 'Creating gif...',
-    });
-    wx.uploadFile({
-      // url: 'http://localhost:3000/api/v1/gifs',
-      url: 'https://gifme-api.wogengapp.cn/api/v1/gifs',
-      filePath: filePath,
-      name: 'video_upload',
-      method: 'POST',
-      formData: {
-        user_id: db_user.id
-      },
-      success: function (res) {
-        let id = res.data
-        wx.switchTab({
-          url: `../user/user`
-        });
-        wx.hideLoading();
-      }
-    });
+  bindSubmit: function (e) {
+    const input_tag = e.detail.value.content
+    if (input_tag == '') {
+      wx.showModal({
+        title: 'Tags Required',
+        content: 'Please add 1 or more tags to post your gif :)',
+      });
+    } else {
+      wx.showLoading({
+        title: 'Creating gif...',
+      });
+      wx.uploadFile({
+        // url: 'http://localhost:3000/api/v1/gifs',
+        url: 'https://gifme-api.wogengapp.cn/api/v1/gifs',
+        filePath: filePath,
+        name: 'video_upload',
+        method: 'POST',
+        formData: {
+          user_id: db_user.id,
+          tags: input_tag
+        },
+        success: function (res) {
+          let id = res.data
+          wx.switchTab({
+            url: `../user/user`
+          });
+          wx.hideLoading();
+        }
+      });
+    }
   },
 
   bindSendDanmu: function () {
