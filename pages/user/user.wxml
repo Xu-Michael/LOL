@@ -10,10 +10,10 @@
       <view class="name">{{user.name}}</view>
     </view>
     <view class="flex-row">
-      <view class="totalc flex">Gifs collected {{user.user_collection_count}} times</view>
+      <view class="totalc flex">You collected {{user.user_collection_count}} Gifs</view>
     </view>
     <view class="flex-row2">
-      <view class="totalc flex">Gifs collected {{totalscore}} times</view>
+      <view class="totalc flex">Gifs collected {{totalscore}} times by other users</view>
     </view>
   <!-- <image wx:if="{{deleteflag == false}}" src="../../image/icon-trash.png" id="trash" bindtap="showDeletes"/>
   <image wx:else src="../../image/icon-trash.png" id="trashopen" bindtap="hideDeletes"/> -->
