@@ -60,6 +60,9 @@ Page({
             page.setData({
               user: user
             });
+            this.setData({
+              colorheart: true
+            });
 
             wx.hideToast();
             const collection = {
