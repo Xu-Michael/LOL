@@ -19,7 +19,6 @@ Page({
   },
 
   showGif: function (e) {
-    console.log(e);
     const data = e.currentTarget.dataset;
     const gifId = data.gif;
     wx.navigateTo({
@@ -28,7 +27,6 @@ Page({
   },
 
   showUser: function (e) {
-    console.log(e);
     let data = e.currentTarget.dataset;
     const userId = data.gif.user_id;
     let current_user = wx.getStorageSync('user')

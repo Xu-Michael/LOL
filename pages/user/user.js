@@ -17,11 +17,54 @@ Page({
   },
 
   showGif: function (e) {
-    console.log(e)
     const data = e.currentTarget.dataset;
-    console.log(data);
-    const gifId = data.gif.id;
-    console.log(gifId);
+    const gifId = data.gif;
+    wx.navigateTo({
+      url: `../show/show?id=${gifId}`
+    });
+  },
+  collect: function (e) {
+    let data = e.currentTarget.dataset;
+    let page = this;
+    try {
+      var user = wx.getStorageSync('user')
+      if (user) {
+        const current_user_id = user.id
+        wx.request({
+          url: `https://gifme-api.wogengapp.cn/api/v1/users/${user.id}`,
+          // url: `http://localhost:3000/api/v1/users/${current_user_id}`,
+          method: 'GET',
+          success(res) {
+            const user = res.data;
+            // Update local data
+            page.setData({
+              user: user
+            });
+            wx.hideToast();
+            const collection = {
+              user_id: current_user_id,
+              gif_id: data.gif.id
+            };
+            wx.request({
+              url: `https://gifme-api.wogengapp.cn/api/v1/users/${current_user_id}/collections`,
+              // url: `http://localhost:3000/api/v1/users/${current_user_id}/collections`,
+              method: 'POST',
+              data: collection,
+              success(e) {
+                console.log(e)
+                // set data on index page and show
+              }
+            });
+          }
+        });
+      } else {
+        wx.reLaunch({
+          url: '../login/login'
+        });
+      }
+    } catch (e) {
+      console.log(e)
+    }
   },
 
   showDeletes: function () {
@@ -33,11 +76,30 @@ Page({
   },
 
   gifDelete: function(e) {
-    const data = e.currentTarget.dataset;
-    console.log(data);
-    const gifId = data.gif.id;
+    const gifId = e.currentTarget.dataset.gif;
     console.log(gifId);
-},
+    wx.showModal({
+      title: 'Delete',
+      content: 'Delete? :(',
+      success: function (res) {
+        if (res.confirm) {
+          wx.request({
+            url: `https://gifme-api.wogengapp.cn/api/v1/gifs/${gifId}`,
+            // url: `http://localhost:3000/api/v1/gifs/${gifId}`,
+            method: 'DELETE',
+            success() {
+              // set data on index page and show
+              wx.reLaunch({
+                url: '../user/user',
+              })
+            }
+          });
+        } else if (res.cancel) {
+          modalHidden: true;
+        }
+      }
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -48,20 +110,42 @@ Page({
     try {
       var user = wx.getStorageSync('user')
       if (user) {
-        const user_id = user.id
         wx.request({
           url: `https://gifme-api.wogengapp.cn/api/v1/users/${user.id}`,
           // url: `http://localhost:3000/api/v1/users/${user.id}`,
           method: 'GET',
           success(res) {
-            const user = res.data;
-            console.log(user)
-            // Update local data
-            page.setData({
-              user: user
-            });
+            if (res.statusCode == 200) {
+              const user = res.data;
+              const user_gifs = user.users_gifs
+              // console.log(res.data);
 
-            wx.hideToast();
+              const usergifs = res.data.users_gifs;
+              var i;
+              var a = []
+              for (i in usergifs) {
+              // console.log(usergifs[i].collection_count);
+              a.push(usergifs[i].collection_count);
+              console.log(a)
+              var total=0;
+              for(var i in a) { total += a[i]; }
+              // console.log(total)
+              // return total
+            }
+            page.setData({totalscore: total});
+            // console.log(totalscore)
+
+              // Update local data
+              page.setData({
+                user: user,
+                gifs: user_gifs
+              });
+              wx.hideToast();
+            } else {
+              wx.reLaunch({
+                url: '../login/login'
+              });
+            }
           }
         });
       } else {
@@ -72,6 +156,7 @@ Page({
     } catch (e) {
       console.log(e)
     }
+
   },
 
   /**
