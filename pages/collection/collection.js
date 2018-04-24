@@ -70,36 +70,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let page = this;
-    try {
-      var user = wx.getStorageSync('user')
-      if (user) {
-        wx.request({
-          url: `https://gifme-api.wogengapp.cn/api/v1/users/${user.id}/collections`,
-          // url: `http://localhost:3000/api/v1/users/${user.id}/collections`,
-          method: 'GET',
-          success(res) {
-            if (res.statusCode == 200) {
-              const gifs = res.data.collections;
-              page.setData({
-                gifs: gifs
-              });
-              wx.hideToast();
-            } else {
-              wx.reLaunch({
-                url: '../login/login'
-              });
-            }
-          }
-        });
-      } else {
-        wx.reLaunch({
-          url: '../login/login'
-        });
-      }
-    } catch (e) {
-      console.log(e)
-    }
+    
   },
   showUser: function (e) {
     let data = e.currentTarget.dataset;
@@ -136,7 +107,36 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let page = this;
+    try {
+      var user = wx.getStorageSync('user')
+      if (user) {
+        wx.request({
+          url: `https://gifme-api.wogengapp.cn/api/v1/users/${user.id}/collections`,
+          // url: `http://localhost:3000/api/v1/users/${user.id}/collections`,
+          method: 'GET',
+          success(res) {
+            if (res.statusCode == 200) {
+              const gifs = res.data.collections;
+              page.setData({
+                gifs: gifs
+              });
+              wx.hideToast();
+            } else {
+              wx.reLaunch({
+                url: '../login/login'
+              });
+            }
+          }
+        });
+      } else {
+        wx.reLaunch({
+          url: '../login/login'
+        });
+      }
+    } catch (e) {
+      console.log(e)
+    }
   },
 
   /**
