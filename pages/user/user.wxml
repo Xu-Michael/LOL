@@ -10,7 +10,10 @@
       <view class="name">{{user.name}}</view>
     </view>
     <view class="flex-row">
-      <view class="totalc flex">Gifs collected {{user.user_collection_count}} times</view>
+      <view class="totalc flex">You collected {{user.user_collection_count}} Gifs</view>
+    </view>
+    <view class="flex-row2">
+      <view class="totalc flex">Gifs collected {{totalscore}} times by other users</view>
     </view>
   <!-- <image wx:if="{{deleteflag == false}}" src="../../image/icon-trash.png" id="trash" bindtap="showDeletes"/>
   <image wx:else src="../../image/icon-trash.png" id="trashopen" bindtap="hideDeletes"/> -->
@@ -35,7 +38,7 @@
   <view class="card-container">
     <view class="gif-container" wx:for="{{gifs}}" wx:for-item="gif" wx:key="gif.id">
        <view class="card gif-image" style="background-image: linear-gradient(rgba(0,0,0,0) 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0) 90%), url('{{gif.image}}') ;" data-gif="{{gif.id}}" bindtap="showGif">
-      </view> 
+      </view>
       <!-- <video class="card gif-image" src="../../image/rihanna.mov" controls="{{false}}" data-gif="{{gif.id}}" bindtap="showGif">
       </video> -->
 
