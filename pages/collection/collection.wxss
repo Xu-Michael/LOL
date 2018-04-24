@@ -1,6 +1,10 @@
 @import "../../wxSearchView/wxSearchView.wxss";
 
 /* Cards */
+.collection-header {
+  text-align: center;
+}
+
  .card-container {
   display: flex;
   flex-wrap: wrap;
