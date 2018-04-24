@@ -105,7 +105,9 @@ Page({
         console.log(res)
         const gifs_trending = res.data.gifs_by_collections;
         const gifs_new = res.data.gifs_by_new;
-        console.log(res.data.collected)
+        // gifs_new.forEach((gif) => {
+        //    gif.collected = collected: true
+        // })
         // Update local data
         page.setData({
           gifs_trending: gifs_trending,
