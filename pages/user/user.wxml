@@ -15,10 +15,7 @@
     <view class="flex-row2">
       <view class="totalc flex">Gifs collected {{totalscore}} times by other users</view>
     </view>
-    <view class="badgecontainer">
-    <image class="badge" src="../../image/orange/favorite.svg" />
-    {{message}}
-    </view>
+
 
     <!-- wx:if="{{usergifs.length == 0}}" -->
   <!-- <image wx:if="{{deleteflag == false}}" src="../../image/icon-trash.png" id="trash" bindtap="showDeletes"/>
@@ -63,3 +60,8 @@
       </view>
     </view>
   </view>
+
+  <view class="badgecontainer">
+    <image class="badge" src="../../image/orange/favorite.svg" />
+    {{message}}
+    </view>
