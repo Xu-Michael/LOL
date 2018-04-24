@@ -17,11 +17,54 @@ Page({
   },
 
   showGif: function (e) {
-    console.log(e)
     const data = e.currentTarget.dataset;
-    console.log(data);
-    const gifId = data.gif.id;
-    console.log(gifId);
+    const gifId = data.gif;
+    wx.navigateTo({
+      url: `../show/show?id=${gifId}`
+    });
+  },
+  collect: function (e) {
+    let data = e.currentTarget.dataset;
+    let page = this;
+    try {
+      var user = wx.getStorageSync('user')
+      if (user) {
+        const current_user_id = user.id
+        wx.request({
+          url: `https://gifme-api.wogengapp.cn/api/v1/users/${user.id}`,
+          // url: `http://localhost:3000/api/v1/users/${current_user_id}`,
+          method: 'GET',
+          success(res) {
+            const user = res.data;
+            // Update local data
+            page.setData({
+              user: user
+            });
+            wx.hideToast();
+            const collection = {
+              user_id: current_user_id,
+              gif_id: data.gif.id
+            };
+            wx.request({
+              url: `https://gifme-api.wogengapp.cn/api/v1/users/${current_user_id}/collections`,
+              // url: `http://localhost:3000/api/v1/users/${current_user_id}/collections`,
+              method: 'POST',
+              data: collection,
+              success(e) {
+                console.log(e)
+                // set data on index page and show
+              }
+            });
+          }
+        });
+      } else {
+        wx.reLaunch({
+          url: '../login/login'
+        });
+      }
+    } catch (e) {
+      console.log(e)
+    }
   },
 
   showDeletes: function () {
