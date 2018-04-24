@@ -15,7 +15,7 @@
       </view>
       <view class="gif-stats">
         <view class="gif-collected"> 
-          <view class="number-collected">{{totalscore}}</view>
+          <view class="number-collected">{{usergifscount}}</view>
           <view class="collected-status">Gifs</view>
         </view>
         <view class="gif-collected">
@@ -73,7 +73,7 @@
     </view>
   </view>
 
-  <view class="badgecontainer">
+  <!-- <view class="badgecontainer">
     <image class="badge" src="../../image/orange/favorite.svg" />
     {{message}}
-    </view>
+    </view> -->

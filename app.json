@@ -1,4 +1,4 @@
-{
+  {
   "pages":[
     "pages/index/index",
     "pages/show/show",
@@ -18,7 +18,8 @@
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#282C34",
     "navigationBarTitleText": "逗我笑",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle":"white",
+    "backgroundColor": "#282C34"
   },
   "tabBar": {
     "backgroundColor": "#393f4a",
