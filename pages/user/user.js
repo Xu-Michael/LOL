@@ -85,8 +85,8 @@ Page({
       success: function (res) {
         if (res.confirm) {
           wx.request({
-            url: `https://gifme-api.wogengapp.cn/api/v1/gifs/${gifId}`,
-            // url: `http://localhost:3000/api/v1/gifs/${gifId}`,
+            // url: `https://gifme-api.wogengapp.cn/api/v1/gifs/${gifId}`,
+            url: `http://localhost:3000/api/v1/gifs/${gifId}`,
             method: 'DELETE',
             success() {
               // set data on index page and show
