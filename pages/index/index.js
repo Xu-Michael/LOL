@@ -88,7 +88,6 @@ Page({
                       gifs_new: gifs_new
                     });
                     wx.hideToast();
-
                   }
                 });
 
