@@ -41,8 +41,8 @@ Page({
       success: function (res) {
         if (res.confirm) {
           wx.request({
-            url: `https://gifme-api.wogengapp.cn/api/v1/gifs/${gifId}`,
-            // url: `http://localhost:3000/api/v1/gifs/${gifId}`,
+            // url: `https://gifme-api.wogengapp.cn/api/v1/gifs/${gifId}`,
+            url: `http://localhost:3000/api/v1/gifs/${gifId}`,
             method: 'DELETE',
             success() {
               // set data on index page and show
@@ -68,8 +68,8 @@ Page({
       var user = wx.getStorageSync('user')
       if (user) {
         wx.request({
-          url: `https://gifme-api.wogengapp.cn/api/v1/users/${user.id}`,
-          // url: `http://localhost:3000/api/v1/users/${user.id}`,
+          // url: `https://gifme-api.wogengapp.cn/api/v1/users/${user.id}`,
+          url: `http://localhost:3000/api/v1/users/${user.id}`,
           method: 'GET',
           success(res) {
             if (res.statusCode == 200) {

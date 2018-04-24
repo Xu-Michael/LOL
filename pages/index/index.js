@@ -94,8 +94,8 @@ Page({
     // this.setData(app.globalData);
     let page = this;
     wx.request({
-      url: "https://gifme-api.wogengapp.cn/api/v1/gifs",
-      // url: "http://localhost:3000/api/v1/gifs",
+      // url: "https://gifme-api.wogengapp.cn/api/v1/gifs",
+      url: "http://localhost:3000/api/v1/gifs",
       method: 'GET',
       success(res) {
         const gifs_trending = res.data.gifs_by_collections;

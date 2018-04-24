@@ -24,8 +24,8 @@ Page({
       var user = wx.getStorageSync('user')
       if (user) {
         wx.request({
-          url: `https://gifme-api.wogengapp.cn/api/v1/users/${user.id}`,
-          // url: `http://localhost:3000/api/v1/users/${user.id}`,
+          // url: `https://gifme-api.wogengapp.cn/api/v1/users/${user.id}`,
+          url: `http://localhost:3000/api/v1/users/${user.id}`,
           method: 'GET',
           success(res) {
             if (res.statusCode == 200) {
@@ -55,10 +55,10 @@ Page({
                       title: 'Creating your gif...',
                     });
                     wx.uploadFile({
-                      // url: 'http://localhost:3000/api/v1/gifs',
-                      url: 'https://gifme-api.wogengapp.cn/api/v1/gifs',
+                      url: 'http://localhost:3000/api/v1/gifs',
+                      // url: 'https://gifme-api.wogengapp.cn/api/v1/gifs',
                       filePath: filePath,
-                      name: 'video',
+                      name: 'video_upload',
                       method: 'POST',
                       formData: {
                         user_id: user.id
@@ -127,8 +127,8 @@ Page({
       var user = wx.getStorageSync('user')
       if (user) {
         wx.request({
-          url: `https://gifme-api.wogengapp.cn/api/v1/users/${user.id}`,
-          // url: `http://localhost:3000/api/v1/users/${user.id}`,
+          // url: `https://gifme-api.wogengapp.cn/api/v1/users/${user.id}`,
+          url: `http://localhost:3000/api/v1/users/${user.id}`,
           method: 'GET',
           success(res) {
             if (res.statusCode == 200) {
@@ -158,10 +158,10 @@ Page({
                       title: 'Creating your gif...',
                     });
                     wx.uploadFile({
-                      // url: 'http://localhost:3000/api/v1/gifs',
-                      url: 'https://gifme-api.wogengapp.cn/api/v1/gifs',
+                      url: 'http://localhost:3000/api/v1/gifs',
+                      // url: 'https://gifme-api.wogengapp.cn/api/v1/gifs',
                       filePath: filePath,
-                      name: 'video',
+                      name: 'video_upload',
                       method: 'POST',
                       formData: {
                         user_id: user.id
