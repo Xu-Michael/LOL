@@ -100,6 +100,7 @@ Page({
       success(res) {
         const gifs_trending = res.data.gifs_by_collections;
         const gifs_new = res.data.gifs_by_new;
+        console.log(gifs_new)
         // Update local data
         page.setData({
           gifs_trending: gifs_trending,
