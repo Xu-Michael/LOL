@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    totalscore: 0
   },
 
   showCollection: function (e) {
@@ -118,9 +119,12 @@ Page({
             if (res.statusCode == 200) {
               const user = res.data;
               const user_gifs = user.users_gifs
+              page.setData({usergifscount: user_gifs.length});
               // console.log(res.data);
-
               const usergifs = res.data.users_gifs;
+              console.log(usergifs)
+              const usergifscount = usergifs.length;
+              console.log(usergifscount)
               var i;
               var a = []
               for (i in usergifs) {
@@ -128,11 +132,13 @@ Page({
               a.push(usergifs[i].collection_count);
               console.log(a)
               var total=0;
-              for(var i in a) { total += a[i]; }
+              for(var i in a) { total += a[i]; 
+              };
+              page.setData({ totalscore: total });
+              
               // console.log(total)
               // return total
-            }
-            page.setData({totalscore: total});
+            };
             // console.log(totalscore)
 
               // Update local data
