@@ -93,9 +93,11 @@ Page({
   onLoad: function (options) {
     // this.setData(app.globalData);
     let page = this;
+    var user = wx.getStorageSync('user')
+    const user_id = user.id
     wx.request({
-      url: "https://gifme-api.wogengapp.cn/api/v1/gifs",
-      // url: "http://localhost:3000/api/v1/gifs",
+      url: `https://gifme-api.wogengapp.cn/api/v1/gifs?user_id=${user_id}`,
+      // url: `http://localhost:3000/api/v1/gifs?user_id=${user_id}`,
       method: 'GET',
       success(res) {
         console.log(res)

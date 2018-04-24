@@ -38,8 +38,8 @@ Page({
     let page = this;
     let user_id = options.id
     wx.request({
-      url: `https://gifme-api.wogengapp.cn/api/v1/users/${user_id}`,
-      // url: `http://localhost:3000/api/v1/users/${user_id}`,
+      url: `https://gifme-api.wogengapp.cn/api/v1/users/${user_id}?current_user_id=${user.id}`,
+      // url: `http://localhost:3000/api/v1/users/${user_id}?current_user_id=${user.id}`,
       method: 'GET',
       success(res) {
         console.log(res)

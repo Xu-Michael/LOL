@@ -306,3 +306,8 @@
   border-top-right-radius: 5rpx;
   border-top-left-radius: 5rpx;
 }
+
+.badge {
+  height: 40rpx;
+  width: 40rpx;
+}
