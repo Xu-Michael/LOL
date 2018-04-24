@@ -21,7 +21,7 @@
       <view class="gif-details">
         <view class="collected">
           <image wx:if="{{gif.collected == true}}" class="icon-heart" data-gif="{{gif}}" bindtap="collect" src="../../image/orange/favorite.svg"/>
-          <image wx:else class="icon-heart" data-gif="{{gif}}" bindtap="collect" src="../../image/white/favorite.svg"/>
+          <image wx:else class="icon-heart" data-gif="{{gif}}" src="../../image/white/favorite.svg"/>
           {{ gif.collection_count}}
         </view>
         <view class="tag collected">
