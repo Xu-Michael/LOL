@@ -55,6 +55,7 @@ Page({
           method: 'GET',
           success(res) {
             const user = res.data;
+            console.log(res.data)
             // Update local data
             page.setData({
               user: user
@@ -97,12 +98,16 @@ Page({
     const user_id = user.id
     wx.request({
       url: `https://gifme-api.wogengapp.cn/api/v1/gifs?user_id=${user_id}`,
-      // url: `http://localhost:3000/api/v1/gifs?user_id=${user_id}`,
+      // url: "http://localhost:3000/api/v1/gifs?user_id=${user_id}",
       method: 'GET',
       success(res) {
+        console.log()
         console.log(res)
         const gifs_trending = res.data.gifs_by_collections;
         const gifs_new = res.data.gifs_by_new;
+        // gifs_new.forEach((gif) => {
+        //    gif.collected = collected: true
+        // })
         // Update local data
         page.setData({
           gifs_trending: gifs_trending,

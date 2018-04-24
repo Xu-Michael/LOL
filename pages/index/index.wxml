@@ -8,11 +8,11 @@
     </view>
   </view> -->
 
-  <view class="navbar">  
-  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>  
-</view>  
-  
-<view hidden="{{currentTab!==0}}">  
+  <view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+
+<view hidden="{{currentTab!==0}}">
   <view class="card-container">
     <view class="gif-container" wx:for="{{gifs_new}}" wx:for-item="gif" wx:key="gif.id">
       <view class="card" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('{{gif.image}}') ;" data-gif="{{gif.id}}" bindtap="showGif"></view>
@@ -20,7 +20,8 @@
       <view><image class="avatar-bordered" src="{{gif.user_avatar}}" data-gif="{{gif}}" bindtap="showUser"/></view>
       <view class="gif-details">
         <view class="collected">
-          <image class="icon-heart" data-gif="{{gif}}" bindtap="collect" src="../../image/orange/favorite.svg"/>
+          <image wx:if="{{gif.collected == true}}" class="icon-heart" data-gif="{{gif}}" bindtap="collect" src="../../image/orange/favorite.svg"/>
+          <image wx:else class="icon-heart" data-gif="{{gif}}" src="../../image/white/favorite.svg"/>
           {{ gif.collection_count}}
         </view>
         <view class="tag collected">
@@ -34,9 +35,9 @@
   <!-- <view class="highlight-button">
     <view class="submit-button">SUBMIT</view>
   </view> -->
-</view>  
-  
-<view hidden="{{currentTab!==1}}">  
+</view>
+
+<view hidden="{{currentTab!==1}}">
   <view class="card-container">
     <view class="gif-container" wx:for="{{gifs_trending}}" wx:for-item="gif" wx:key="gif.id">
       <view class="card" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('{{gif.image}}') ;" data-gif="{{gif.id}}" bindtap="showGif"></view>
@@ -53,17 +54,17 @@
       </view>
     </view>
   </view>
-</view>  
-  
-<!-- <view hidden="{{currentTab!==2}}">  
-  tab_03  
+</view>
+
+<!-- <view hidden="{{currentTab!==2}}">
+  tab_03
 </view>   -->
 <view class="search-icon flex">
   <image class="weui-icon-search_in-box" src="../../image/white/search.svg" type="search" bindtap="wxSearchTab"/>
 </view>
 
 
-<!-- 
+<!--
   <view class="card" bindtap="showGif" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url('{{gifs[2].image}}') ;" data-gif="{{gifs[2]}}">
     <view class="collected">
       <image class="icon-heart" src="../../image/white/favorite.png"/>
