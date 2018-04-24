@@ -22,11 +22,11 @@
           <view class="number-collected">{{user.user_collection_count}}</view>
           <view class="collected-status">Likes</view>
         </view>
+        <view class="gif-collected">
+          <view class="number-collected">{{totalscore}}</view>
+          <view class="collected-status">Collected</view>
+        </view>
       </view>
-    </view>
-    <view class="badgecontainer">
-    <image class="badge" src="../../image/orange/favorite.svg" />
-    {{message}}
     </view>
 
     <!-- wx:if="{{usergifs.length == 0}}" -->

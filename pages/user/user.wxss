@@ -232,7 +232,7 @@
   justify-content: space-around;
   align-items: center;
   position: fixed;
-  right: 170rpx;
+  left: 260rpx;
   top: 90rpx;
 }
 
@@ -240,7 +240,7 @@
   /* border: 1px solid rgba(252, 87, 54, .9);
   border-bottom: 1px solid rgba(253, 120, 90, .9); */
   font-size: 35rpx;
-  padding: 0 60rpx 0 60rpx;
+  padding: 0 40rpx 0 40rpx;
   color: white;
   display: flex;
   justify-content: center;
