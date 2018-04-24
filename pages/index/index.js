@@ -55,6 +55,7 @@ Page({
           method: 'GET',
           success(res) {
             const user = res.data;
+            console.log(res.data)
             // Update local data
             page.setData({
               user: user
@@ -93,14 +94,19 @@ Page({
   onLoad: function (options) {
     // this.setData(app.globalData);
     let page = this;
+    var user = wx.getStorageSync('user')
+    const user_id = user.id
     wx.request({
-      // url: "https://gifme-api.wogengapp.cn/api/v1/gifs",
-      url: "http://localhost:3000/api/v1/gifs",
+      url: `https://gifme-api.wogengapp.cn/api/v1/gifs?user_id=${user_id}`,
+      // url: "http://localhost:3000/api/v1/gifs?user_id=${user_id}",
       method: 'GET',
       success(res) {
+        console.log(res)
         const gifs_trending = res.data.gifs_by_collections;
         const gifs_new = res.data.gifs_by_new;
-        console.log(gifs_new)
+        // gifs_new.forEach((gif) => {
+        //    gif.collected = collected: true
+        // })
         // Update local data
         page.setData({
           gifs_trending: gifs_trending,
@@ -142,14 +148,20 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    wx.showNavigationBarLoading() //在标题栏中显示加载
 
+    //模拟加载
+    setTimeout(function () {
+      // complete
+      wx.hideNavigationBarLoading() //完成停止加载
+      wx.stopPullDownRefresh() //停止下拉刷新
+    }, 1500);
   },
 
   /**

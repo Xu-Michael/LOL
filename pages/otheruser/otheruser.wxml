@@ -4,7 +4,35 @@
   </view>
 </view>
  -->
-  <view class="flex">
+
+  <view class="user-container">
+    <view class="user-details">
+      <image class="avatar" src='{{user.avatar}}'/>
+    </view>
+    <view class="user-stats">
+      <view class="name-row">
+        <view class="user-name">{{user.name}}</view>
+        <image src="../../image/orange/crown.svg" class="icon-crown" />
+      </view>
+      <view class="gif-stats">
+        <view class="gif-collected"> 
+          <view class="number-collected">{{totalscore}}</view>
+          <view class="collected-status">Gifs</view>
+        </view>
+        <view class="gif-collected">
+          <view class="number-collected">{{user.user_collection_count}}</view>
+          <view class="collected-status">Likes</view>
+        </view>
+        <view class="gif-collected">
+          <view class="number-collected">{{totalscore}}</view>
+          <view class="collected-status">Collected</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- <view class="flex">
   <view class="border flex">
   <view class="avatar-name flex text-align">
     <image class="avatar" src='{{user.avatar}}' />
@@ -16,12 +44,12 @@
       <view class="totalc flex">Gifs collected {{user.user_collection_count}} times</view>
     </view>
 
-  </view>
-<image wx:if="{{deleteflag == false}}" src="../../image/icon-trash.png" id="trash" bindtap="showDeletes"/>
-<image wx:else src="../../image/icon-trash.png" id="trashopen" bindtap="hideDeletes"/>
-    </view>
+  </view> -->
+<!-- <image wx:if="{{deleteflag == false}}" src="../../image/icon-trash.png" id="trash" bindtap="showDeletes"/>
+<image wx:else src="../../image/icon-trash.png" id="trashopen" bindtap="hideDeletes"/> -->
+    <!-- </view>
 
-    </view>
+    </view> -->
 
 
 <!-- <view wx:for="{{user.users_gifs}}" -->

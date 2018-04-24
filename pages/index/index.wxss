@@ -130,9 +130,12 @@
   flex: auto;  
   text-align: center;  
   line-height: 80rpx;  
+  width: 50%;
 }  
 .navbar .item.active{  
-  color: #FC5736;  
+  background: linear-gradient(
+    160deg, rgba(252, 87, 54, .9),rgba(253, 120, 90, .9)); 
+  color: white;
 }  
 .navbar .item.active:after{  
   content: "";  
@@ -142,7 +145,6 @@
   left: 0;  
   right: 0;  
   height: 4rpx;  
-  background: #FC5736;  
 }  
 
 .search-icon {
