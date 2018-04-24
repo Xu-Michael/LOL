@@ -93,39 +93,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // this.setData(app.globalData);
-    let page = this;
-    var user = wx.getStorageSync('user')
-    const user_id = user.id
-    wx.request({
-      url: `https://gifme-api.wogengapp.cn/api/v1/gifs?user_id=${user_id}`,
-      // url: "http://localhost:3000/api/v1/gifs?user_id=${user_id}",
-      method: 'GET',
-      success(res) {
-        console.log(res)
-        page.setData(res.data)
-        // console.log(page.data.gifs)
-        let gifs = page.data.gifs
-        gifs = gifs.map(g => {
-          g["collectGifIcon"] = false
-          return g
-        })
-        page.setData({gifs: gifs})
-
-        const gifs_trending = res.data.gifs_by_collections;
-        const gifs_new = res.data.gifs_by_new;
-        // gifs_new.forEach((gif) => {
-        //    gif.collected = collected: true
-        // })
-        // Update local data
-        page.setData({
-          gifs_trending: gifs_trending,
-          gifs_new: gifs_new
-        });
-
-        wx.hideToast();
-      }
-    });
+  
   },
 
   wxSearchTab: function () {
@@ -145,6 +113,39 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    // this.setData(app.globalData);
+    let page = this;
+    var user = wx.getStorageSync('user')
+    const user_id = user.id
+    wx.request({
+      url: `https://gifme-api.wogengapp.cn/api/v1/gifs?user_id=${user_id}`,
+      // url: "http://localhost:3000/api/v1/gifs?user_id=${user_id}",
+      method: 'GET',
+      success(res) {
+        console.log(res)
+        page.setData(res.data)
+        // console.log(page.data.gifs)
+        let gifs = page.data.gifs
+        gifs = gifs.map(g => {
+          g["collectGifIcon"] = false
+          return g
+        })
+        page.setData({ gifs: gifs })
+
+        const gifs_trending = res.data.gifs_by_collections;
+        const gifs_new = res.data.gifs_by_new;
+        // gifs_new.forEach((gif) => {
+        //    gif.collected = collected: true
+        // })
+        // Update local data
+        page.setData({
+          gifs_trending: gifs_trending,
+          gifs_new: gifs_new
+        });
+
+        wx.hideToast();
+      }
+    });
   },
 
   /**

@@ -106,7 +106,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
     let page = this;
     try {
       var user = wx.getStorageSync('user')
@@ -129,14 +141,14 @@ Page({
               var i;
               var a = []
               for (i in usergifs) {
-              // console.log(usergifs[i].collection_count);
-              a.push(usergifs[i].collection_count);
-            };
+                // console.log(usergifs[i].collection_count);
+                a.push(usergifs[i].collection_count);
+              };
               console.log(a);
 
               // console.log(a)
-              var total=0;
-              for(var i in a) { total += a[i] };
+              var total = 0;
+              for (var i in a) { total += a[i] };
               page.setData({ totalscore: total });
 
               if (page.data.usergifscount == 0) {
@@ -196,7 +208,7 @@ Page({
               // console.log(total)
               // return total
 
-            // console.log(page.data.totalscore)
+              // console.log(page.data.totalscore)
 
               // Update local data
               page.setData({
@@ -219,21 +231,6 @@ Page({
     } catch (e) {
       console.log(e)
     }
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
   },
 
   /**
