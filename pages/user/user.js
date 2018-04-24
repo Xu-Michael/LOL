@@ -85,11 +85,15 @@ Page({
               a.push(usergifs[i].collection_count);
               console.log(a)
               var total=0;
-              for(var i in a) { total += a[i]; }
+              for(var i in a) { total += a[i]; };
+              if (a === []) {
+                page.setData({totalscore: 0});
+              } else {
+                page.setData({totalscore: total});
+              };
               // console.log(total)
               // return total
             }
-            page.setData({totalscore: total});
             // console.log(totalscore)
 
               // Update local data
