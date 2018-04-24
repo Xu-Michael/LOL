@@ -139,24 +139,24 @@
   width: 100%;
 }
 
-button[plain]{ 
+button[plain]{
   /* border:0;
   padding: 0;  */
   margin: 0;
 }
 
-.pos{  
-  position: absolute;  
-  top: 10px;  
-  left: 23px;  
-  opacity: 0;  
-}  
-.icon_kf{  
-  width: 20px;  
-  height: 20px;  
-  display: inline-block;  
-  margin-top: 5px;  
-}  
+.pos{
+  position: absolute;
+  top: 10px;
+  left: 23px;
+  opacity: 0;
+}
+.icon_kf{
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin-top: 5px;
+}
 
 
 .heart-collected {
@@ -180,7 +180,7 @@ button[plain]{
   border: none !important;
   padding: 0 !important;
   line-height: 0;
-} 
+}
 
 .icon-share {
   height: 38rpx;
@@ -276,6 +276,6 @@ border-radius:5px;
   height: 35rpx;
   width: 35rpx;
   padding: 10rpx;
-}*/ 
+}*/
 
 
