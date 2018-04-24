@@ -98,8 +98,8 @@
   display: flex;
   flex-direction: row;
   position:fixed;
-  left: 338rpx;
-  top: 10rpx;
+  left: 300rpx;
+  top: 20rpx;
 }
 
 .user-name {
@@ -215,7 +215,7 @@
   justify-content: center;
   align-items: center;
   position: fixed;
-  left: 100rpx;
+  left: 80rpx;
 }
 
 .user-stats {
@@ -231,8 +231,8 @@
   justify-content: space-around;
   align-items: center;
   position: fixed;
-  right: 130rpx;
-  top: 85rpx;
+  right: 170rpx;
+  top: 90rpx;
 }
 
 .gif-collected {
