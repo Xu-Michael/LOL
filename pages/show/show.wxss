@@ -28,33 +28,6 @@ video {
   font-size: 55rpx;
   font-weight: bolder;
   margin-right: 30rpx;
-  
-button[plain]{
-  /* border:0;
-  padding: 0;  */
-  margin: 0;
-}
-
-.pos{
-  position: absolute;
-  top: 10px;
-  left: 23px;
-  opacity: 0;
-}
-.icon_kf{
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  margin-top: 5px;
-}
-
-
-.heart-collected {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  left: 80rpx;
 }
 
 .tagicon-container {
@@ -68,18 +41,6 @@ button[plain]{
 #tag-icon {
   height: 60rpx;
   width: 120rpx;
-}
-
-.share-button {
-  background-color: #282C34;
-  border: none !important;
-  padding: 0 !important;
-  line-height: 0;
-}
-
-.icon-share {
-  height: 38rpx;
-  width: 38rpx;
 }
 
 .key-list-container {
@@ -137,10 +98,3 @@ button[plain]{
 .icon-text {
   font-size: 50rpx;
 }
-
-
-/*.icon-heart {
-  height: 35rpx;
-  width: 35rpx;
-  padding: 10rpx;
-}*/

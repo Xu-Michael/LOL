@@ -1,36 +1,3 @@
-<!-- <view class="show-container" style="background: linear-gradient(rgba(30, 27, 38, 0.9), rgba(30, 27, 38, 0.9)), url('')">
-  <view class="card-container flex">
-    <view class="card-gif">
-      <image class="show-gif" src="{{gif.image}}"/>
-        </view>
-
-        <view class="collectheader flex">
-          <view class="heart-collected flex">
-            <image wx:if="{{collectioncheck == true}}" class="icon-heart" src="../../image/orange/favorite.png"/>
-            <image wx:else class="icon-heart" bindtap="collect" data-gif="{{gif}}" src="../../image/white/favorite.png"/>
-            <view if wx:if="{{numberup == false}}" class="collectnum">{{gif.collection_count}}</view>
-            <view if wx:else class="collectnum">{{gif.collection_count + 1}}</view>
-          </view>
-          <view class="other-buttons flex">
-            <image if class="icon-heart" bindtap="editGif" data-id="{{id}}" src="../../image/white/draw.png"/>
-            <button class="share-button" open-type="share" plain="true">
-              <image class="icon-share" src="../../image/white/share.png"></image>
-            </button>
-          </view>
-          </view>
-
-          <view class="tagcontainer margin-top wrap">
-          <view class="leadicon flex tag-space">
-            <image class="icon-heart" src="../../image/orange/tag2.png"/>
-          </view>
-          <view wx:for="{{gif.tags}}" wx:for-item="tag" wx:key="tag.id" class="scroll-view-item_H">
-            <view>{{tag.name}}</view>
-            </view>
-          </view>
-
-</view>
-</view>
-
 <video autoplay controls="{{false}}" loop src="{{gif.video}}"/>
 <view class="content-wrapper">
   <view class="user-info">
@@ -63,39 +30,6 @@
     <view class="action-button">
       <image class="icon" src="../../image/white/share.svg"></image>
       <view class="icon-text">Share</view>
-    </view>
-  </view>
-</view>
-      <!-- <view class="collected">
-        <image class="icon-heart" src="../../image/white/favorite.png"/>
-        {{ collected }}
-      </view> -->
-      <!-- <view class="details-container"> -->
-    </view>
-
-    <view class="collectheader flex">
-      <view class="heart-collected flex">
-        <image wx:if="{{collectioncheck == true}}" class="icon-heart" src="../../image/orange/favorite.svg"/>
-        <image wx:else class="icon-heart" bindtap="collect" data-gif="{{gif}}" src="../../image/white/favorite.svg"/>
-        <view if wx:if="{{numberup == false}}" class="collectnum">{{gif.collection_count}}</view>
-        <view if wx:else class="collectnum">{{gif.collection_count + 1}}</view>
-      </view>
-
-      <view class="other-buttons flex">
-        <image if class="icon-heart" bindtap="editGif" data-id="{{id}}" src="../../image/white/draw.svg"/>
-        <button class="share-button" open-type="share" plain="true">
-          <image class="icon-share" src="../../image/white/share.svg"></image>
-        </button>
-      </view>
-    </view>
-
-    <view class="tagcontainer margin-top wrap">
-      <view class="leadicon flex tag-space">
-        <image class="icon-heart" src="../../image/orange/tag.svg"/>
-      </view>
-      <view wx:for="{{gif.tags}}" wx:for-item="tag" wx:key="tag.id" class="scroll-view-item_H">
-        <view>{{tag.name}}</view>
-      </view>
     </view>
   </view>
 </view>

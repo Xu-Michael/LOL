@@ -49,8 +49,8 @@ Page({
         console.log(user)
         const current_user_id = user.id
         wx.request({
-          // url: `https://gifme-api.wogengapp.cn/api/v1/users/${user.id}`,
-          url: `http://localhost:3000/api/v1/users/${current_user_id}`,
+          url: `https://gifme-api.wogengapp.cn/api/v1/users/${user.id}`,
+          // url: `http://localhost:3000/api/v1/users/${current_user_id}`,
           method: 'GET',
           success(res) {
             const user = res.data;
@@ -66,8 +66,8 @@ Page({
             };
             console.log(collection)
             wx.request({
-              // url: `https://gifme-api.wogengapp.cn/api/v1/users/${current_user_id}/collections`,
-              url: `http://localhost:3000/api/v1/users/${current_user_id}/collections`,
+              url: `https://gifme-api.wogengapp.cn/api/v1/users/${current_user_id}/collections`,
+              // url: `http://localhost:3000/api/v1/users/${current_user_id}/collections`,
               method: 'POST',
               data: collection,
               success(e) {
@@ -94,8 +94,8 @@ Page({
     console.log(options);
     let page = this;
     wx.request({
-      // url: `http://gifme-api.wogengapp.cn/api/v1/gifs/${options.id}`,
-      url: `http://localhost:3000/api/v1/gifs/${options.id}`,
+      url: `http://gifme-api.wogengapp.cn/api/v1/gifs/${options.id}`,
+      // url: `http://localhost:3000/api/v1/gifs/${options.id}`,
       method: 'GET',
       success(res) {
         const gif = res.data;
@@ -114,8 +114,8 @@ Page({
         var user = wx.getStorageSync('user')
         const current_user_id = user.id
         wx.request({
-          url: `http://localhost:3000/api/v1/users/${current_user_id}/collections`,
-          // url: `https://gifme-api.wogengapp.cn/api/v1/users/${current_user_id}/collections`,
+          // url: `http://localhost:3000/api/v1/users/${current_user_id}/collections`,
+          url: `https://gifme-api.wogengapp.cn/api/v1/users/${current_user_id}/collections`,
           method: 'GET',
             success(res) {
               const usercollection = res.data.collections;
@@ -180,4 +180,3 @@ Page({
    * 用户点击右上角分享
    */
 })
-
