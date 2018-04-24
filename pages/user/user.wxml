@@ -72,3 +72,8 @@
       </view>
     </view>
   </view>
+
+  <view class="badgecontainer">
+    <image class="badge" src="../../image/orange/favorite.svg" />
+    {{message}}
+    </view>
