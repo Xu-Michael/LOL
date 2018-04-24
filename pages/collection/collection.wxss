@@ -143,8 +143,6 @@
   background: #FC5736;  
 }  
 
-.weui-icon-search_in-box {
-  position: absolute;
-  left: 10px;
-  top: 7px;
+.collection-search {
+  width: 100%;
 }
