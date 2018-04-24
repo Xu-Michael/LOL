@@ -48,6 +48,9 @@ Page({
               data: collection,
               success(e) {
                 console.log(e)
+                wx.reLaunch({
+                  url: '../collection/collection',
+                })
                 // set data on index page and show
               }
             });
