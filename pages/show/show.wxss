@@ -1,3 +1,10 @@
+page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 video {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -13,7 +20,7 @@ video {
 .user-info {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
 }
 
@@ -25,9 +32,10 @@ video {
 }
 
 .user-name {
-  font-size: 55rpx;
+  font-size: 45rpx;
   font-weight: bolder;
   margin-right: 30rpx;
+  margin-left: 30rpx;
 }
 
 .tagicon-container {
@@ -51,7 +59,7 @@ video {
 }
 
 .wxSearchKeyList{
-  width: 90%;
+  /* width: 90%; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -68,18 +76,20 @@ video {
   border: 1px solid #a1a0a0;
   color: #a1a0a0;
   margin: 5px;
-  padding: 10rpx 15rpx;
+  padding: 0 15rpx 5rpx 15rpx;
   border-radius: 2px;
   /* background-color: rgba(200, 200, 200, 0.1); */
 }
 
 .button-wrapper {
   display: flex;
-  width: 100%;
+  flex-direction: row;
   justify-content: space-around;
+  margin
+  /* width: 100%;
   height: 250rpx;
   position: absolute;
-  bottom: 90rpx;
+  bottom: 90rpx; */
 }
 
 .action-button {
@@ -90,9 +100,9 @@ video {
   flex: 0 0 33%;
 }
 
-.icon {
-  height: 100%;
-  width: 80%;
+.show-icon {
+  height: 100rpx;
+  width: 100rpx;
 }
 
 .icon-text {

@@ -1,9 +1,8 @@
 <view class="collection-header">My Collections</view>
 <view class="card-container">
-  <view class="collection-search weui-search-bar">
+  <!-- <view class="collection-search weui-search-bar">
     <view class="weui-search-bar__form">
       <view class="weui-search-bar__box">
-        <!-- <icon class="weui-icon-search_in-box" type="search" size="14"></icon> -->
         <input type="text" class="weui-search-bar__input" placeholder="Search Gifme" value="{{wxSearchData.value}}" bindinput="wxSearchInput" bindconfirm="wxSearchConfirm" />
         <view class="weui-icon-clear" wx:if="{{wxSearchData.value.length > 0}}" bindtap="wxSearchClear">
           <icon type="clear" size="14"></icon>
@@ -13,7 +12,7 @@
       <view class="weui-search-bar__cancel-btn" bindtap="wxSearchConfirm">
           <text data-key='search'>Search</text>
       </view>
-  </view>
+  </view> -->
 
 
     <view class="gif-container" wx:for="{{gifs}}" wx:for-item="gif" wx:key="gif.id">
