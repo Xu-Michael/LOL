@@ -5,31 +5,32 @@
     <view class="user-name">{{gif.user_name}}</view>
   </view>
   <view class="tagicon-container">
-    <image id="tag-icon" src="../../image/orange/tag.svg"/>Tags:
-  </view>
-  <view class="key-list-container">
-    <view class="wxSearchKeyList">
-      <block wx:for="{{gif.tags}}" wx:for-item="tag" wx:key="tag.id">
-        <view class="wxSearchKeyItem" bindtap="wxSearchKeyTap" data-key="{{tag.id}}">
-          {{tag.name}}
-        </view>
-      </block>
+    <image id="tag-icon" src="../../image/orange/tag.svg"/>
+    <view class="key-list-container">
+      <view class="wxSearchKeyList">
+        <block wx:for="{{gif.tags}}" wx:for-item="tag" wx:key="tag.id">
+          <view class="wxSearchKeyItem" bindtap="wxSearchKeyTap" data-key="{{tag.id}}">
+            {{tag.name}}
+          </view>
+        </block>
+      </view>
     </view>
   </view>
+
   <view class="button-wrapper">
-    <view class="action-button">
+    <!-- <view class="action-button">
       <image class="icon" src="../../image/white/share.svg"></image>
       <view class="icon-text">Back</view>
-    </view>
+    </view> -->
     <view class="action-button">
-      <image wx:if="{{collectioncheck == true}}" class="icon" src="../../image/orange/favorite.svg"/>
+      <image wx:if="{{collectioncheck == true}}" class="show-icon" src="../../image/orange/favorite.svg"/>
       <image wx:else class="icon" bindtap="collect" data-gif="{{gif}}" src="../../image/white/favorite.svg"/>
       <view if wx:if="{{numberup == false}}" class="icon-text">{{gif.collection_count}}</view>
       <view if wx:else class="icon-text">{{gif.collection_count + 1}}</view>
     </view>
     <view class="action-button">
-      <image class="icon" src="../../image/white/share.svg"></image>
-      <view class="icon-text">Share</view>
+      <image class="show-icon" src="../../image/white/share.svg"></image>
+      <!-- <view class="icon-text">Share</view> -->
     </view>
   </view>
 </view>
