@@ -1,7 +1,7 @@
-<video autoplay controls="{{false}}" loop src="{{gif.video}}"/>
+<video autoplay controls="{{false}}" loop src="{{gif.video}}" bindtap="previewGif" data-gif="{{gif.image}}"/>
 <view class="content-wrapper">
   <view class="user-info">
-    <image class="avatar" src="{{gif.user_avatar}}"/>
+    <image class="avatar" src="{{gif.user_avatar}}" data-gif="{{gif}}" bindtap="showUser"/>
     <view class="user-name">{{gif.user_name}}</view>
   </view>
   <view class="tagicon-container">

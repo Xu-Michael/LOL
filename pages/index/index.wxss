@@ -2,11 +2,12 @@
 
 /* Cards */
  .card-container {
+  margin-top: 68rpx;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 20rpx;
-} 
+}
 
 .gif-container {
   display: flex;
@@ -31,10 +32,10 @@
   background-position: center;
   color: white;
   position: relative;
-  margin: 10rpx; 
+  margin: 10rpx;
   position: relative;
   background: #fff;
-   border-radius: 5px; 
+   border-radius: 5px;
    /* padding: 2em 0;  */
    /* box-sizing: border-box;  */
   transition: .3s ease;
@@ -43,13 +44,13 @@
 }
 .card > video {
   position: absolute;
-  top: 50%; 
+  top: 50%;
   left: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
-  min-width: 100%; 
-  min-height: 100%; 
-  width: auto; 
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
   height: auto;
   overflow: hidden;
 }
@@ -63,7 +64,7 @@
   position: absolute;
   top: 20rpx;
   right: 20rpx;
-  background-color: #fff; 
+  background-color: #fff;
 }
 
 .tag {
@@ -105,7 +106,7 @@
     margin-left: 20rpx;
     padding: 30rpx;
     background: linear-gradient(
-    160deg, rgba(252, 87, 54, .9),rgba(253, 120, 90, .9)); 
+    160deg, rgba(252, 87, 54, .9),rgba(253, 120, 90, .9));
     border: 0 !important;
     color: white;
     cursor: pointer;
@@ -114,42 +115,45 @@
     border-radius: 5rpx;
   }
 
-  page{  
-  display: flex;  
-  flex-direction: column;  
-  height: 100%;  
-}  
-.navbar{  
-  flex: none;  
-  display: flex;  
-  background: #282C34;  
+  page{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.navbar{
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  flex: none;
+  display: flex;
+  background: #282C34;
   font-size: 35rpx;
-}  
-.navbar .item{  
-  position: relative;  
-  flex: auto;  
-  text-align: center;  
-  line-height: 80rpx;  
+}
+.navbar .item{
+  position: relative;
+  flex: auto;
+  text-align: center;
+  line-height: 80rpx;
   width: 50%;
-}  
-.navbar .item.active{  
+}
+.navbar .item.active{
   background: linear-gradient(
-    160deg, rgba(252, 87, 54, .9),rgba(253, 120, 90, .9)); 
+    160deg, rgba(252, 87, 54, .9),rgba(253, 120, 90, .9));
   color: white;
-}  
-.navbar .item.active:after{  
-  content: "";  
-  display: block;  
-  position: absolute;  
-  bottom: 0;  
-  left: 0;  
-  right: 0;  
-  height: 4rpx;  
-}  
+}
+.navbar .item.active:after{
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4rpx;
+}
 
 .search-icon {
   background: linear-gradient(
-    160deg, rgba(252, 87, 54, .9),rgba(253, 120, 90, .9)); 
+    160deg, rgba(252, 87, 54, .9),rgba(253, 120, 90, .9));
   position: fixed;
   border-radius: 50%;
   padding: 40rpx;
@@ -163,4 +167,4 @@
  .weui-icon-search_in-box {
   height: 45rpx;
   width: 45rpx;
-} 
+}
