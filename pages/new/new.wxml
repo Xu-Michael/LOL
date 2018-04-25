@@ -1,6 +1,6 @@
 <view class="login-container">
   <block wx:if="{{src === ''}}">
-    <image bindtap='bindButtonTap' class="lock" src="../../image/orange/camera.svg"/>
+    <image animation="{{animationData}}" bindtap='bindButtonTap' class="lock" src="../../image/orange/camera.svg"/>
     <view class="h3">Create your Gif!</view>
   </block>
   <block wx:if="{{src != ''}}">

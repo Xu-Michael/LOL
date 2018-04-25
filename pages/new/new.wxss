@@ -8,7 +8,10 @@ page {
   width: 350rpx;
   height: 350rpx;
   margin-bottom: 50rpx;
+  animation:spin 2s linear infinite;
 }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
 .login-container {
   margin: auto 50rpx;
   text-align: center;

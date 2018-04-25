@@ -44,10 +44,11 @@ Page({
   collect: function (e) {
     let data = e.currentTarget.dataset;
     let page = this;
+    let gif = data.gif
     try {
       var user = wx.getStorageSync('user')
       if (user) {
-        console.log(user)
+        // console.log(user)
         const current_user_id = user.id
         wx.request({
           url: `https://gifme-api.wogengapp.cn/api/v1/users/${user.id}`,
@@ -55,7 +56,7 @@ Page({
           method: 'GET',
           success(res) {
             const user = res.data;
-            console.log(res.data)
+            // console.log(res.data)
             // Update local data
             page.setData({
               user: user
@@ -66,37 +67,40 @@ Page({
               user_id: current_user_id,
               gif_id: data.gif.id
             };
-            console.log(collection)
+            
+            // console.log(collection)
             wx.request({
               url: `https://gifme-api.wogengapp.cn/api/v1/users/${current_user_id}/collections`,
               // url: `http://localhost:3000/api/v1/users/${current_user_id}/collections`,
               method: 'POST',
               data: collection,
               success(res) {
-                console.log(e)
+                let response_data = res.data;
+                let gifs_new = page.data.gifs_new;
+                let gifs_trending = page.data.gifs_trending;
                 // set data on index page and show
-                var user = wx.getStorageSync('user')
-                const user_id = user.id
-                  wx.request({
-                  url: `https://gifme-api.wogengapp.cn/api/v1/gifs?user_id=${user_id}`,
-                  method: 'GET',
-                  success(res) {
-                    const gifs_trending = res.data.gifs_by_collections;
-                    const gifs_new = res.data.gifs_by_new;
-                    page.setData({
-                      gifs_trending: gifs_trending,
-                      gifs_new: gifs_new
-                    });
-                    wx.hideToast();
+                var user = wx.getStorageSync('user');
+                const user_id = user.id;
+              
+                if (response_data.user_id == collection.user_id && response_data.gif_id == collection.gif_id){
+                  let gifs_new_index = gifs_new.findIndex(g => g.id == gif.id)
+                  let gifs_trending_index = gifs_trending.findIndex(g => g.id == gif.id)
+                  if (res.statusCode === 202) {
+                    gifs_new[gifs_new_index].collected = false
+                    gifs_trending[gifs_trending_index].collected = false
+                    gifs_new[gifs_new_index].collection_count = response_data.collection_count
+                    gifs_trending[gifs_trending_index].collection_count = response_data.collection_count
+                  } else {
+                    gifs_new[gifs_new_index].collected = true
+                    gifs_trending[gifs_trending_index].collected = true
+                    gifs_new[gifs_new_index].collection_count = response_data.collection_count
+                    gifs_trending[gifs_trending_index].collection_count = response_data.collection_count
                   }
-                });
-
+                }
               }
-
             });
-          }
+          }          
         });
-
       } else {
         wx.reLaunch({
           url: '../login/login'
@@ -139,7 +143,7 @@ Page({
       // url: "http://localhost:3000/api/v1/gifs?user_id=${user_id}",
       method: 'GET',
       success(res) {
-        console.log(res)
+        // console.log(res)
         // page.setData(res.data)
         // // console.log(page.data.gifs)
         // let gifs = page.data.gifs
