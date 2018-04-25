@@ -4,6 +4,7 @@
   </view>
 </view>
  -->
+ <view class="user-header">
   <view class="user-container">
     <view class="user-details">
       <image class="avatar" src='{{user.avatar}}'/>
@@ -33,6 +34,7 @@
   <!-- <image wx:if="{{deleteflag == false}}" src="../../image/icon-trash.png" id="trash" bindtap="showDeletes"/>
   <image wx:else src="../../image/icon-trash.png" id="trashopen" bindtap="hideDeletes"/> -->
   </view>
+</view>
 
 
 <!-- <view wx:for="{{user.users_gifs}}" -->
