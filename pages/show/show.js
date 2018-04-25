@@ -86,6 +86,20 @@ Page({
       console.log(e)
     }
   },
+  showUser: function (e) {
+    let data = e.currentTarget.dataset;
+    const userId = data.gif.user_id;
+    let current_user = wx.getStorageSync('user')
+    if (userId == current_user.id) {
+      wx.switchTab({
+        url: `../user/user`
+      });
+    } else {
+      wx.navigateTo({
+        url: `../otheruser/otheruser?id=${userId}`
+      });
+    }
+  },
 
   /**
    * 生命周期函数--监听页面加载
