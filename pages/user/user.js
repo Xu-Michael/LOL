@@ -198,44 +198,44 @@ Page({
                 page.setData({ badge: "../../image/orange/crown.svg" });
                 page.setData({ message: "Novice" });
               } else if (page.data.totalscore > 19 && page.data.totalscore < 50) {
-                page.setData({ badge: "../../image/orange/favorite.svg" });
+                page.setData({ badge: "../../image/orange/dragon.svg" });
                 page.setData({ message: "Intermediate" });
               } else if (page.data.totalscore > 49 && page.data.totalscore < 100) {
-                page.setData({ badge: "../../image/orange/favorite.svg" });
+                page.setData({ badge: "../../image/orange/dragon.svg" });
                 page.setData({ message: "Advanced" });
               } else if (page.data.totalscore > 99 && page.data.totalscore < 150) {
-                page.setData({ badge: "../../image/orange/favorite.svg" });
+                page.setData({ badge: "../../image/orange/dragon.svg" });
                 page.setData({ message: "Expert" });
               } else if (page.data.totalscore > 149 && page.data.totalscore < 200) {
-                page.setData({ badge: "../../image/orange/favorite.svg" });
+                page.setData({ badge: "../../image/orange/dragon.svg" });
                 page.setData({ message: "Elite" });
               } else if (page.data.totalscore > 199 && page.data.totalscore < 300) {
-                page.setData({ badge: "../../image/orange/favorite.svg" });
+                page.setData({ badge: "../../image/orange/dragon.svg" });
                 page.setData({ message: "Gif Magistrate" });
               } else if (page.data.totalscore > 299 && page.data.totalscore < 500) {
-                page.setData({ badge: "../../image/orange/favorite.svg" });
+                page.setData({ badge: "../../image/orange/dragon.svg" });
                 page.setData({ message: "Gif King" });
               } else if (page.data.totalscore > 499 && page.data.totalscore < 1000) {
-                page.setData({ badge: "../../image/orange/favorite.svg" });
+                page.setData({ badge: "../../image/orange/dragon.svg" });
                 page.setData({ message: "Gif Emperor" });
               } else if (page.data.totalscore > 999 && page.data.totalscore < 2000) {
-                page.setData({ badge: "../../image/orange/favorite.svg" });
+                page.setData({ badge: "../../image/orange/dragon.svg" });
                 page.setData({ message: "Master of Gifs" });
               } else if (page.data.totalscore > 1999 && page.data.totalscore < 3000) {
-                page.setData({ badge: "../../image/orange/favorite.svg" });
+                page.setData({ badge: "../../image/orange/dragon.svg" });
                 page.setData({ message: "Grandmaster" });
               } else if (page.data.totalscore > 2999 && page.data.totalscore < 5000) {
-                page.setData({ badge: "../../image/orange/favorite.svg" });
+                page.setData({ badge: "../../image/orange/dragon.svg" });
                 page.setData({ message: "Ulramaster" });
               } else if (page.data.totalscore > 4999 && page.data.totalscore < 10000) {
-                page.setData({ badge: "../../image/orange/favorite.svg" });
+                page.setData({ badge: "../../image/orange/dragon.svg" });
                 page.setData({ message: "Gif Ascendant" });
               } else if (page.data.totalscore > 9999) {
-                page.setData({ badge: "../../image/orange/favorite.svg" });
+                page.setData({ badge: "../../image/orange/dragon.svg" });
                 page.setData({ message: "Gif God" });
               } else {
                 console.log(page.data.totalscore)
-                page.setData({ badge: "../../image/orange/favorite.svg" });
+                page.setData({ badge: "../../image/orange/dragon.svg" });
                 page.setData({ message: "Gif God" });
               }
               // console.log(total)
