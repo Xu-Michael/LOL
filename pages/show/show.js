@@ -30,10 +30,6 @@ Page({
     })
   },
 
-  success: function (e) {
-
-  },
-
   wxSearchKeyTap: function (e) {
     search(e.target.dataset.key);
   },

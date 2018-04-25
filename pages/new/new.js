@@ -78,7 +78,7 @@ Page({
       }
     } catch (e) {
       console.log(e)
-    }
+    };
   },
 
   onReady: function (res) {
@@ -188,7 +188,8 @@ Page({
   },
 
   bindSubmit: function (e) {
-    const input_tag = e.detail.value.content
+    const page = this;
+    const input_tag = e.detail.value.content;
     if (input_tag == '') {
       wx.showModal({
         title: 'Tags Required',
@@ -209,9 +210,9 @@ Page({
           tags: input_tag
         },
         success: function (res) {
-          let id = res.data
-          wx.reLaunch({
-            url: '../new/new',
+          page.setData({
+            src: '',
+            Key: ''
           });
           wx.switchTab({
             url: `../user/user`
