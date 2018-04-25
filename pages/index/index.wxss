@@ -99,27 +99,28 @@
   margin-bottom: 40rpx;
 }
 
- .submit-button {
-    display: block;
-    text-align: center;
-    width: 400rpx;
-    margin-left: 20rpx;
-    padding: 30rpx;
-    background: linear-gradient(
-    160deg, rgba(252, 87, 54, .9),rgba(253, 120, 90, .9));
-    border: 0 !important;
-    color: white;
-    cursor: pointer;
-    font-size: 35rpx;
-    text-shadow: 0 1px 0 rgba(black, .2);
-    border-radius: 5rpx;
-  }
+.submit-button {
+  display: block;
+  text-align: center;
+  width: 400rpx;
+  margin-left: 20rpx;
+  padding: 30rpx;
+  background: linear-gradient(
+  160deg, rgba(252, 87, 54, .9),rgba(253, 120, 90, .9));
+  border: 0 !important;
+  color: white;
+  cursor: pointer;
+  font-size: 35rpx;
+  text-shadow: 0 1px 0 rgba(black, .2);
+  border-radius: 5rpx;
+}
 
-  page{
+page {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
+
 .navbar{
   position: fixed;
   width: 100%;
@@ -128,6 +129,7 @@
   display: flex;
   background: #282C34;
   font-size: 35rpx;
+  box-shadow: 0px 3px 5px 0px rgba(25, 25, 25, 0.6);
 }
 .navbar .item{
   position: relative;
