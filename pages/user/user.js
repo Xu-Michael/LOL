@@ -184,7 +184,7 @@ Page({
               for (var i in a) { total += a[i] };
               page.setData({ totalscore: total });
 
-              if (page.data.usergifscount == 0) {
+              if (page.data.totalscore == 0) {
                 console.log("success")
                 page.setData({ badge: "../../image/orange/egg.svg" });
                 page.setData({ message: "Make some Gifs!" });
