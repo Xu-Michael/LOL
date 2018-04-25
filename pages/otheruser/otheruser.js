@@ -67,46 +67,46 @@ Page({
         } else if (page.data.totalscore > 0 && page.data.totalscore < 2) {
           page.setData({ badge: "../../image/orange/star.svg" });
           page.setData({ message: "Noob" });
-        } else if (page.data.totalscore > 2 && page.data.totalscore < 5) {
+        } else if (page.data.totalscore >= 2 && page.data.totalscore < 5) {
           page.setData({ badge: "../../image/orange/crown-silver.svg" });
           page.setData({ message: "Beginner" });
-        } else if (page.data.totalscore > 5 && page.data.totalscore < 19) {
+        } else if (page.data.totalscore >= 5 && page.data.totalscore < 19) {
           page.setData({ badge: "../../image/orange/crown.svg" });
           page.setData({ message: "Novice" });
-        } else if (page.data.totalscore > 19 && page.data.totalscore < 50) {
+        } else if (page.data.totalscore >= 19 && page.data.totalscore < 50) {
           page.setData({ badge: "../../image/orange/dragon.svg" });
           page.setData({ message: "Intermediate" });
-        } else if (page.data.totalscore > 49 && page.data.totalscore < 100) {
+        } else if (page.data.totalscore >= 49 && page.data.totalscore < 100) {
           page.setData({ badge: "../../image/orange/dragon.svg" });
           page.setData({ message: "Advanced" });
-        } else if (page.data.totalscore > 99 && page.data.totalscore < 150) {
+        } else if (page.data.totalscore >= 99 && page.data.totalscore < 150) {
           page.setData({ badge: "../../image/orange/dragon.svg" });
           page.setData({ message: "Expert" });
-        } else if (page.data.totalscore > 149 && page.data.totalscore < 200) {
+        } else if (page.data.totalscore >= 149 && page.data.totalscore < 200) {
           page.setData({ badge: "../../image/orange/dragon.svg" });
           page.setData({ message: "Elite" });
-        } else if (page.data.totalscore > 199 && page.data.totalscore < 300) {
+        } else if (page.data.totalscore >= 199 && page.data.totalscore < 300) {
           page.setData({ badge: "../../image/orange/dragon.svg" });
           page.setData({ message: "Gif Magistrate" });
-        } else if (page.data.totalscore > 299 && page.data.totalscore < 500) {
+        } else if (page.data.totalscore >= 299 && page.data.totalscore < 500) {
           page.setData({ badge: "../../image/orange/dragon.svg" });
           page.setData({ message: "Gif King" });
-        } else if (page.data.totalscore > 499 && page.data.totalscore < 1000) {
+        } else if (page.data.totalscore >= 499 && page.data.totalscore < 1000) {
           page.setData({ badge: "../../image/orange/dragon.svg" });
           page.setData({ message: "Gif Emperor" });
-        } else if (page.data.totalscore > 999 && page.data.totalscore < 2000) {
+        } else if (page.data.totalscore >= 999 && page.data.totalscore < 2000) {
           page.setData({ badge: "../../image/orange/dragon.svg" });
           page.setData({ message: "Master of Gifs" });
-        } else if (page.data.totalscore > 1999 && page.data.totalscore < 3000) {
+        } else if (page.data.totalscore >= 1999 && page.data.totalscore < 3000) {
           page.setData({ badge: "../../image/orange/dragon.svg" });
           page.setData({ message: "Grandmaster" });
-        } else if (page.data.totalscore > 2999 && page.data.totalscore < 5000) {
+        } else if (page.data.totalscore >= 2999 && page.data.totalscore < 5000) {
           page.setData({ badge: "../../image/orange/dragon.svg" });
           page.setData({ message: "Ulramaster" });
-        } else if (page.data.totalscore > 4999 && page.data.totalscore < 10000) {
+        } else if (page.data.totalscore >= 4999 && page.data.totalscore < 10000) {
           page.setData({ badge: "../../image/orange/dragon.svg" });
           page.setData({ message: "Gif Ascendant" });
-        } else if (page.data.totalscore > 9999) {
+        } else if (page.data.totalscore >= 9999) {
           page.setData({ badge: "../../image/orange/dragon.svg" });
           page.setData({ message: "Gif God" });
         } else {
