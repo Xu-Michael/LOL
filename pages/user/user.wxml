@@ -7,11 +7,11 @@
   <view class="user-container">
     <view class="user-details">
       <image class="avatar" src='{{user.avatar}}'/>
+      <image src="{{badge}}" class="icon-crown"/>
     </view>
     <view class="user-stats">
       <view class="name-row">
         <view class="user-name">{{user.name}}</view>
-        <image src="../../image/orange/crown.svg" class="icon-crown" />
       </view>
       <view class="gif-stats">
         <view class="gif-collected"> 

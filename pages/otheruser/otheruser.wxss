@@ -14,10 +14,10 @@
 
 .avatar {
   border-radius: 50%;
-  height: 150rpx;
-  width: 150rpx;
+  height: 170rpx;
+  width: 170rpx;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  border: #f8f5f5 10rpx solid;
+  /* border: #f8f5f5 10rpx solid; */
   margin-bottom: 10rpx;
 }
 
@@ -90,9 +90,12 @@
 }
 
 .icon-crown {
-  height: 40rpx;
-  width: 40rpx;
+  height: 60rpx;
+  width: 60rpx;
   margin-left: 30rpx;
+  position: fixed;
+  top: -2rpx;
+  left: 165rpx;
 }
 
 
@@ -114,9 +117,12 @@
 }
 
 .avatar {
-  border-radius: 100rpx;
-  height: 120rpx;
-  width: 120rpx;
+  border-radius: 50%;
+  height: 170rpx;
+  width: 170rpx;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  /* border: #f8f5f5 10rpx solid; */
+  margin-bottom: 10rpx;
 }
 
 .totalc {

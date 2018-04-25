@@ -186,18 +186,18 @@ Page({
 
               if (page.data.usergifscount == 0) {
                 console.log("success")
-                page.setData({ badge: "../../image/orange/favorite.svg" });
+                page.setData({ badge: "../../image/orange/egg.svg" });
                 page.setData({ message: "Make some Gifs!" });
-              } else if (page.data.totalscore > 0 && page.data.totalscore < 10) {
-                page.setData({ badge: "../../image/orange/favorite.svg" });
+              } else if (page.data.totalscore > 0 && page.data.totalscore < 2) {
+                page.setData({ badge: "../../image/orange/star.svg" });
                 page.setData({ message: "Noob" });
-              } else if (page.data.totalscore > 9 && page.data.totalscore < 20) {
-                page.setData({ badge: "../../image/orange/favorite.svg" });
+              } else if (page.data.totalscore > 2 && page.data.totalscore < 5) {
+                page.setData({ badge: "../../image/orange/crown-silver.svg" });
                 page.setData({ message: "Beginner" });
-              } else if (page.data.totalscore > 19 && page.data.totalscore < 30) {
-                page.setData({ badge: "../../image/orange/favorite.svg" });
+              } else if (page.data.totalscore > 5 && page.data.totalscore < 19) {
+                page.setData({ badge: "../../image/orange/crown.svg" });
                 page.setData({ message: "Novice" });
-              } else if (page.data.totalscore > 29 && page.data.totalscore < 50) {
+              } else if (page.data.totalscore > 19 && page.data.totalscore < 50) {
                 page.setData({ badge: "../../image/orange/favorite.svg" });
                 page.setData({ message: "Intermediate" });
               } else if (page.data.totalscore > 49 && page.data.totalscore < 100) {
