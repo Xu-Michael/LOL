@@ -1,4 +1,4 @@
-<video autoplay controls="{{false}}" loop src="{{gif.video}}"/>
+<video autoplay controls="{{false}}" loop src="{{gif.video}}" bindtap="previewGif" data-gif="{{gif.image}}"/>
 <view class="content-wrapper">
   <view class="user-info">
     <image class="avatar" src="{{gif.user_avatar}}"/>
@@ -24,7 +24,7 @@
     </view> -->
     <view class="action-button">
       <image wx:if="{{collectioncheck == true}}" class="show-icon" src="../../image/orange/favorite.svg"/>
-      <image wx:else class="icon" bindtap="collect" data-gif="{{gif}}" src="../../image/white/favorite.svg"/>
+      <image wx:else class="show-icon" bindtap="collect" data-gif="{{gif}}" src="../../image/white/favorite.svg"/>
       <view if wx:if="{{numberup == false}}" class="icon-text">{{gif.collection_count}}</view>
       <view if wx:else class="icon-text">{{gif.collection_count + 1}}</view>
     </view>
