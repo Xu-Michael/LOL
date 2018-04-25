@@ -1,4 +1,4 @@
-<video autoplay controls="{{false}}" loop src="{{gif.video}}"/>
+<video autoplay controls="{{false}}" loop src="{{gif.video}}" bindtap="previewGif" data-gif="{{gif.image}}"/>
 <view class="content-wrapper">
   <view class="user-info">
     <image class="avatar" src="{{gif.user_avatar}}"/>

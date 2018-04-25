@@ -135,8 +135,18 @@ Page({
           }
     });
   },
+
   onReady: function () {
 
+  },
+
+  previewGif: function (e) {
+    var current = e.target.dataset.gif
+
+    wx.previewImage({
+      current: current,
+      urls: [current]
+    });
   },
 
   /**
