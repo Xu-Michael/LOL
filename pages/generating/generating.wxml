@@ -30,17 +30,10 @@
           <image class="icon-heart" src="../../image/orange/add.svg"/></button>
         </label>
       </view>
-
  
       <view class="highlight-button">
         <view wx:if="{{flag1 == true && flag2 == true}}" class='lf--continuego' bindtap="onContinueClicked">NEXT</view>
         <view wx:else class="class='lf--continue'">NEXT</view>
       </view>
     </form>
-
-
-
-
-
-
 </view>
