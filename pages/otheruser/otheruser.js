@@ -160,22 +160,21 @@ Page({
               data: collection,
               success(res) {
                 console.log(e)
-                // set data on index page and show
-                // var user = wx.getStorageSync('user')
-                // const user_id = user.id
-                //   wx.request({
-                //   url: `https://gifme-api.wogengapp.cn/api/v1/users/${user_id}?current_user_id=${user.id}`,
-                //   // url: `https://gifme-api.wogengapp.cn/api/v1/gifs?user_id=${user_id}`,
-                //   method: 'GET',
-                //   success(res) {
-                //     console.log(res)
-                //     const user = res.data
-                //     console.log(user)
-                //     // Update local data
-                //     page.setData({
-                //       user: user
-                //     });
-                //     wx.hideToast();
+                var user = wx.getStorageSync('user')
+                const user_id = user.id
+                  wx.request({
+                  url: `https://gifme-api.wogengapp.cn/api/v1/users/${user_id}?current_user_id=${user.id}`,
+                  // url: `https://gifme-api.wogengapp.cn/api/v1/gifs?user_id=${user_id}`,
+                  method: 'GET',
+                  success(res) {
+                    console.log(res)
+                    const user = res.data
+                    console.log(user)
+                    // Update local data
+                    page.setData({
+                      user: user
+                    });
+                    wx.hideToast();
                   }
                 });
               }
