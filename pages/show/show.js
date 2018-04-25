@@ -99,7 +99,6 @@ Page({
       method: 'GET',
       success(res) {
         const gif = res.data;
-        console.log(gif)
         page.setData({
           gif: gif
         });
@@ -107,7 +106,6 @@ Page({
       }
     });
     var getId = options.id;
-    console.log(getId)
         this.setData({
             currentId: getId
         });
