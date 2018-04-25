@@ -3,6 +3,15 @@
 /* Cards */
 .collection-header {
   text-align: center;
+  background: linear-gradient(
+  160deg, rgba(252, 87, 54, .9),rgba(253, 120, 90, .9));
+  color: #fff;
+  width: 100%;
+  height: 80rpx;
+  font-size: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
  .card-container {

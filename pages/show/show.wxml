@@ -1,4 +1,4 @@
-<video autoplay controls="{{false}}" loop src="{{gif.video}}" bindtap="previewGif" data-gif="{{gif.image}}"/>
+<!-- <video autoplay controls="{{false}}" loop src="{{gif.video}}" bindtap="previewGif" data-gif="{{gif.image}}"/>
 <view class="content-wrapper">
   <view class="user-info">
     <image class="avatar" src="{{gif.user_avatar}}" data-gif="{{gif}}" bindtap="showUser"/>
@@ -18,10 +18,6 @@
   </view>
 
   <view class="button-wrapper">
-    <!-- <view class="action-button">
-      <image class="icon" src="../../image/white/share.svg"></image>
-      <view class="icon-text">Back</view>
-    </view> -->
     <view class="action-button">
       <image wx:if="{{collectioncheck == true}}" class="show-icon" src="../../image/orange/favorite.svg"/>
       <image wx:else class="show-icon" bindtap="collect" data-gif="{{gif}}" src="../../image/white/favorite.svg"/>
@@ -30,7 +26,46 @@
     </view>
     <view class="action-button">
       <image class="show-icon" src="../../image/white/share.svg"></image>
-      <!-- <view class="icon-text">Share</view> -->
+       <view class="icon-text">Share</view> 
     </view>
   </view>
-</view>
+</view> -->
+
+
+
+  <view class="card-container">
+    <view class="gif-container">
+      <view class="tag-collected">
+        <image id="tag-icon" src="../../image/orange/tag.svg"/>
+        <view class="key-list-container">
+          <view class="wxSearchKeyList">
+            <block wx:for="{{gif.tags}}" wx:for-item="tag" wx:key="tag.id">
+              <view class="wxSearchKeyItem" bindtap="wxSearchKeyTap" data-key="{{tag.id}}">
+                {{tag.name}}
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+      <video autoplay controls="{{false}}" loop src="{{gif.video}}" bindtap="previewGif" data-gif="{{gif.image}}"/>
+
+      <view class="gif-details">
+        <view class="collected user-info">
+          <image class="avatar" src="{{gif.user_avatar}}" data-gif="{{gif}}" bindtap="showUser"/>
+          <view class="user-name">{{gif.user_name}}</view>
+        </view>
+        <view class="collected">
+          <image wx:if="{{collectioncheck == true}}" class="show-icon" src="../../image/orange/favorite.svg"/>
+          <image wx:else class="show-icon" bindtap="collect" data-gif="{{gif}}" src="../../image/white/favorite.svg"/>
+          <view if wx:if="{{numberup == false}}" class="icon-text">{{gif.collection_count}}</view>
+          <view if wx:else class="icon-text">{{gif.collection_count + 1}}</view>
+        </view>
+
+        <view class="collected share">
+          <button class='icon-share' open-type="share" plain="true"><image class="show-icon" src="../../image/orange/share.svg" bindtap="onShareAppMessage"></image></button>
+          <view class="icon-text">Share</view>
+        </view>
+
+      </view>
+    </view>
+  </view>
