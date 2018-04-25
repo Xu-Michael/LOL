@@ -46,11 +46,22 @@ Page({
               // url: `http://localhost:3000/api/v1/users/${current_user_id}/collections`,
               method: 'POST',
               data: collection,
-              success(e) {
+              success(res) {
                 console.log(e)
-                wx.reLaunch({
-                  url: '../collection/collection',
-                })
+                var user = wx.getStorageSync('user')
+                const user_id = user.id
+                  wx.request({
+                   url: `https://gifme-api.wogengapp.cn/api/v1/users/${user.id}/collections`,
+                  method: 'GET',
+                  success(res) {
+                    const gifs = res.data.collections;
+                    page.setData({
+                      gifs: gifs
+                    });
+                    wx.hideToast();
+
+                  }
+                });
                 // set data on index page and show
               }
             });
@@ -70,7 +81,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+
   },
   showUser: function (e) {
     let data = e.currentTarget.dataset;

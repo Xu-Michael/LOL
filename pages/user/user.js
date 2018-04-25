@@ -77,6 +77,7 @@ Page({
   },
 
   gifDelete: function(e) {
+    let page = this;
     const gifId = e.currentTarget.dataset.gif;
     console.log(gifId);
     wx.showModal({
@@ -90,9 +91,41 @@ Page({
             method: 'DELETE',
             success() {
               // set data on index page and show
-              wx.reLaunch({
-                url: '../user/user',
-              })
+              var user = wx.getStorageSync('user')
+              wx.request({
+                url: `https://gifme-api.wogengapp.cn/api/v1/users/${user.id}?current_user_id=${user.id}`,
+              // url: `http://localhost:3000/api/v1/users/${user.id}?current_user_id=${user.id}`,
+                method: 'GET',
+                success(res) {
+
+                  const user = res.data;
+                  const user_gifs = user.users_gifs
+                  // page.setData({usergifscount: user_gifs.length});
+                  // console.log(res.data);
+                  const usergifs = res.data.users_gifs;
+                  console.log(usergifs)
+                  // var thecount = usergifs.length;
+                  page.setData({ usergifscount: usergifs.length });
+                  console.log(page.data.usergifscount);
+                  var i;
+                  var a = []
+                  for (i in usergifs) {
+                  // console.log(usergifs[i].collection_count);
+                    a.push(usergifs[i].collection_count);
+                  };
+                  console.log(a);
+
+                  // console.log(a)
+                  var total = 0;
+                  for (var i in a) { total += a[i] };
+                  page.setData({
+                    totalscore: total,
+                    user: user,
+                    gifs: user_gifs
+                  });
+                }
+              });
+
             }
           });
         } else if (res.cancel) {
