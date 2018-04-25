@@ -62,7 +62,7 @@
         </view>
 
         <view class="collected share">
-          <image class="show-icon" src="../../image/orange/share.svg"></image>
+          <button class='icon-share' open-type="share" plain="true"><image class="show-icon" src="../../image/orange/share.svg" bindtap="onShareAppMessage"></image></button>
           <view class="icon-text">Share</view>
         </view>
 

@@ -31,7 +31,7 @@ video {
   justify-content: center;
   flex-direction: column;
   /* width: 350rpx; */
-   background: #f5f5f5;
+   background: white;
   /* border-radius: 5px;
   margin-top: 30rpx; */
 }
@@ -173,4 +173,10 @@ video {
 .icon-text {
   font-size: 30rpx;
   margin-left: 15rpx;
+}
+
+.icon-share {
+  border: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
