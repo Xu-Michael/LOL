@@ -72,14 +72,31 @@ Page({
               // url: `http://localhost:3000/api/v1/users/${current_user_id}/collections`,
               method: 'POST',
               data: collection,
-              success(e) {
+              success(res) {
                 console.log(e)
                 // set data on index page and show
+                var user = wx.getStorageSync('user')
+                const user_id = user.id
+                  wx.request({
+                  url: `https://gifme-api.wogengapp.cn/api/v1/gifs?user_id=${user_id}`,
+                  method: 'GET',
+                  success(res) {
+                    const gifs_trending = res.data.gifs_by_collections;
+                    const gifs_new = res.data.gifs_by_new;
+                    page.setData({
+                      gifs_trending: gifs_trending,
+                      gifs_new: gifs_new
+                    });
+                    wx.hideToast();
+                  }
+                });
+
               }
 
             });
           }
         });
+
       } else {
         wx.reLaunch({
           url: '../login/login'
@@ -93,7 +110,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+
   },
 
   wxSearchTab: function () {
@@ -123,14 +140,14 @@ Page({
       method: 'GET',
       success(res) {
         console.log(res)
-        page.setData(res.data)
-        // console.log(page.data.gifs)
-        let gifs = page.data.gifs
-        gifs = gifs.map(g => {
-          g["collectGifIcon"] = false
-          return g
-        })
-        page.setData({ gifs: gifs })
+        // page.setData(res.data)
+        // // console.log(page.data.gifs)
+        // let gifs = page.data.gifs
+        // gifs = gifs.map(g => {
+        //   g["collectGifIcon"] = false
+        //   return g
+        // })
+        // page.setData({ gifs: gifs })
 
         const gifs_trending = res.data.gifs_by_collections;
         const gifs_new = res.data.gifs_by_new;
