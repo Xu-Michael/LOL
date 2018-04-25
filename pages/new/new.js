@@ -210,6 +210,9 @@ Page({
         },
         success: function (res) {
           let id = res.data
+          wx.reLaunch({
+            url: '../new/new',
+          });
           wx.switchTab({
             url: `../user/user`
           });
