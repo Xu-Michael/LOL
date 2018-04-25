@@ -167,17 +167,17 @@ Page({
               // page.setData({usergifscount: user_gifs.length});
               // console.log(res.data);
               const usergifs = res.data.users_gifs;
-              console.log(usergifs)
+              // console.log(usergifs)
               // var thecount = usergifs.length;
               page.setData({ usergifscount: usergifs.length });
-              console.log(page.data.usergifscount);
+              // console.log(page.data.usergifscount);
               var i;
               var a = []
               for (i in usergifs) {
                 // console.log(usergifs[i].collection_count);
                 a.push(usergifs[i].collection_count);
               };
-              console.log(a);
+              // console.log(a);
 
               // console.log(a)
               var total = 0;

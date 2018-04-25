@@ -8,7 +8,7 @@
   <view class="user-container">
     <view class="user-details">
       <image class="avatar" src='{{user.avatar}}'/>
-      <image src="../../image/orange/crown.svg" class="icon-crown" />
+      <image src="{{badge}}" class="icon-crown"/>
     </view>
     <view class="user-stats">
       <view class="name-row">
