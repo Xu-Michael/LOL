@@ -15,8 +15,8 @@
         <view class="user-name">{{user.name}}</view>
       </view>
       <view class="gif-stats">
-        <view class="gif-collected"> 
-          <view class="number-collected">{{totalscore}}</view>
+        <view class="gif-collected">
+          <view class="number-collected">{{usergifscount}}</view>
           <view class="collected-status">Gifs</view>
         </view>
         <view class="gif-collected">
@@ -75,7 +75,8 @@
 
       <view class="gif-details">
         <view class="collected">
-          <image class="icon-heart" data-gif="{{gif.id}}" bindtap="collect" src="../../image/orange/favorite.png"/>
+          <image wx:if="{{gif.collected}}" class="icon-heart" data-gif="{{gif}}" bindtap="collect" src="../../image/orange/favorite.svg"/>
+          <image wx:else class="icon-heart" data-gif="{{gif}}" key="unique" bindtap="collect" src="../../image/white/favorite.svg"/>
           {{ gif.collection_count}}
         </view>
         <view class="tag collected">
