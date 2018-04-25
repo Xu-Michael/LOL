@@ -36,6 +36,11 @@ video {
   margin-top: 30rpx; */
 }
 
+image {
+  width: 380px;
+  height: 380px;
+}
+
 .gif-details {
   display: flex;
   justify-content: space-between;

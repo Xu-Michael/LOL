@@ -47,25 +47,26 @@
           </view>
         </view>
       </view>
-      <video autoplay controls="{{false}}" loop src="{{gif.video}}" bindtap="previewGif" data-gif="{{gif.image}}"/>
+      <view class="image-container">
+        <image src="{{gif.image}}" bindtap="previewGif" data-gif="{{gif.image}}"/>
+        <view class="gif-details">
+          <view class="collected user-info">
+            <image class="avatar" src="{{gif.user_avatar}}" data-gif="{{gif}}" bindtap="showUser"/>
+            <view class="user-name">{{gif.user_name}}</view>
+          </view>
+          <view class="collected">
+            <image wx:if="{{collectioncheck == true}}" class="show-icon" src="../../image/orange/favorite.svg"/>
+            <image wx:else class="show-icon" bindtap="collect" data-gif="{{gif}}" src="../../image/white/favorite.svg"/>
+            <view if wx:if="{{numberup == false}}" class="icon-text">{{gif.collection_count}}</view>
+            <view if wx:else class="icon-text">{{gif.collection_count + 1}}</view>
+          </view>
 
-      <view class="gif-details">
-        <view class="collected user-info">
-          <image class="avatar" src="{{gif.user_avatar}}" data-gif="{{gif}}" bindtap="showUser"/>
-          <view class="user-name">{{gif.user_name}}</view>
-        </view>
-        <view class="collected">
-          <image wx:if="{{collectioncheck == true}}" class="show-icon" src="../../image/orange/favorite.svg"/>
-          <image wx:else class="show-icon" bindtap="collect" data-gif="{{gif}}" src="../../image/white/favorite.svg"/>
-          <view if wx:if="{{numberup == false}}" class="icon-text">{{gif.collection_count}}</view>
-          <view if wx:else class="icon-text">{{gif.collection_count + 1}}</view>
-        </view>
+          <view class="collected share">
+            <button class='icon-share' open-type="share" plain="true"><image class="show-icon" src="../../image/orange/share.svg" bindtap="onShareAppMessage"></image></button>
+            <view class="icon-text">Share</view>
+          </view>
 
-        <view class="collected share">
-          <button class='icon-share' open-type="share" plain="true"><image class="show-icon" src="../../image/orange/share.svg" bindtap="onShareAppMessage"></image></button>
-          <view class="icon-text">Share</view>
         </view>
-
-      </view>
+      </view> 
     </view>
   </view>
