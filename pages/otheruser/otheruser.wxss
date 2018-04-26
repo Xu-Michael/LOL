@@ -1,5 +1,5 @@
 .user-container {
-  height: 200rpx; 
+  height: 200rpx;
   box-shadow: 0 3px 10px -2px rgba(0, 0, 0, 0.35);
   color: rgba(252, 87, 54, .9);
   padding-bottom: 20rpx;
@@ -34,23 +34,28 @@
   left: 80rpx;
 }
 
-.user-stats {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
 .name-row {
   font-size: 35rpx;
   /* margin: 0 0 10rpx 20rpx; */
   color: #a1a0a0;
   text-align: center;
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  flex-direction: column;
   position:fixed;
-  left: 300rpx;
-  top: 20rpx;
+  left:389rpx;
+  top:-14rpx;
+}
+
+.message {
+  color:rgba(252, 87, 54, .9);
+}
+
+.user-stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .user-name {

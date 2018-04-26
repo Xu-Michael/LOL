@@ -101,6 +101,13 @@
   justify-content: center;
 }
 
+.flexcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .name-row {
   font-size: 35rpx;
   /* margin: 0 0 10rpx 20rpx; */
@@ -109,9 +116,9 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  position:fixed;
+  /*position:fixed;
   left:389rpx;
-  top:-14rpx;
+  top:-14rpx;*/
 }
 
 .message {
@@ -235,6 +242,7 @@
   align-items: center;
   position: fixed;
   left: 80rpx;
+  top:2rpx;
 }
 
 .user-stats {
@@ -242,6 +250,9 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  position: fixed;
+  left:260rpx;
+  top:-11rpx;
 }
 
 .gif-stats {
@@ -249,9 +260,9 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  position: fixed;
+  /*position: fixed;
   left: 260rpx;
-  top: 90rpx;
+  top: 90rpx;*/
 }
 
 .gif-collected {
@@ -316,7 +327,7 @@
   width: 60rpx;
   margin-left: 30rpx;
   position: fixed;
-  top: -2rpx;
+  top: 0rpx;
   left: 165rpx;
 }
 

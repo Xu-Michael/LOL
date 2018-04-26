@@ -15,9 +15,7 @@
         <view class="user-name">{{user.name}}</view>
         <view class="message">{{message}}</view>
       </view>
-
       <view class="gif-stats">
-
         <view class="gif-collected">
           <view class="number-collected">{{totalscore}}</view>
           <view class="collected-status">Score</view>
