@@ -13,19 +13,22 @@
     <view class="user-stats">
       <view class="name-row">
         <view class="user-name">{{user.name}}</view>
+        <view class="message">{{message}}</view>
       </view>
+
       <view class="gif-stats">
-        <view class="gif-collected"> 
-          <view class="number-collected">{{usergifscount}}</view>
-          <view class="collected-status">Gifs</view>
+
+        <view class="gif-collected">
+          <view class="number-collected">{{totalscore}}</view>
+          <view class="collected-status">Score</view>
         </view>
         <view class="gif-collected">
           <view class="number-collected">{{user.user_collection_count}}</view>
           <view class="collected-status">Collected</view>
         </view>
         <view class="gif-collected">
-          <view class="number-collected">{{totalscore}}</view>
-          <view class="collected-status">Score</view>
+          <view class="number-collected">{{usergifscount}}</view>
+          <view class="collected-status">Gifs</view>
         </view>
       </view>
     </view>
