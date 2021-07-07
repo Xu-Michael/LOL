@@ -96,7 +96,9 @@
   position: fixed;
   top: -2rpx;
   left: 165rpx;
+  animation:shake 2s linear infinite;
 }
+@keyframes shake { 50% { -webkit-transform: rotate(-50deg); transform:rotate(9deg); } }
 
 
 

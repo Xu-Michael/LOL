@@ -58,7 +58,9 @@
   bottom:-4rpx;
   left:678rpx;*/
   margin: 14rpx;
+  
 }
+
 
 .action-icons {
   flex-direction: column;
@@ -313,7 +315,9 @@
   position: fixed;
   top: -2rpx;
   left: 165rpx;
+  animation:shake 2s linear infinite;
 }
+@keyframes shake { 50% { -webkit-transform: rotate(-50deg); transform:rotate(9deg); } }
 
 .gif-image {
   background-image: linear-gradient(rgba(255,255,255,0) 50%, rgba(252,252,252,0) 50%, rgba(246,246,246,1) 90%);
